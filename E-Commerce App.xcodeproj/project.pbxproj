@@ -20,6 +20,10 @@
 		75C0FF6EB5DBBEC6BA3D3037 /* Pods_E_Commerce_App_E_Commerce_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561022BB48905223A4E42994 /* Pods_E_Commerce_App_E_Commerce_AppUITests.framework */; };
 		9D2DD40D77FE49471C167A26 /* Pods_E_Commerce_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20428079085419C4BE6A3066 /* Pods_E_Commerce_App.framework */; };
 		D0F60F0538308175273059A0 /* Pods_E_Commerce_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69AFB8510183501938BBC1F7 /* Pods_E_Commerce_AppTests.framework */; };
+		F7966DEC28660C8B0052705B /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7966DEB28660C8B0052705B /* DescriptionViewController.swift */; };
+		F7966DF028660D240052705B /* DescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7966DEF28660D240052705B /* DescriptionViewModel.swift */; };
+		F7966DF22866178E0052705B /* ProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7966DF12866178E0052705B /* ProductDetails.swift */; };
+		F7966DF4286638010052705B /* DescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7966DF3286638010052705B /* DescriptionCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		58B0229728639A47008A5C0F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		69AFB8510183501938BBC1F7 /* Pods_E_Commerce_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Commerce_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3924D1A89648D15394EF804 /* Pods-E-Commerce App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E-Commerce App.release.xcconfig"; path = "Target Support Files/Pods-E-Commerce App/Pods-E-Commerce App.release.xcconfig"; sourceTree = "<group>"; };
+		F7966DEB28660C8B0052705B /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DescriptionViewController.swift; path = descriptionView/DescriptionViewController.swift; sourceTree = SOURCE_ROOT; };
+		F7966DEF28660D240052705B /* DescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DescriptionViewModel.swift; path = descriptionViewModel/DescriptionViewModel.swift; sourceTree = SOURCE_ROOT; };
+		F7966DF12866178E0052705B /* ProductDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductDetails.swift; path = descriptionViewModel/ProductDetails.swift; sourceTree = SOURCE_ROOT; };
+		F7966DF3286638010052705B /* DescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DescriptionCollectionViewCell.swift; path = descriptionView/DescriptionCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +224,8 @@
 		58B0228A286389EB008A5C0F /* descriptionView */ = {
 			isa = PBXGroup;
 			children = (
+				F7966DEB28660C8B0052705B /* DescriptionViewController.swift */,
+				F7966DF3286638010052705B /* DescriptionCollectionViewCell.swift */,
 			);
 			path = descriptionView;
 			sourceTree = "<group>";
@@ -223,6 +233,7 @@
 		58B0228B28638A0F008A5C0F /* descriptionViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F7966DEF28660D240052705B /* DescriptionViewModel.swift */,
 			);
 			path = descriptionViewModel;
 			sourceTree = "<group>";
@@ -230,6 +241,7 @@
 		58B0228C28638A25008A5C0F /* descriptionModel */ = {
 			isa = PBXGroup;
 			children = (
+				F7966DF12866178E0052705B /* ProductDetails.swift */,
 			);
 			path = descriptionModel;
 			sourceTree = "<group>";
@@ -546,9 +558,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				58B0229828639A47008A5C0F /* NetworkManager.swift in Sources */,
+				F7966DF4286638010052705B /* DescriptionCollectionViewCell.swift in Sources */,
 				58A8250B28637A1100DCFFC3 /* ViewController.swift in Sources */,
 				58A8250728637A1100DCFFC3 /* AppDelegate.swift in Sources */,
+				F7966DEC28660C8B0052705B /* DescriptionViewController.swift in Sources */,
 				58A8250928637A1100DCFFC3 /* SceneDelegate.swift in Sources */,
+				F7966DF028660D240052705B /* DescriptionViewModel.swift in Sources */,
+				F7966DF22866178E0052705B /* ProductDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
