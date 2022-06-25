@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class DescriptionViewController: UIViewController {
     
@@ -22,11 +23,33 @@ class DescriptionViewController: UIViewController {
     
     @IBOutlet weak var DescriptionLabel: UILabel!
     
+    @IBOutlet weak var descriptionDetailsLabel: UILabel!
+    var descriptionViewModel : DescriptionViewModel!
+    
+//    struct Review {
+//        var rate : Float
+//        var price : Float
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         DescriptionCollectionView.delegate = self
         DescriptionCollectionView.dataSource = self
+        descriptionViewModel = DescriptionViewModel()
+        descriptionViewModel.bindResultToDescriptionView={[weak self]in
+                                DispatchQueue.main.async {
+                                    self?.DescriptionCollectionView.reloadData()
+                                   // self?.viewDidLoad()
+                                    self?.descriptionDetailsLabel.text = self?.descriptionViewModel.result?.body_html
+                                    self?.RatingLabel.text = "4/5"
+                                    self?.ReviewsLabel.text = self?.descriptionViewModel.result?.title
+
+                                }
+                            }
+        
+        descriptionViewModel.getItems(id:7358110630059)
+        //descriptionDetailsLabel.text = descriptionViewModel.result?.title
     }
     
 
@@ -42,6 +65,23 @@ class DescriptionViewController: UIViewController {
 
 }
 
-extension DescriptionViewController : UICollectionViewDelegate, UICollectionViewDataSource{
+extension DescriptionViewController : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return descriptionViewModel.result?.images.count ?? 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = DescriptionCollectionView.dequeueReusableCell(withReuseIdentifier: "DescriptionCollectionViewCell", for: indexPath) as? DescriptionCollectionViewCell else {return UICollectionViewCell()}
+        let urlimage = URL(string: descriptionViewModel.result?.images[indexPath.row].src ?? "")
+        cell.DescriptionImageView.sd_setImage(with:urlimage, placeholderImage: UIImage(named: "ball"))
+       // print(descriptionViewModel.result?.title)
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexpath: IndexPath) -> CGSize{
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.width)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
 }

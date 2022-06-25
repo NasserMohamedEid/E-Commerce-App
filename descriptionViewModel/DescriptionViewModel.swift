@@ -7,12 +7,25 @@
 
 import Foundation
 
-class DescriptionViewModel{
+
+class DescriptionViewModel {
     
-    var bindingResultDescription : (()->()) = {}
     
-    init(){
-        
+    var bindResultToDescriptionView : (() -> ()) = {}
+    
+    
+    var result : Product?{
+        didSet{
+            bindResultToDescriptionView()
+        }
     }
     
+    func getItems(id:Int){
+        NetworkManager.fetchProductDetails(id: id, completionHandler: {
+            [weak self](result)in
+            
+            self?.result=result?.product
+        })
+    
+}
 }
