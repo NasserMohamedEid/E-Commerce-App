@@ -17,8 +17,13 @@ struct Product : Decodable{
     let body_html: String
     let vendor: String
     let images: [Images]
+    let variants: [Variants]
 }
 
 struct Images : Decodable{
     var src: String
+}
+
+struct Variants: Decodable {
+    let price: String
 }

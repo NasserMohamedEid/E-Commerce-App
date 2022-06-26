@@ -44,6 +44,10 @@ class DescriptionViewController: UIViewController {
                                     self?.descriptionDetailsLabel.text = self?.descriptionViewModel.result?.body_html
                                     self?.RatingLabel.text = "4/5"
                                     self?.ReviewsLabel.text = self?.descriptionViewModel.result?.title
+                                var price = self?.descriptionViewModel.result?.variants[0].price
+                                    
+                                    self?.PriceLabel.text = (price ?? "") + "LE"
+                                    
 
                                 }
                             }
@@ -74,12 +78,12 @@ extension DescriptionViewController : UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = DescriptionCollectionView.dequeueReusableCell(withReuseIdentifier: "DescriptionCollectionViewCell", for: indexPath) as? DescriptionCollectionViewCell else {return UICollectionViewCell()}
         let urlimage = URL(string: descriptionViewModel.result?.images[indexPath.row].src ?? "")
-        cell.DescriptionImageView.sd_setImage(with:urlimage, placeholderImage: UIImage(named: "ball"))
+        cell.DescriptionImageView.sd_setImage(with:urlimage, placeholderImage: UIImage(named: "product"))
        // print(descriptionViewModel.result?.title)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexpath: IndexPath) -> CGSize{
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.width)
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.width/1.5)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
