@@ -16,6 +16,10 @@
 		58A8251E28637A1200DCFFC3 /* E_Commerce_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A8251D28637A1200DCFFC3 /* E_Commerce_AppTests.swift */; };
 		58A8252828637A1200DCFFC3 /* E_Commerce_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A8252728637A1200DCFFC3 /* E_Commerce_AppUITests.swift */; };
 		58A8252A28637A1200DCFFC3 /* E_Commerce_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A8252928637A1200DCFFC3 /* E_Commerce_AppUITestsLaunchTests.swift */; };
+		58A92A492864E12B00AE780E /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A92A482864E12B00AE780E /* CategoryViewModel.swift */; };
+		58A92A4B2864E81800AE780E /* categoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A92A4A2864E81800AE780E /* categoryModel.swift */; };
+		58AB111928649FD600013F72 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AB111828649FD600013F72 /* CategoryViewController.swift */; };
+		58ADA0EA28661E8E0066AED4 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ADA0E928661E8E0066AED4 /* CategoryCollectionViewCell.swift */; };
 		58B0229828639A47008A5C0F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B0229728639A47008A5C0F /* NetworkManager.swift */; };
 		75C0FF6EB5DBBEC6BA3D3037 /* Pods_E_Commerce_App_E_Commerce_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561022BB48905223A4E42994 /* Pods_E_Commerce_App_E_Commerce_AppUITests.framework */; };
 		9D2DD40D77FE49471C167A26 /* Pods_E_Commerce_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20428079085419C4BE6A3066 /* Pods_E_Commerce_App.framework */; };
@@ -60,6 +64,10 @@
 		58A8252328637A1200DCFFC3 /* E-Commerce AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "E-Commerce AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58A8252728637A1200DCFFC3 /* E_Commerce_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E_Commerce_AppUITests.swift; sourceTree = "<group>"; };
 		58A8252928637A1200DCFFC3 /* E_Commerce_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E_Commerce_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		58A92A482864E12B00AE780E /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		58A92A4A2864E81800AE780E /* categoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryModel.swift; sourceTree = "<group>"; };
+		58AB111828649FD600013F72 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		58ADA0E928661E8E0066AED4 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		58B0229728639A47008A5C0F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		69AFB8510183501938BBC1F7 /* Pods_E_Commerce_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Commerce_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3924D1A89648D15394EF804 /* Pods-E-Commerce App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E-Commerce App.release.xcconfig"; path = "Target Support Files/Pods-E-Commerce App/Pods-E-Commerce App.release.xcconfig"; sourceTree = "<group>"; };
@@ -258,6 +266,8 @@
 		58B0229028638AAB008A5C0F /* CategoryView */ = {
 			isa = PBXGroup;
 			children = (
+				58AB111828649FD600013F72 /* CategoryViewController.swift */,
+				58ADA0E928661E8E0066AED4 /* CategoryCollectionViewCell.swift */,
 			);
 			path = CategoryView;
 			sourceTree = "<group>";
@@ -265,6 +275,7 @@
 		58B0229128638AB6008A5C0F /* CategoryViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				58A92A482864E12B00AE780E /* CategoryViewModel.swift */,
 			);
 			path = CategoryViewModel;
 			sourceTree = "<group>";
@@ -272,6 +283,7 @@
 		58B0229228638ACD008A5C0F /* CategoryModel */ = {
 			isa = PBXGroup;
 			children = (
+				58A92A4A2864E81800AE780E /* categoryModel.swift */,
 			);
 			path = CategoryModel;
 			sourceTree = "<group>";
@@ -545,9 +557,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58ADA0EA28661E8E0066AED4 /* CategoryCollectionViewCell.swift in Sources */,
+				58AB111928649FD600013F72 /* CategoryViewController.swift in Sources */,
 				58B0229828639A47008A5C0F /* NetworkManager.swift in Sources */,
+				58A92A4B2864E81800AE780E /* categoryModel.swift in Sources */,
 				58A8250B28637A1100DCFFC3 /* ViewController.swift in Sources */,
 				58A8250728637A1100DCFFC3 /* AppDelegate.swift in Sources */,
+				58A92A492864E12B00AE780E /* CategoryViewModel.swift in Sources */,
 				58A8250928637A1100DCFFC3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
