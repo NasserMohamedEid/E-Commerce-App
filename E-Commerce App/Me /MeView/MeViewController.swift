@@ -9,7 +9,12 @@ import UIKit
 
 class MeViewController: UIViewController {
 
+    //MARK:-outlets : -
+    
     @IBOutlet weak var meTableView: UITableView!
+    
+    
+    //MARK:- lifecycle : -
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +22,22 @@ class MeViewController: UIViewController {
        
     }
     
-
+    //MARK:-Function Helper
+    
+    @IBAction func settingButtonPressed(_ sender: UIBarButtonItem) {
+        
+        guard let settingsVC = storyboard?.instantiateViewController(withIdentifier: "SettingViewController") as? SettingViewController else {return}
+        self.navigationController?.pushViewController(settingsVC, animated: true)
+        
+    }
+    
+    @IBAction func moreOrderButton(_ sender: UIButton) {
+        
+        guard let orderListVC = storyboard?.instantiateViewController(withIdentifier: "orderViewController") as? orderViewController else {return}
+        
+        self.navigationController?.pushViewController(orderListVC, animated: true)
+        
+    }
 }
 extension MeViewController :UITableViewDelegate,UITableViewDataSource {
     

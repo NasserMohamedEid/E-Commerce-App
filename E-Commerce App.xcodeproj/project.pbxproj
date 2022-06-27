@@ -23,6 +23,13 @@
 		E03D354528667B2E007847F2 /* Brands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03D354428667B2E007847F2 /* Brands.swift */; };
 		E03D354728667DBA007847F2 /* BrandsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03D354628667DBA007847F2 /* BrandsViewModel.swift */; };
 		E03D3549286681B6007847F2 /* BrandsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03D3548286681B6007847F2 /* BrandsCollectionViewCell.swift */; };
+		E06E2F6A2869CA7D0034E741 /* orderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E2F692869CA7D0034E741 /* orderViewController.swift */; };
+		E06E2F722869D16C0034E741 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E2F712869D16C0034E741 /* SettingViewController.swift */; };
+		E06E2F742869D65F0034E741 /* settingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E2F732869D65F0034E741 /* settingsTableViewCell.swift */; };
+		E06E2F762869D6FE0034E741 /* orderListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E2F752869D6FE0034E741 /* orderListTableViewCell.swift */; };
+		E06E2F782869E0690034E741 /* AdderessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E2F772869E0690034E741 /* AdderessViewController.swift */; };
+		E06F5D75286A124B00A57871 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06F5D74286A124B00A57871 /* AddressTableViewCell.swift */; };
+		E06F5D77286A14C800A57871 /* AddNewAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06F5D76286A14C800A57871 /* AddNewAddressViewController.swift */; };
 		E08BB43928678409005D08B3 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08BB43828678409005D08B3 /* ProductsViewController.swift */; };
 		E08BB44128678B79005D08B3 /* placeholder-images.png in Resources */ = {isa = PBXBuildFile; fileRef = E08BB44028678B79005D08B3 /* placeholder-images.png */; };
 		E08BB447286797CE005D08B3 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08BB446286797CE005D08B3 /* MeViewController.swift */; };
@@ -73,6 +80,13 @@
 		E03D354428667B2E007847F2 /* Brands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brands.swift; sourceTree = "<group>"; };
 		E03D354628667DBA007847F2 /* BrandsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsViewModel.swift; sourceTree = "<group>"; };
 		E03D3548286681B6007847F2 /* BrandsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsCollectionViewCell.swift; sourceTree = "<group>"; };
+		E06E2F692869CA7D0034E741 /* orderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderViewController.swift; sourceTree = "<group>"; };
+		E06E2F712869D16C0034E741 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		E06E2F732869D65F0034E741 /* settingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsTableViewCell.swift; sourceTree = "<group>"; };
+		E06E2F752869D6FE0034E741 /* orderListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderListTableViewCell.swift; sourceTree = "<group>"; };
+		E06E2F772869E0690034E741 /* AdderessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdderessViewController.swift; sourceTree = "<group>"; };
+		E06F5D74286A124B00A57871 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		E06F5D76286A14C800A57871 /* AddNewAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAddressViewController.swift; sourceTree = "<group>"; };
 		E08BB43828678409005D08B3 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		E08BB44028678B79005D08B3 /* placeholder-images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder-images.png"; sourceTree = "<group>"; };
 		E08BB446286797CE005D08B3 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +170,8 @@
 		58A8250528637A1100DCFFC3 /* E-Commerce App */ = {
 			isa = PBXGroup;
 			children = (
+				E06E2F6F2869D1470034E741 /* Settings */,
+				E06E2F672869CA3B0034E741 /* Orders */,
 				E08BB4422867977E005D08B3 /* Me  */,
 				58B02296286399F5008A5C0F /* NetworkManager */,
 				58A825392863804000DCFFC3 /* description Product */,
@@ -324,6 +340,43 @@
 				58B0229728639A47008A5C0F /* NetworkManager.swift */,
 			);
 			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		E06E2F672869CA3B0034E741 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				E06E2F682869CA5F0034E741 /* View */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		E06E2F682869CA5F0034E741 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E06E2F692869CA7D0034E741 /* orderViewController.swift */,
+				E06E2F752869D6FE0034E741 /* orderListTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E06E2F6F2869D1470034E741 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E06E2F702869D14F0034E741 /* SettingsView */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		E06E2F702869D14F0034E741 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				E06E2F712869D16C0034E741 /* SettingViewController.swift */,
+				E06E2F732869D65F0034E741 /* settingsTableViewCell.swift */,
+				E06E2F772869E0690034E741 /* AdderessViewController.swift */,
+				E06F5D74286A124B00A57871 /* AddressTableViewCell.swift */,
+				E06F5D76286A14C800A57871 /* AddNewAddressViewController.swift */,
+			);
+			path = SettingsView;
 			sourceTree = "<group>";
 		};
 		E08BB4422867977E005D08B3 /* Me  */ = {
@@ -599,16 +652,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E06E2F6A2869CA7D0034E741 /* orderViewController.swift in Sources */,
 				E08BB447286797CE005D08B3 /* MeViewController.swift in Sources */,
 				E03D3549286681B6007847F2 /* BrandsCollectionViewCell.swift in Sources */,
+				E06F5D77286A14C800A57871 /* AddNewAddressViewController.swift in Sources */,
 				E03D354728667DBA007847F2 /* BrandsViewModel.swift in Sources */,
+				E06E2F782869E0690034E741 /* AdderessViewController.swift in Sources */,
 				E08BB43928678409005D08B3 /* ProductsViewController.swift in Sources */,
 				58B0229828639A47008A5C0F /* NetworkManager.swift in Sources */,
 				58A8250B28637A1100DCFFC3 /* BrandsViewController.swift in Sources */,
 				E03D354528667B2E007847F2 /* Brands.swift in Sources */,
+				E06E2F742869D65F0034E741 /* settingsTableViewCell.swift in Sources */,
 				58A8250728637A1100DCFFC3 /* AppDelegate.swift in Sources */,
+				E06E2F762869D6FE0034E741 /* orderListTableViewCell.swift in Sources */,
 				58A8250928637A1100DCFFC3 /* SceneDelegate.swift in Sources */,
 				E08BB44928679ACD005D08B3 /* MeTableViewCell.swift in Sources */,
+				E06F5D75286A124B00A57871 /* AddressTableViewCell.swift in Sources */,
+				E06E2F722869D16C0034E741 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
