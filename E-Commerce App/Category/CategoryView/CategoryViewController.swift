@@ -33,7 +33,7 @@ class CategoryViewController: UIViewController{
             for index in 0...(self.categoryViewModel.result?.count ?? 0)-1{
                 if self.categoryViewModel.result?[index].product_type=="ACCESSORIES"{
                     self.arrayOfProduct?[index]=(self.categoryViewModel.result?[index])!
-                    print(self.arrayOfProduct?.count ?? <#default value#>)
+                    print(self.arrayOfProduct?.count ?? 0)
                     print(self.arrayOfProduct?.count)
                 }
                 self.categoryCollectionView.reloadData()
