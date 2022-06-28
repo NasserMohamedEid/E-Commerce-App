@@ -163,6 +163,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="ADD TO BAG"/>
+                                <connections>
+                                    <action selector="addToCartButton:" destination="raC-Ld-m3A" eventType="touchUpInside" id="rnP-Xr-8Qh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGw-Cx-Oye">
                                 <rect key="frame" x="20" y="794.5" width="92" height="46"/>

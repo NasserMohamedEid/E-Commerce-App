@@ -27,3 +27,9 @@ struct Images : Decodable{
 struct Variants: Decodable {
     let price: String
 }
+
+//struct ProductCart : Encodable {
+//    let title: String
+//    let images: [Images]
+//    let variants: [Variants]
+//}
