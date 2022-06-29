@@ -27,7 +27,7 @@ class NetworkManager{
 //            response in guard let response = response.value else{return}
 //            completionHandler(response)
 //    }
-//    
+//
 //    }
 
 }

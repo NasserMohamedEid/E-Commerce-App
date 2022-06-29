@@ -293,10 +293,10 @@
             </objects>
             <point key="canvasLocation" x="868" y="810"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="Gck-J2-do2">
             <objects>
-                <viewController id="XCs-aB-gJG" sceneMemberID="viewController">
+                <viewController id="XCs-aB-gJG" customClass="RegisterViewController" customModule="E_Commerce_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IEd-oK-eat">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -402,10 +402,10 @@
             </objects>
             <point key="canvasLocation" x="1668.1159420289857" y="809.59821428571422"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="pNn-yO-8al">
             <objects>
-                <viewController id="sTN-y8-OEK" sceneMemberID="viewController">
+                <viewController id="sTN-y8-OEK" customClass="LoginViewController" customModule="E_Commerce_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U6e-MW-6Fd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

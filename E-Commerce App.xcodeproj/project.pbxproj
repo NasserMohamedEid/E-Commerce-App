@@ -20,6 +20,8 @@
 		75C0FF6EB5DBBEC6BA3D3037 /* Pods_E_Commerce_App_E_Commerce_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561022BB48905223A4E42994 /* Pods_E_Commerce_App_E_Commerce_AppUITests.framework */; };
 		9D2DD40D77FE49471C167A26 /* Pods_E_Commerce_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20428079085419C4BE6A3066 /* Pods_E_Commerce_App.framework */; };
 		D0F60F0538308175273059A0 /* Pods_E_Commerce_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69AFB8510183501938BBC1F7 /* Pods_E_Commerce_AppTests.framework */; };
+		F743D35E286CA43A0013D032 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743D35D286CA4390013D032 /* LoginViewController.swift */; };
+		F743D362286CA5030013D032 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743D361286CA5030013D032 /* RegisterViewController.swift */; };
 		F7966DEC28660C8B0052705B /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7966DEB28660C8B0052705B /* DescriptionViewController.swift */; };
 		F7966DF028660D240052705B /* DescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7966DEF28660D240052705B /* DescriptionViewModel.swift */; };
 		F7966DF4286638010052705B /* DescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7966DF3286638010052705B /* DescriptionCollectionViewCell.swift */; };
@@ -67,6 +69,8 @@
 		58B0229728639A47008A5C0F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		69AFB8510183501938BBC1F7 /* Pods_E_Commerce_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Commerce_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3924D1A89648D15394EF804 /* Pods-E-Commerce App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E-Commerce App.release.xcconfig"; path = "Target Support Files/Pods-E-Commerce App/Pods-E-Commerce App.release.xcconfig"; sourceTree = "<group>"; };
+		F743D35D286CA4390013D032 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F743D361286CA5030013D032 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F7966DEB28660C8B0052705B /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DescriptionViewController.swift; path = descriptionView/DescriptionViewController.swift; sourceTree = SOURCE_ROOT; };
 		F7966DEF28660D240052705B /* DescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DescriptionViewModel.swift; path = descriptionViewModel/DescriptionViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F7966DF3286638010052705B /* DescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DescriptionCollectionViewCell.swift; path = descriptionView/DescriptionCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -149,6 +153,8 @@
 		58A8250528637A1100DCFFC3 /* E-Commerce App */ = {
 			isa = PBXGroup;
 			children = (
+				F743D35F286CA4D80013D032 /* Register */,
+				F743D35B286CA3E00013D032 /* Login */,
 				58B02296286399F5008A5C0F /* NetworkManager */,
 				58A825392863804000DCFFC3 /* description Product */,
 				58A8253828637FEF00DCFFC3 /* products */,
@@ -316,6 +322,38 @@
 				58B0229728639A47008A5C0F /* NetworkManager.swift */,
 			);
 			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		F743D35B286CA3E00013D032 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F743D35C286CA4060013D032 /* Login View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F743D35C286CA4060013D032 /* Login View */ = {
+			isa = PBXGroup;
+			children = (
+				F743D35D286CA4390013D032 /* LoginViewController.swift */,
+			);
+			path = "Login View";
+			sourceTree = "<group>";
+		};
+		F743D35F286CA4D80013D032 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				F743D360286CA4E50013D032 /* RegisterView */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		F743D360286CA4E50013D032 /* RegisterView */ = {
+			isa = PBXGroup;
+			children = (
+				F743D361286CA5030013D032 /* RegisterViewController.swift */,
+			);
+			path = RegisterView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -557,6 +595,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F743D35E286CA43A0013D032 /* LoginViewController.swift in Sources */,
+				F743D362286CA5030013D032 /* RegisterViewController.swift in Sources */,
 				58B0229828639A47008A5C0F /* NetworkManager.swift in Sources */,
 				F7966DF4286638010052705B /* DescriptionCollectionViewCell.swift in Sources */,
 				58A8250B28637A1100DCFFC3 /* ViewController.swift in Sources */,
