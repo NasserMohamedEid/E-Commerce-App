@@ -9,7 +9,7 @@ import Foundation
 
 
 
-struct Products: Codable {
+struct ProductsBrand: Codable {
 
     let products: [products]
 
@@ -33,7 +33,7 @@ struct products: Codable {
     let tags: String?
     let adminGraphqlApiId: String?
     let options: [Options]?
-    let images: [Images]?
+    let images: [ImagesBrand]?
 
     
     enum CodingKeys: String, CodingKey {
@@ -74,7 +74,7 @@ struct Options: Codable {
     
 }
 
-struct Images: Codable {
+struct ImagesBrand: Codable {
 
     let id: Int?
     let productId: Int?
