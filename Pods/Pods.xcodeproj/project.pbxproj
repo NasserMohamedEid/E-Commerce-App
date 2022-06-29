@@ -394,7 +394,7 @@
 		A2FAB92D47BA66107E9D673915D70565 /* UIImage+Metadata.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Metadata.m"; path = "SDWebImage/Core/UIImage+Metadata.m"; sourceTree = "<group>"; };
 		A30234D4B61FFA7EB82C1638F4FEA555 /* SDWebImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageManager.m; path = SDWebImage/Core/SDWebImageManager.m; sourceTree = "<group>"; };
 		A3E1E7B8917FD59C8C096B4F79237B89 /* SDImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = SDWebImage/Core/SDImageCache.h; sourceTree = "<group>"; };
-		A606492194B2A9D5F390CD284324481E /* Pods-E-Commerce App */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-E-Commerce App"; path = Pods_E_Commerce_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A606492194B2A9D5F390CD284324481E /* Pods_E_Commerce_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Commerce_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A84B99906B6852C9BCB7267146BE6235 /* SDImageFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageFrame.h; path = SDWebImage/Core/SDImageFrame.h; sourceTree = "<group>"; };
 		A89C2DAF31EAF8008D1500537C1B7481 /* Pods-E-Commerce App-E-Commerce AppUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-E-Commerce App-E-Commerce AppUITests-frameworks.sh"; sourceTree = "<group>"; };
 		A9A615008411A3D7C15565B5F6E66C04 /* SDWebImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImage.h; path = WebImage/SDWebImage.h; sourceTree = "<group>"; };
@@ -852,7 +852,7 @@
 			isa = PBXGroup;
 			children = (
 				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */,
-				A606492194B2A9D5F390CD284324481E /* Pods-E-Commerce App */,
+				A606492194B2A9D5F390CD284324481E /* Pods_E_Commerce_App.framework */,
 				3A7CCCFC15B5B04D8283A82EB783B072 /* Pods-E-Commerce App-E-Commerce AppUITests */,
 				33B17B1E767BB1A6A8A850AB9D769175 /* Pods-E-Commerce AppTests */,
 				B0B214D775196BA7CA8E17E53048A493 /* SDWebImage.framework */,
@@ -996,7 +996,7 @@
 			);
 			name = "Pods-E-Commerce App";
 			productName = Pods_E_Commerce_App;
-			productReference = A606492194B2A9D5F390CD284324481E /* Pods-E-Commerce App */;
+			productReference = A606492194B2A9D5F390CD284324481E /* Pods_E_Commerce_App.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		3847153A6E5EEFB86565BA840768F429 /* SDWebImage */ = {
