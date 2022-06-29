@@ -14,7 +14,7 @@ class BrandsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cellContentView: UIView!{
         
         didSet{
-            cellContentView.layer.borderWidth = 3
+            cellContentView.layer.borderWidth = 2
             cellContentView.backgroundColor = .white
             cellContentView.layer.borderColor = UIColor.black.cgColor
             cellContentView.layer.cornerRadius = cellContentView.frame.size.width / 4

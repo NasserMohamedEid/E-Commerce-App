@@ -21,7 +21,17 @@ class NetworkManager{
 
     }
     
+    static func fetchproducts(collectionId : Int, completionHandler :@escaping(Products?)->Void){
+        let productUrl = "https://fde429753a207f610321a557c2e0ceb0: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@menofia-2022-q3.myshopify.com/admin/api/2022-04/products.json"
+        AF.request(productUrl, method: .get,encoding: URLEncoding.queryString).responseDecodable(of:Products.self) { response in
+            print(response)
+            guard let productResponse = response.value else{return}
+             completionHandler(productResponse)
+        }
+    }
+
     
+<<<<<<< HEAD
     
     
 
@@ -35,5 +45,26 @@ let url:String="https://fde429753a207f610321a557c2e0ceb0:shpat_cf28431392f47aff3
             }
         }
 
+=======
+    static func createAddress(customerID : Int , completionHandler: @escaping(Address?)-> Void){
+        
+        let parametrs:Parameters = [
+             "address":["address1":"1 Rue des Carrieres","address2":"Suite 1234","city":"Montreal","company":"Fancy Co.","first_name":"Samuel","last_name":"de Champlain","phone":"819-555-5555","province":"Quebec","country":"Canada","zip":"G1R 4P5","name":"Samuel de Champlain","province_code":"QC","country_code":"CA","country_name":"Canada" ]
+           
+            ]
+          
+    let headers:HTTPHeaders = ["X-Shopify-Access-Token":"{access_token}","Content-Type":"application/json"]
+        let addressUrl = "https://@menofia-2022-q3.myshopify.com/admin/api/2022-04/customers/\(customerID)/addresses.json"
+        AF.request(addressUrl, method: .post, parameters: parametrs, encoding: JSONEncoding.default, headers: headers).responseDecodable(of: Address.self) { response in
+            print(response)
+            guard let response = response.value else {return}
+            print(response)
+            completionHandler(response)
+            
+        }
+           
+
+        }
+>>>>>>> sherif
 }
 
