@@ -18,7 +18,7 @@ struct Brands : Decodable {
 
 struct SmartCollections: Decodable {
 
-    let id: Int??
+    let id: Int?
     let handle: String?
     let title: String?
     let updatedAt: String?
