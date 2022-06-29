@@ -155,6 +155,7 @@
 		58A824FA28637A1000DCFFC3 = {
 			isa = PBXGroup;
 			children = (
+				58AC348A286C647200D90281 /* Shopping cart */,
 				E08BB44028678B79005D08B3 /* placeholder-images.png */,
 				58A8250528637A1100DCFFC3 /* E-Commerce App */,
 				58A8251C28637A1200DCFFC3 /* E-Commerce AppTests */,
@@ -251,6 +252,37 @@
 				58B0228A286389EB008A5C0F /* descriptionView */,
 			);
 			path = "description Product";
+			sourceTree = "<group>";
+		};
+		58AC348A286C647200D90281 /* Shopping cart */ = {
+			isa = PBXGroup;
+			children = (
+				58AC348D286C64AF00D90281 /* cartView */,
+				58AC348C286C649900D90281 /* cartViewModel */,
+				58AC348B286C648300D90281 /* cartModel */,
+			);
+			path = "Shopping cart";
+			sourceTree = "<group>";
+		};
+		58AC348B286C648300D90281 /* cartModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cartModel;
+			sourceTree = "<group>";
+		};
+		58AC348C286C649900D90281 /* cartViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cartViewModel;
+			sourceTree = "<group>";
+		};
+		58AC348D286C64AF00D90281 /* cartView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cartView;
 			sourceTree = "<group>";
 		};
 		58B0228A286389EB008A5C0F /* descriptionView */ = {
@@ -664,7 +696,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				E06E2F6A2869CA7D0034E741 /* orderViewController.swift in Sources */,
 				E08BB447286797CE005D08B3 /* MeViewController.swift in Sources */,
 				E03D3549286681B6007847F2 /* BrandsCollectionViewCell.swift in Sources */,
@@ -678,15 +709,13 @@
 				E06E2F742869D65F0034E741 /* settingsTableViewCell.swift in Sources */,
 				58A8250728637A1100DCFFC3 /* AppDelegate.swift in Sources */,
 				E06E2F762869D6FE0034E741 /* orderListTableViewCell.swift in Sources */,
-
 				58ADA0EA28661E8E0066AED4 /* CategoryCollectionViewCell.swift in Sources */,
 				58AB111928649FD600013F72 /* CategoryViewController.swift in Sources */,
 				58B0229828639A47008A5C0F /* NetworkManager.swift in Sources */,
 				58A92A4B2864E81800AE780E /* categoryModel.swift in Sources */,
-				58A8250B28637A1100DCFFC3 /* ViewController.swift in Sources */,
+				58A8250B28637A1100DCFFC3 /* BrandsViewController.swift in Sources */,
 				58A8250728637A1100DCFFC3 /* AppDelegate.swift in Sources */,
 				58A92A492864E12B00AE780E /* CategoryViewModel.swift in Sources */,
-
 				58A8250928637A1100DCFFC3 /* SceneDelegate.swift in Sources */,
 				E08BB44928679ACD005D08B3 /* MeTableViewCell.swift in Sources */,
 				E06F5D75286A124B00A57871 /* AddressTableViewCell.swift in Sources */,
