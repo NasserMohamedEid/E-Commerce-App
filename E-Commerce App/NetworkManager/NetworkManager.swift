@@ -21,9 +21,9 @@ class NetworkManager{
 
     }
     
-    static func fetchproducts(collectionId : Int, completionHandler :@escaping(Products?)->Void){
-        let productUrl = "https://fde429753a207f610321a557c2e0ceb0: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@menofia-2022-q3.myshopify.com/admin/api/2022-04/products.json"
-        AF.request(productUrl, method: .get,encoding: URLEncoding.queryString).responseDecodable(of:Products.self) { response in
+    static func fetchproducts(collectionId : Int, completionHandler :@escaping(ProductsBrand?)->Void){
+        let productUrl = "https://fde429753a207f610321a557c2e0ceb0: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@menofia-2022-q3.myshopify.com/admin/api/2022-04/collections/\(collectionId)/products.json"
+        AF.request(productUrl, method: .get,encoding: URLEncoding.queryString).responseDecodable(of:ProductsBrand.self) { response in
             print(response)
             guard let productResponse = response.value else{return}
              completionHandler(productResponse)
@@ -31,7 +31,7 @@ class NetworkManager{
     }
 
     
-<<<<<<< HEAD
+
     
     
 
@@ -45,7 +45,7 @@ let url:String="https://fde429753a207f610321a557c2e0ceb0:shpat_cf28431392f47aff3
             }
         }
 
-=======
+
     static func createAddress(customerID : Int , completionHandler: @escaping(Address?)-> Void){
         
         let parametrs:Parameters = [
@@ -65,6 +65,6 @@ let url:String="https://fde429753a207f610321a557c2e0ceb0:shpat_cf28431392f47aff3
            
 
         }
->>>>>>> sherif
+
 }
 

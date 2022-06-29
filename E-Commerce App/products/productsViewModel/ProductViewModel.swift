@@ -12,7 +12,7 @@ class ProductViewModel {
     
     let services:NetworkManager
     var bindingProductResult : (()->()) = {}
-    var productsData:Products?
+    var productsData:ProductsBrand?
     
     
     
