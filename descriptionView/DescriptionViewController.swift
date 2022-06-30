@@ -61,6 +61,9 @@ class DescriptionViewController: UIViewController {
         
     }
     
+    @IBAction func addToFavButton(_ sender: UIButton) {
+    }
+    
 
 }
 

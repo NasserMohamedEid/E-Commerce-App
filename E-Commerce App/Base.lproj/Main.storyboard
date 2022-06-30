@@ -175,6 +175,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                <connections>
+                                    <action selector="addToFavButton:" destination="raC-Ld-m3A" eventType="touchUpInside" id="cZ4-dT-PUF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCM-nS-yNI">
                                 <rect key="frame" x="10" y="355" width="384" height="42"/>
@@ -358,6 +361,9 @@
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="makeRegisterButton:" destination="XCs-aB-gJG" eventType="touchUpInside" id="ktH-k7-HT0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3m-Kd-WNf">
                                 <rect key="frame" x="20" y="30" width="70.5" height="31"/>
@@ -365,6 +371,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="backward" catalog="system" title="Me">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="backMeScreenButton:" destination="XCs-aB-gJG" eventType="touchUpInside" id="j04-sD-dcb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CTv-bC-pFv"/>
@@ -397,6 +406,14 @@
                             <constraint firstItem="JIR-ix-vmB" firstAttribute="leading" secondItem="CTv-bC-pFv" secondAttribute="leading" id="zyw-R8-EGP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="nIZ-TO-vEo" id="O6y-0s-hFS"/>
+                        <outlet property="emailInTextField" destination="ont-iL-sye" id="gQ9-H1-jZG"/>
+                        <outlet property="firstNameTextField" destination="PNg-bH-aIx" id="cR8-eP-dmj"/>
+                        <outlet property="lastNameTextField" destination="L6h-hk-gIk" id="rLt-MW-LSp"/>
+                        <outlet property="passwordInTextField" destination="uu6-5d-aGg" id="neu-MI-Zlv"/>
+                        <outlet property="registerImageView" destination="JIR-ix-vmB" id="SCx-3e-2ok"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SO2-rH-lyt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -440,6 +457,9 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="22"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="registerButton:" destination="sTN-y8-OEK" eventType="touchUpInside" id="dRI-kX-zw1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHn-KB-ddm">
                                 <rect key="frame" x="19" y="30" width="71" height="31"/>
@@ -447,6 +467,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="backward" catalog="system" title="Me">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="backTOMeButton:" destination="sTN-y8-OEK" eventType="touchUpInside" id="EWI-wt-sPT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8W-DB-gjP">
                                 <rect key="frame" x="32" y="553" width="350" height="47"/>
@@ -459,6 +482,9 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="22"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="loginButton:" destination="sTN-y8-OEK" eventType="touchUpInside" id="JaE-jF-340"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sfF-i1-a0Q"/>
@@ -485,6 +511,11 @@
                             <constraint firstItem="KUa-dt-4pS" firstAttribute="leading" secondItem="sfF-i1-a0Q" secondAttribute="leading" constant="20" id="vwH-pt-yUx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="KUa-dt-4pS" id="KXf-xk-KRN"/>
+                        <outlet property="loginImageView" destination="Zth-8Q-HYY" id="9Gp-SL-EtW"/>
+                        <outlet property="passwordTextField" destination="TEv-Du-lmU" id="BI5-Ei-hp1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2r-0S-rS5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
