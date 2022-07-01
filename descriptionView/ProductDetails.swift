@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct ProductDetails : Decodable{
+struct ProductDetails : Decodable{    //product hyb2a productDetails
     let product: Product
 }
 
-struct Product : Decodable{
+struct Product : Decodable{  // productDetails
     let id: Int
     let title: String
     let body_html: String
@@ -25,11 +25,12 @@ struct Images : Decodable{
 }
 
 struct Variants: Decodable {
-    let price: String
+    let product_id : Int
+    let id: Int
+    let title: String
+    let price : String
+    let position : Int
 }
 
-//struct ProductCart : Encodable {
-//    let title: String
-//    let images: [Images]
-//    let variants: [Variants]
-//}
+
+

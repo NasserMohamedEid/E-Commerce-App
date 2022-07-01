@@ -14,17 +14,25 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailInTextField: UITextField!
     @IBOutlet weak var passwordInTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
+    var registerViewModel : RegisterViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+  registerViewModel = RegisterViewModel()
+   
+        
     }
     
+    
     @IBAction func makeRegisterButton(_ sender: UIButton) {
+        registerViewModel.bindResultToRegisterView = {[weak self]in}
+        registerViewModel.createCustomer(name: firstNameTextField.text ?? "", lastName: lastNameTextField.text ?? "", email: emailInTextField.text ?? "", password: passwordInTextField.text ?? "", configPassword: confirmPasswordTextField.text ?? "")
     }
     
     @IBAction func backMeScreenButton(_ sender: UIButton) {
     }
+    
+
+    
     
 }

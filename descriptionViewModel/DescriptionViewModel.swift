@@ -12,11 +12,18 @@ class DescriptionViewModel {
     
     
     var bindResultToDescriptionView : (() -> ()) = {}
-    
+    var orderList : Order?
     
     var result : Product?{
         didSet{
             bindResultToDescriptionView()
+        }
+    }
+    
+    var resultOrd : Order?{
+        didSet{
+            bindResultToDescriptionView()
+
         }
     }
     
@@ -28,4 +35,12 @@ class DescriptionViewModel {
         })
     
 }
+    func addToCartPost(){
+        NetworkManager.addToCart { [weak self] resultOrd in
+            guard let self = self else{return}
+            self.resultOrd=resultOrd?.order
+            print(resultOrd ?? "")
+            
+        }
+    }
 }

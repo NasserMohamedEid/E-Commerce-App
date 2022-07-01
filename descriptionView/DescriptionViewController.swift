@@ -12,7 +12,8 @@ class DescriptionViewController: UIViewController {
     
     @IBOutlet weak var DescriptionCollectionView: UICollectionView!
     
-    @IBOutlet weak var ImagesPageController: UIPageControl!
+    @IBOutlet weak var ImagePageController: UIPageControl!
+    
   
     @IBOutlet weak var Sec2Label: UILabel!
     @IBOutlet weak var ReviewsLabel: UILabel!
@@ -48,20 +49,38 @@ class DescriptionViewController: UIViewController {
                                 }
 
                             }
-       // self.startTimer()
-//        ImagesPageController.numberOfPages = descriptionViewModel.result?.images.count ?? 0
-        //print(descriptionViewModel.result?.images[3].src.count)
-       // ImagesPageController.currentPage = 0
+        self.startTimer()
+
+        //ImagePageController.numberOfPages = descriptionViewModel.result?.images.count ?? 0
+        print(descriptionViewModel.result?.images[0].src.count ?? 0)
+        ImagePageController.currentPage = 0
         descriptionViewModel.getItems(id:7358110630059)
         //descriptionDetailsLabel.text = descriptionViewModel.result?.title
         
     }
 
     @IBAction func addToCartButton(_ sender: UIButton) {
+        descriptionViewModel.addToCartPost()
         
     }
     
     @IBAction func addToFavButton(_ sender: UIButton) {
+    }
+    
+    func startTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(moveToNext), userInfo: nil, repeats: true)
+    }
+    @objc func moveToNext(){
+
+        if currentIndex < (descriptionViewModel.result?.images.count ?? 0)-1 {
+            currentIndex += 1
+            //ImagePageController.currentPage = currentIndex
+            print((descriptionViewModel.result?.images.count ?? 0)-1)
+        }else{
+            currentIndex = 0
+        }
+        ImagePageController.currentPage = currentIndex
+        DescriptionCollectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
     }
     
 
@@ -87,17 +106,9 @@ extension DescriptionViewController : UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-//    func startTimer(){
-//        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(moveToNext), userInfo: nil, repeats: true)
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        currentIndex = Int(scrollView.contentOffset.x / collectionView.frame.size.width)
+//        ImagesPageController.currentPage = currentIndex
 //    }
-//    @objc func moveToNext(){
-//        if currentIndex < (descriptionViewModel.result?.images.count ?? 3)-1 {
-//            currentIndex += 1
-//            print((descriptionViewModel.result?.images.count ?? 1)-1)
-//        }else{
-//            currentIndex = 0
-//        }
-//    ImagesPageController.currentPage = currentIndex
-//        DescriptionCollectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
-//    }
+ 
 }

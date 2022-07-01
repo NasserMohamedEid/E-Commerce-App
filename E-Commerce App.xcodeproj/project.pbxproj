@@ -20,6 +20,9 @@
 		75C0FF6EB5DBBEC6BA3D3037 /* Pods_E_Commerce_App_E_Commerce_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561022BB48905223A4E42994 /* Pods_E_Commerce_App_E_Commerce_AppUITests.framework */; };
 		9D2DD40D77FE49471C167A26 /* Pods_E_Commerce_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20428079085419C4BE6A3066 /* Pods_E_Commerce_App.framework */; };
 		D0F60F0538308175273059A0 /* Pods_E_Commerce_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69AFB8510183501938BBC1F7 /* Pods_E_Commerce_AppTests.framework */; };
+		F723970E286F1C7900CB07C7 /* OrderCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723970D286F1C7900CB07C7 /* OrderCart.swift */; };
+		F7239711286F2FDA00CB07C7 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7239710286F2FDA00CB07C7 /* RegisterViewModel.swift */; };
+		F7239714286F310200CB07C7 /* CustomerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7239713286F310200CB07C7 /* CustomerModel.swift */; };
 		F743D35E286CA43A0013D032 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743D35D286CA4390013D032 /* LoginViewController.swift */; };
 		F743D362286CA5030013D032 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743D361286CA5030013D032 /* RegisterViewController.swift */; };
 		F7966DEC28660C8B0052705B /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7966DEB28660C8B0052705B /* DescriptionViewController.swift */; };
@@ -69,6 +72,9 @@
 		58B0229728639A47008A5C0F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		69AFB8510183501938BBC1F7 /* Pods_E_Commerce_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Commerce_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3924D1A89648D15394EF804 /* Pods-E-Commerce App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E-Commerce App.release.xcconfig"; path = "Target Support Files/Pods-E-Commerce App/Pods-E-Commerce App.release.xcconfig"; sourceTree = "<group>"; };
+		F723970D286F1C7900CB07C7 /* OrderCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderCart.swift; path = "E-Commerce App/Register/RegisterView/OrderCart.swift"; sourceTree = SOURCE_ROOT; };
+		F7239710286F2FDA00CB07C7 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		F7239713286F310200CB07C7 /* CustomerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerModel.swift; sourceTree = "<group>"; };
 		F743D35D286CA4390013D032 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F743D361286CA5030013D032 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F7966DEB28660C8B0052705B /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DescriptionViewController.swift; path = descriptionView/DescriptionViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -248,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				F7D21B122867B51E004D8084 /* ProductDetails.swift */,
+				F723970D286F1C7900CB07C7 /* OrderCart.swift */,
 			);
 			path = descriptionModel;
 			sourceTree = "<group>";
@@ -324,6 +331,22 @@
 			path = NetworkManager;
 			sourceTree = "<group>";
 		};
+		F723970F286F2FA000CB07C7 /* RegisterViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F7239710286F2FDA00CB07C7 /* RegisterViewModel.swift */,
+			);
+			path = RegisterViewModel;
+			sourceTree = "<group>";
+		};
+		F7239712286F30DD00CB07C7 /* RegisterModel */ = {
+			isa = PBXGroup;
+			children = (
+				F7239713286F310200CB07C7 /* CustomerModel.swift */,
+			);
+			path = RegisterModel;
+			sourceTree = "<group>";
+		};
 		F743D35B286CA3E00013D032 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +366,8 @@
 		F743D35F286CA4D80013D032 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				F7239712286F30DD00CB07C7 /* RegisterModel */,
+				F723970F286F2FA000CB07C7 /* RegisterViewModel */,
 				F743D360286CA4E50013D032 /* RegisterView */,
 			);
 			path = Register;
@@ -602,7 +627,10 @@
 				58A8250B28637A1100DCFFC3 /* ViewController.swift in Sources */,
 				58A8250728637A1100DCFFC3 /* AppDelegate.swift in Sources */,
 				F7966DEC28660C8B0052705B /* DescriptionViewController.swift in Sources */,
+				F7239714286F310200CB07C7 /* CustomerModel.swift in Sources */,
+				F7239711286F2FDA00CB07C7 /* RegisterViewModel.swift in Sources */,
 				58A8250928637A1100DCFFC3 /* SceneDelegate.swift in Sources */,
+				F723970E286F1C7900CB07C7 /* OrderCart.swift in Sources */,
 				F7D21B132867B51E004D8084 /* ProductDetails.swift in Sources */,
 				F7966DF028660D240052705B /* DescriptionViewModel.swift in Sources */,
 			);
@@ -782,6 +810,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TP8LF837KP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "E-Commerce App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -810,6 +839,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TP8LF837KP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "E-Commerce App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

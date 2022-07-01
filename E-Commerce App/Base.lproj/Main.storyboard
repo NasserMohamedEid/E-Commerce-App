@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="raC-Ld-m3A">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XCs-aB-gJG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -64,7 +64,7 @@
         <!--Description View Controller-->
         <scene sceneID="xd1-rH-lkw">
             <objects>
-                <viewController id="raC-Ld-m3A" customClass="DescriptionViewController" customModule="E_Commerce_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DescriptionViewController" id="raC-Ld-m3A" customClass="DescriptionViewController" customModule="E_Commerce_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LCi-e2-YdX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,10 +75,10 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vgx-JE-A4U">
-                                <rect key="frame" x="0.0" y="72" width="414" height="275"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="268"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="275" id="ZsU-J0-sJ9"/>
+                                    <constraint firstAttribute="height" constant="268" id="ZsU-J0-sJ9"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mnE-ua-sDC">
                                     <size key="itemSize" width="391" height="219"/>
@@ -88,7 +88,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DescriptionCollectionViewCell" id="Xm4-dp-t64" customClass="DescriptionCollectionViewCell" customModule="E_Commerce_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="391" height="219"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="391" height="219"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RRH-nA-K2J">
                                             <rect key="frame" x="0.0" y="0.0" width="391" height="219"/>
@@ -212,9 +212,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="OrV-j0-TuX">
-                                <rect key="frame" x="139" y="321" width="116" height="26"/>
-                                <color key="pageIndicatorTintColor" systemColor="systemGray3Color"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="NFn-Ja-hDa">
+                                <rect key="frame" x="149" y="321" width="116" height="26"/>
+                                <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
                         </subviews>
@@ -228,17 +228,16 @@
                             <constraint firstItem="vgx-JE-A4U" firstAttribute="top" secondItem="mgm-43-WUd" secondAttribute="bottom" constant="-3.5" id="6eW-gj-aXr"/>
                             <constraint firstItem="0Wd-sY-iYh" firstAttribute="top" secondItem="PXf-Bx-96P" secondAttribute="bottom" constant="79" id="7Sq-T5-Ksc"/>
                             <constraint firstItem="yFo-Mj-RIL" firstAttribute="trailing" secondItem="naM-2g-AB6" secondAttribute="trailing" constant="250" id="865-U3-rhx"/>
-                            <constraint firstItem="xCM-nS-yNI" firstAttribute="top" secondItem="vgx-JE-A4U" secondAttribute="bottom" constant="8" id="B21-8B-16L"/>
+                            <constraint firstItem="xCM-nS-yNI" firstAttribute="top" secondItem="vgx-JE-A4U" secondAttribute="bottom" constant="15" id="B21-8B-16L"/>
                             <constraint firstItem="zSL-gj-BRj" firstAttribute="top" secondItem="xCM-nS-yNI" secondAttribute="bottom" constant="63" id="Bka-K5-Gtd"/>
                             <constraint firstItem="mgm-43-WUd" firstAttribute="top" secondItem="yFo-Mj-RIL" secondAttribute="top" id="CKz-pH-Qff"/>
                             <constraint firstItem="naM-2g-AB6" firstAttribute="top" secondItem="MNK-Pk-6Rp" secondAttribute="bottom" constant="19" id="D3e-6V-pE7"/>
                             <constraint firstItem="naM-2g-AB6" firstAttribute="leading" secondItem="yFo-Mj-RIL" secondAttribute="leading" constant="10" id="DdJ-oj-945"/>
                             <constraint firstItem="mgm-43-WUd" firstAttribute="leading" secondItem="yFo-Mj-RIL" secondAttribute="leading" constant="10" id="EEf-rY-XzQ"/>
-                            <constraint firstItem="yFo-Mj-RIL" firstAttribute="trailing" secondItem="OrV-j0-TuX" secondAttribute="trailing" constant="159" id="FR7-7w-0BX"/>
+                            <constraint firstItem="NFn-Ja-hDa" firstAttribute="leading" secondItem="yFo-Mj-RIL" secondAttribute="leading" constant="149" id="IaS-1N-dpK"/>
                             <constraint firstItem="vgx-JE-A4U" firstAttribute="leading" secondItem="yFo-Mj-RIL" secondAttribute="leading" id="JGc-1c-7hO"/>
                             <constraint firstItem="fYh-Q3-6hA" firstAttribute="leading" secondItem="yFo-Mj-RIL" secondAttribute="leading" id="Jfb-9w-rCM"/>
                             <constraint firstItem="yFo-Mj-RIL" firstAttribute="trailing" secondItem="0Wd-sY-iYh" secondAttribute="trailing" id="LFz-fQ-s20"/>
-                            <constraint firstItem="OrV-j0-TuX" firstAttribute="leading" secondItem="yFo-Mj-RIL" secondAttribute="leading" constant="139" id="Loy-ez-t0s"/>
                             <constraint firstItem="PXf-Bx-96P" firstAttribute="leading" secondItem="yFo-Mj-RIL" secondAttribute="leading" constant="10" id="MvA-mf-lQs"/>
                             <constraint firstItem="yFo-Mj-RIL" firstAttribute="bottom" secondItem="0Wd-sY-iYh" secondAttribute="bottom" id="RAg-Cp-Lfn"/>
                             <constraint firstItem="fCR-0Q-QZW" firstAttribute="centerY" secondItem="0Wd-sY-iYh" secondAttribute="centerY" id="YYv-j8-VQ5"/>
@@ -246,13 +245,13 @@
                             <constraint firstItem="yFo-Mj-RIL" firstAttribute="trailing" secondItem="xCM-nS-yNI" secondAttribute="trailing" constant="20" id="aLn-be-VVd"/>
                             <constraint firstItem="fCR-0Q-QZW" firstAttribute="trailing" secondItem="LCi-e2-YdX" secondAttribute="trailingMargin" id="bAh-Gc-0bG"/>
                             <constraint firstItem="yFo-Mj-RIL" firstAttribute="trailing" secondItem="zSL-gj-BRj" secondAttribute="trailing" constant="30" id="bnR-wQ-5oZ"/>
-                            <constraint firstItem="MNK-Pk-6Rp" firstAttribute="top" secondItem="vgx-JE-A4U" secondAttribute="bottom" constant="8" id="dgH-Ul-iH6"/>
-                            <constraint firstItem="OrV-j0-TuX" firstAttribute="bottom" secondItem="vgx-JE-A4U" secondAttribute="bottom" id="fQ0-d1-nJL"/>
+                            <constraint firstItem="MNK-Pk-6Rp" firstAttribute="top" secondItem="vgx-JE-A4U" secondAttribute="bottom" constant="15" id="dgH-Ul-iH6"/>
+                            <constraint firstItem="NFn-Ja-hDa" firstAttribute="top" secondItem="vgx-JE-A4U" secondAttribute="bottom" constant="-19" id="fNB-xe-h1d"/>
                             <constraint firstItem="zSL-gj-BRj" firstAttribute="leading" secondItem="nMh-6t-uXz" secondAttribute="trailing" constant="98" id="gV6-LY-qa7"/>
-                            <constraint firstItem="OrV-j0-TuX" firstAttribute="centerX" secondItem="yFo-Mj-RIL" secondAttribute="centerX" constant="-10" id="jmE-14-XfW"/>
                             <constraint firstItem="aGw-Cx-Oye" firstAttribute="leading" secondItem="yFo-Mj-RIL" secondAttribute="leading" constant="20" id="jmx-dD-cU6"/>
                             <constraint firstItem="yFo-Mj-RIL" firstAttribute="trailing" secondItem="mgm-43-WUd" secondAttribute="trailing" constant="314" id="lqE-gI-dpf"/>
                             <constraint firstItem="fCR-0Q-QZW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aGw-Cx-Oye" secondAttribute="trailing" constant="8" symbolic="YES" id="m0Y-ds-niQ"/>
+                            <constraint firstItem="yFo-Mj-RIL" firstAttribute="trailing" secondItem="NFn-Ja-hDa" secondAttribute="trailing" constant="149" id="m3w-1m-PA1"/>
                             <constraint firstItem="fCR-0Q-QZW" firstAttribute="top" secondItem="fYh-Q3-6hA" secondAttribute="bottom" constant="26.5" id="mTx-XT-oU9"/>
                             <constraint firstItem="fYh-Q3-6hA" firstAttribute="top" secondItem="zSL-gj-BRj" secondAttribute="bottom" constant="39" id="oMD-yg-ILW"/>
                             <constraint firstItem="fYh-Q3-6hA" firstAttribute="top" secondItem="MNK-Pk-6Rp" secondAttribute="bottom" constant="19" id="poQ-6M-W4e"/>
@@ -268,7 +267,7 @@
                     <connections>
                         <outlet property="DescriptionCollectionView" destination="vgx-JE-A4U" id="L6H-L6-OHC"/>
                         <outlet property="DescriptionLabel" destination="fYh-Q3-6hA" id="Ydx-Sw-Kig"/>
-                        <outlet property="ImagesPageController" destination="OrV-j0-TuX" id="7D3-qz-zDm"/>
+                        <outlet property="ImagePageController" destination="NFn-Ja-hDa" id="Qsq-QH-hRG"/>
                         <outlet property="PriceLabel" destination="nMh-6t-uXz" id="1xn-2b-NbS"/>
                         <outlet property="RatingLabel" destination="zSL-gj-BRj" id="DVu-bn-Ucz"/>
                         <outlet property="ReviewsLabel" destination="xCM-nS-yNI" id="RMg-dq-oj2"/>
@@ -278,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voc-5H-9W4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-939" y="1547"/>
+            <point key="canvasLocation" x="-939.13043478260875" y="1546.875"/>
         </scene>
         <!--Me-->
         <scene sceneID="Lwz-Ie-tcO">
@@ -299,7 +298,7 @@
         <!--Register View Controller-->
         <scene sceneID="Gck-J2-do2">
             <objects>
-                <viewController id="XCs-aB-gJG" customClass="RegisterViewController" customModule="E_Commerce_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" id="XCs-aB-gJG" customClass="RegisterViewController" customModule="E_Commerce_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IEd-oK-eat">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -422,7 +421,7 @@
         <!--Login View Controller-->
         <scene sceneID="pNn-yO-8al">
             <objects>
-                <viewController id="sTN-y8-OEK" customClass="LoginViewController" customModule="E_Commerce_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="sTN-y8-OEK" customClass="LoginViewController" customModule="E_Commerce_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U6e-MW-6Fd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -530,9 +529,6 @@
         <image name="square.grid.2x2.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
