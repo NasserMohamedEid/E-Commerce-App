@@ -8,10 +8,8 @@
 import Foundation
 import Alamofire
 class NetworkManager{
-    //7358110630059
     static func fetchProductDetails(id:Int,completionHandler:@escaping (ProductDetails?)->Void){
         let baseUrl:String = "https://fde429753a207f610321a557c2e0ceb0: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@menofia-2022-q3.myshopify.com/admin/api/2022-04/products/\(id).json"
-        //"+String(id)+"
         AF.request(baseUrl).responseDecodable(of:ProductDetails.self){
                         response in
                         guard let descriptionProduct=response.value else{return}
