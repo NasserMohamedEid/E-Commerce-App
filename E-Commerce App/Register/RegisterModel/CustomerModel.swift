@@ -14,12 +14,8 @@ struct User: Decodable {
     let customer: Customerr   //
 }
 
+
 struct Customerr: Decodable {
-
-    let customer: Customer
-}
-
-struct Customer: Decodable {
 
 
     let firstName: String?
