@@ -7,10 +7,23 @@
 
 import Foundation
 import Alamofire
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 6ff287e5ac3556abde1ec03ce6960a45f8f9eca0
 class NetworkManager{
+    static func fetchProductDetails(id:Int,completionHandler:@escaping (ProductDetails?)->Void){
+        let baseUrl:String = "https://fde429753a207f610321a557c2e0ceb0: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@menofia-2022-q3.myshopify.com/admin/api/2022-04/products/\(id).json"
+        AF.request(baseUrl).responseDecodable(of:ProductDetails.self){
+                        response in
+                        guard let descriptionProduct=response.value else{return}
+            print(descriptionProduct.product.title)
+            completionHandler(descriptionProduct)
+                    }
+    }
     
+<<<<<<< HEAD
     static func fetchBrands(completionHandler: @escaping(Brands?)-> Void){
         let brandsUrl : String = "https://fde429753a207f610321a557c2e0ceb0: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@menofia-2022-q3.myshopify.com/admin/api/2022-04/smart_collections.json"
         AF.request(brandsUrl, method: .get, encoding: URLEncoding.queryString)
@@ -76,6 +89,8 @@ let url:String="https://fde429753a207f610321a557c2e0ceb0:shpat_cf28431392f47aff3
                     }
     }
     
+=======
+>>>>>>> 6ff287e5ac3556abde1ec03ce6960a45f8f9eca0
     static func addToCart(completionHandler:@escaping (OrderRequest? )->Void){
         
         
@@ -101,6 +116,13 @@ let url:String="https://fde429753a207f610321a557c2e0ceb0:shpat_cf28431392f47aff3
             guard let response = response.value else{return}
             completionHandler(response)
 
+<<<<<<< HEAD
+=======
+}
+
+}
+
+>>>>>>> 6ff287e5ac3556abde1ec03ce6960a45f8f9eca0
 }
 
 }

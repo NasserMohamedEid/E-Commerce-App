@@ -2,6 +2,7 @@
 //  DescriptionViewController.swift
 //  E-Commerce App
 //
+<<<<<<< HEAD
 //  Created by Ahmed Hamam on 02/07/2022.
 //
 
@@ -17,6 +18,31 @@ class DescriptionViewController: UIViewController {
     @IBOutlet weak var descriptionDetailsLabel: UILabel!
     
 
+=======
+//  Created by Ahmed Hamam on 24/06/2022.
+//
+
+import UIKit
+import SDWebImage
+
+class DescriptionViewController: UIViewController {
+    
+    @IBOutlet weak var DescriptionCollectionView: UICollectionView!
+    
+    @IBOutlet weak var ImagePageController: UIPageControl!
+    
+  
+    @IBOutlet weak var Sec2Label: UILabel!
+    @IBOutlet weak var ReviewsLabel: UILabel!
+    
+    @IBOutlet weak var PriceLabel: UILabel!
+    
+    @IBOutlet weak var RatingLabel: UILabel!
+    
+    @IBOutlet weak var DescriptionLabel: UILabel!
+    
+    @IBOutlet weak var descriptionDetailsLabel: UILabel!
+>>>>>>> 6ff287e5ac3556abde1ec03ce6960a45f8f9eca0
     var descriptionViewModel : DescriptionViewModel!
     var timer : Timer?
     var currentIndex = 0
@@ -33,7 +59,11 @@ class DescriptionViewController: UIViewController {
                                    // self?.viewDidLoad()
                                     self?.descriptionDetailsLabel.text = self?.descriptionViewModel.result?.body_html
                                     self?.RatingLabel.text = "4/5"
+<<<<<<< HEAD
                                     self?.titleLabel.text = self?.descriptionViewModel.result?.title
+=======
+                                    self?.ReviewsLabel.text = self?.descriptionViewModel.result?.title
+>>>>>>> 6ff287e5ac3556abde1ec03ce6960a45f8f9eca0
                                 var price = self?.descriptionViewModel.result?.variants[0].price
                                     
                                     self?.PriceLabel.text = (price ?? "") + "LE"
@@ -41,11 +71,19 @@ class DescriptionViewController: UIViewController {
                                 }
 
                             }
+<<<<<<< HEAD
        // self.startTimer()
 
         //ImagePageController.numberOfPages = descriptionViewModel.result?.images.count ?? 0
         print(descriptionViewModel.result?.images[0].src.count ?? 0)
        // ImagePageController.currentPage = 0
+=======
+        self.startTimer()
+
+        //ImagePageController.numberOfPages = descriptionViewModel.result?.images.count ?? 0
+        print(descriptionViewModel.result?.images[0].src.count ?? 0)
+        ImagePageController.currentPage = 0
+>>>>>>> 6ff287e5ac3556abde1ec03ce6960a45f8f9eca0
         descriptionViewModel.getItems(id:7358110630059)
         //descriptionDetailsLabel.text = descriptionViewModel.result?.title
         
@@ -59,6 +97,7 @@ class DescriptionViewController: UIViewController {
     @IBAction func addToFavButton(_ sender: UIButton) {
     }
     
+<<<<<<< HEAD
 //    func startTimer(){
 //        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(moveToNext), userInfo: nil, repeats: true)
 //    }
@@ -74,6 +113,23 @@ class DescriptionViewController: UIViewController {
 //      //  ImagePageController.currentPage = currentIndex
 //        DescriptionCollectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
 //    }
+=======
+    func startTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(moveToNext), userInfo: nil, repeats: true)
+    }
+    @objc func moveToNext(){
+
+        if currentIndex < (descriptionViewModel.result?.images.count ?? 0)-1 {
+            currentIndex += 1
+            //ImagePageController.currentPage = currentIndex
+            print((descriptionViewModel.result?.images.count ?? 0)-1)
+        }else{
+            currentIndex = 0
+        }
+        ImagePageController.currentPage = currentIndex
+        DescriptionCollectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
+    }
+>>>>>>> 6ff287e5ac3556abde1ec03ce6960a45f8f9eca0
     
 
 }

@@ -7,7 +7,11 @@
 		<key>E-Commerce App.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
 			<integer>6</integer>
+=======
+			<integer>5</integer>
+>>>>>>> 6ff287e5ac3556abde1ec03ce6960a45f8f9eca0
 		</dict>
 	</dict>
 </dict>
