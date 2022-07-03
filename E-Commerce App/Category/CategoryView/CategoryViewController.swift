@@ -119,6 +119,11 @@ extension CategoryViewController:UICollectionViewDataSource,UICollectionViewDele
         cell.productImage.sd_setImage(with: url)
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let DVC = storyboard?.instantiateViewController(withIdentifier: "DescriptionViewController")as? DescriptionViewController else { return }
+        DVC.idProduct = categoryViewModel.result?[indexPath.row].id
+        self.navigationController?.pushViewController(DVC, animated: true)
+    }
     /***************************************************************************************/
     
 }
