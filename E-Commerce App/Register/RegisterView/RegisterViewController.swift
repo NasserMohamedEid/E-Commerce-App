@@ -7,7 +7,6 @@
 
 
 import UIKit
-
 class RegisterViewController: UIViewController {
 
     @IBOutlet weak var registerImageView: UIImageView!
@@ -22,9 +21,9 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
   registerViewModel = RegisterViewModel()
    
-        
+        registerImageView.image = UIImage(named:"shop")
+
     }
-    
     
 
     @IBAction func makeRegisterButton(_ sender: UIButton) {

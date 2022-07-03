@@ -2,12 +2,10 @@
 //  OrderCart.swift
 //  E-Commerce App
 //
-<<<<<<< HEAD
-//  Created by Ahmed Hamam on 02/07/2022.
-=======
+
 //  Created by Ahmed Hamam on 01/07/2022.
->>>>>>> 6ff287e5ac3556abde1ec03ce6960a45f8f9eca0
-//
+
+
 
 import Foundation
 

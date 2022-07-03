@@ -32,6 +32,7 @@ class DescriptionViewController: UIViewController {
     var descriptionViewModel : DescriptionViewModel!
     var timer : Timer?
     var currentIndex = 0
+    var idProduct : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,7 @@ class DescriptionViewController: UIViewController {
                                     self?.descriptionDetailsLabel.text = self?.descriptionViewModel.result?.body_html
                                     self?.RatingLabel.text = "4/5"
 
-                                    self?.titleLabel.text = self?.descriptionViewModel.result?.title
+                                    self?.ReviewsLabel.text = self?.descriptionViewModel.result?.title
 
                                     self?.ReviewsLabel.text = self?.descriptionViewModel.result?.title
 
@@ -57,21 +58,16 @@ class DescriptionViewController: UIViewController {
                                 }
 
                             }
+        title = "Product Info"
 
-       // self.startTimer()
-
-        //ImagePageController.numberOfPages = descriptionViewModel.result?.images.count ?? 0
-        print(descriptionViewModel.result?.images[0].src.count ?? 0)
-       // ImagePageController.currentPage = 0
+        
+        ImagePageController.numberOfPages = descriptionViewModel.result?.images.count ?? 0
 
         self.startTimer()
 
-        //ImagePageController.numberOfPages = descriptionViewModel.result?.images.count ?? 0
-        print(descriptionViewModel.result?.images[0].src.count ?? 0)
-        ImagePageController.currentPage = 0
+       ImagePageController.currentPage = 0
 
-        descriptionViewModel.getItems(id:7358110630059)
-        //descriptionDetailsLabel.text = descriptionViewModel.result?.title
+        descriptionViewModel.getItems(id:idProduct ?? 0)
         
     }
 
@@ -84,21 +80,7 @@ class DescriptionViewController: UIViewController {
     }
     
 
-//    func startTimer(){
-//        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(moveToNext), userInfo: nil, repeats: true)
-//    }
-//    @objc func moveToNext(){
-//
-//        if currentIndex < (descriptionViewModel.result?.images.count ?? 0)-1 {
-//            currentIndex += 1
-//            //ImagePageController.currentPage = currentIndex
-//            print((descriptionViewModel.result?.images.count ?? 0)-1)
-//        }else{
-//            currentIndex = 0
-//        }
-//      //  ImagePageController.currentPage = currentIndex
-//        DescriptionCollectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
-//    }
+
 
     func startTimer(){
         timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(moveToNext), userInfo: nil, repeats: true)
@@ -107,13 +89,14 @@ class DescriptionViewController: UIViewController {
 
         if currentIndex < (descriptionViewModel.result?.images.count ?? 0)-1 {
             currentIndex += 1
-            //ImagePageController.currentPage = currentIndex
-            print((descriptionViewModel.result?.images.count ?? 0)-1)
+            print((descriptionViewModel.result?.images.count ?? 0)-currentIndex)
         }else{
             currentIndex = 0
         }
         ImagePageController.currentPage = currentIndex
-        DescriptionCollectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
+        DescriptionCollectionView.scrollToItem(at: IndexPath(row: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
+        ImagePageController.currentPage = currentIndex
+
     }
 
     
