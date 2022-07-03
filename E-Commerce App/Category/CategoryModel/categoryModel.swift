@@ -10,7 +10,7 @@ struct CategoryModel:Decodable{
     var products:[Products]?
 }
 struct Products:Decodable{
-   // var id:Int64
+    var id:Int
     var title:String?
     var vendor:String?
     var product_type: String?
