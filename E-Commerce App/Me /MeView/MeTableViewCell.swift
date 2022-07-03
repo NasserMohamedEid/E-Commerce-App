@@ -10,6 +10,11 @@ import UIKit
 class MeTableViewCell: UITableViewCell {
 
 
+    @IBOutlet weak var cellContentView: UIView!{
+        didSet{
+            cellContentView.layer.borderWidth = 1.5
+        }
+    }
     @IBOutlet weak var createdAtLBL: UILabel!
     @IBOutlet weak var priceLBL: UILabel!
     

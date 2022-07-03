@@ -62,6 +62,12 @@ class BrandsViewController: UIViewController {
 
     //MARK:- Functions Helper
 
+    @IBAction func favouriteButoonPressed(_ sender: UIBarButtonItem) {
+        
+        guard let favVC = storyboard?.instantiateViewController(withIdentifier: "FavouriotesViewController") as? FavouriotesViewController else{return}
+        
+        self.navigationController?.pushViewController(favVC, animated: true)
+    }
     
     func MakeImageChanges(){
         let images = [UIImage(named: "SalesImageHomeScreen"), UIImage(named: "SaleImages1"), UIImage(named: "womenSaleImage")].compactMap{$0}
