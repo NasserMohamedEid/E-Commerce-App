@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		584F2442286E49DB009B14F9 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584F2441286E49DB009B14F9 /* CartViewController.swift */; };
+		584F2444286E4A00009B14F9 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584F2443286E4A00009B14F9 /* CartTableViewCell.swift */; };
 		58A8250728637A1100DCFFC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A8250628637A1100DCFFC3 /* AppDelegate.swift */; };
 		58A8250928637A1100DCFFC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A8250828637A1100DCFFC3 /* SceneDelegate.swift */; };
 		58A8250B28637A1100DCFFC3 /* BrandsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A8250A28637A1100DCFFC3 /* BrandsViewController.swift */; };
@@ -64,6 +66,8 @@
 		20428079085419C4BE6A3066 /* Pods_E_Commerce_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Commerce_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3769E7339FF5417DCBEA0890 /* Pods-E-Commerce App-E-Commerce AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E-Commerce App-E-Commerce AppUITests.release.xcconfig"; path = "Target Support Files/Pods-E-Commerce App-E-Commerce AppUITests/Pods-E-Commerce App-E-Commerce AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		561022BB48905223A4E42994 /* Pods_E_Commerce_App_E_Commerce_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Commerce_App_E_Commerce_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		584F2441286E49DB009B14F9 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		584F2443286E4A00009B14F9 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		588ADE9D6DB6186C47FA2AE6 /* Pods-E-Commerce AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E-Commerce AppTests.release.xcconfig"; path = "Target Support Files/Pods-E-Commerce AppTests/Pods-E-Commerce AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		58A8250328637A1100DCFFC3 /* E-Commerce App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E-Commerce App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58A8250628637A1100DCFFC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -155,7 +159,6 @@
 		58A824FA28637A1000DCFFC3 = {
 			isa = PBXGroup;
 			children = (
-				58AC348A286C647200D90281 /* Shopping cart */,
 				E08BB44028678B79005D08B3 /* placeholder-images.png */,
 				58A8250528637A1100DCFFC3 /* E-Commerce App */,
 				58A8251C28637A1200DCFFC3 /* E-Commerce AppTests */,
@@ -179,6 +182,7 @@
 		58A8250528637A1100DCFFC3 /* E-Commerce App */ = {
 			isa = PBXGroup;
 			children = (
+				58AC348A286C647200D90281 /* Shopping cart */,
 				E06E2F6F2869D1470034E741 /* Settings */,
 				E06E2F672869CA3B0034E741 /* Orders */,
 				E08BB4422867977E005D08B3 /* Me  */,
@@ -281,6 +285,8 @@
 		58AC348D286C64AF00D90281 /* cartView */ = {
 			isa = PBXGroup;
 			children = (
+				584F2441286E49DB009B14F9 /* CartViewController.swift */,
+				584F2443286E4A00009B14F9 /* CartTableViewCell.swift */,
 			);
 			path = cartView;
 			sourceTree = "<group>";
@@ -696,6 +702,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				584F2442286E49DB009B14F9 /* CartViewController.swift in Sources */,
 				E06E2F6A2869CA7D0034E741 /* orderViewController.swift in Sources */,
 				E08BB447286797CE005D08B3 /* MeViewController.swift in Sources */,
 				E03D3549286681B6007847F2 /* BrandsCollectionViewCell.swift in Sources */,
@@ -708,6 +715,7 @@
 				E03D354528667B2E007847F2 /* Brands.swift in Sources */,
 				E06E2F742869D65F0034E741 /* settingsTableViewCell.swift in Sources */,
 				58A8250728637A1100DCFFC3 /* AppDelegate.swift in Sources */,
+				584F2444286E4A00009B14F9 /* CartTableViewCell.swift in Sources */,
 				E06E2F762869D6FE0034E741 /* orderListTableViewCell.swift in Sources */,
 				58ADA0EA28661E8E0066AED4 /* CategoryCollectionViewCell.swift in Sources */,
 				58AB111928649FD600013F72 /* CategoryViewController.swift in Sources */,

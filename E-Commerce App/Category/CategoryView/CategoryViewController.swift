@@ -31,32 +31,46 @@ class CategoryViewController: UIViewController{
         let shoseImage=UIImage(named: "shose")
         let t_shirtImage=UIImage(named: "t-shirt")
         float.addItem("accessories", icon: accessoriesImage, handler: { [self]_ in
-            for index in 0...(self.categoryViewModel.result?.count ?? 0)-1{
-                if self.categoryViewModel.result?[index].product_type=="ACCESSORIES"{
-                    self.SUBProduct?.append((self.categoryViewModel.result?[index])!)
-                    print(self.arrayOfProduct?.count ?? 0)
+            arrayOfProduct?.removeAll()
+            var y=0
+            for index in 0...(categoryViewModel.result?.count ?? 0)-1 {
+                if self.categoryViewModel.result?[y].product_type=="ACCESSORIES"{
+                    self.arrayOfProduct?.append(categoryViewModel.result![y])
+                  
                 }
-                self.arrayOfProduct=self.SUBProduct
-                self.categoryCollectionView.reloadData()
-                
+             y+=1
             }
+            
+            self.categoryCollectionView.reloadData()
         })
      
         float.addItem("shose", icon: shoseImage, handler: { [self]_ in
-            
-            for index in 0...2{
-                if self.categoryViewModel.result?[index].product_type=="SHOES"{
-                   
-                   
+            arrayOfProduct?.removeAll()
+           
+            var y=0
+            for index in 0...(categoryViewModel.result?.count ?? 0)-1 {
+                if self.categoryViewModel.result?[y].product_type=="SHOES"{
+                    self.arrayOfProduct?.append(categoryViewModel.result![y])
+                  
                 }
-             
+             y+=1
             }
             
             self.categoryCollectionView.reloadData()
             
         })
         float.addItem("t-shirt", icon: t_shirtImage, handler: {_ in
-            print("hi")
+            self.arrayOfProduct?.removeAll()
+            var y=0
+            for index in 0...(self.categoryViewModel.result?.count ?? 0)-1 {
+                if self.categoryViewModel.result?[y].product_type=="T-SHIRTS"{
+                    self.arrayOfProduct?.append(self.categoryViewModel.result![y])
+                  
+                }
+             y+=1
+            }
+            
+            self.categoryCollectionView.reloadData()
         })
         self.view.addSubview(float)
     }
