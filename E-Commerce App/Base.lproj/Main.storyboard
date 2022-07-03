@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8rP-Eu-88t">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XCs-aB-gJG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -238,7 +238,7 @@
         <scene sceneID="L6l-3I-izQ">
             <objects>
                 <viewController storyboardIdentifier="CategoryViewController" id="SQA-mf-Wp3" customClass="CategoryViewController" customModule="E_Commerce_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="JjY-Gv-hdK">
+                    <view key="view" contentMode="scaleToFill" id="JjY-Gv-hdK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -254,7 +254,7 @@
                                     <action selector="didSelectSegment:" destination="SQA-mf-Wp3" eventType="valueChanged" id="a3k-Zs-S3f"/>
                                 </connections>
                             </segmentedControl>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8Jy-x8-2vM">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8Jy-x8-2vM">
                                 <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="r7x-qA-IIA">
@@ -308,7 +308,7 @@
                                     <outlet property="delegate" destination="SQA-mf-Wp3" id="hdw-qY-Zlp"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xby-JD-mnK" customClass="Floaty" customModule="Floaty">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xby-JD-mnK" customClass="Floaty" customModule="Floaty">
                                 <rect key="frame" x="338" y="796" width="56" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="UbB-dP-a28"/>

@@ -13,7 +13,7 @@ class RegisterViewModel {
     var bindResultToRegisterView : (() -> ()) = {}
     
 
-    var result :Customerr?{
+    var result :Customere?{
 
         didSet{
             bindResultToRegisterView()
