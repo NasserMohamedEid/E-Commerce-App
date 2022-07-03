@@ -64,6 +64,11 @@ extension ProductsViewController : UICollectionViewDelegate,UICollectionViewData
         return 10
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let DVC = storyboard?.instantiateViewController(withIdentifier: "DescriptionViewController")as? DescriptionViewController else { return }
+        DVC.idProduct = productViewModel?.productsData?.products[indexPath.row].id
+        self.navigationController?.pushViewController(DVC, animated: true)
+    }
     
     
     

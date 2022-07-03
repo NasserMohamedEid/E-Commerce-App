@@ -1,6 +1,9 @@
 PODS:
   - Alamofire (5.6.1)
+<<<<<<< HEAD
   - Floaty (4.2.0)
+=======
+>>>>>>> 6ff287e5ac3556abde1ec03ce6960a45f8f9eca0
   - SDWebImage (5.13.0):
     - SDWebImage/Core (= 5.13.0)
   - SDWebImage/Core (5.13.0)
@@ -18,7 +21,10 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+<<<<<<< HEAD
   Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
+=======
+>>>>>>> 6ff287e5ac3556abde1ec03ce6960a45f8f9eca0
   SDWebImage: 0327043dbb9533e75f2eff8445b3df0f2ceca6ac
 
 PODFILE CHECKSUM: cfd1a69bacba2e7fa85d9968543aa1ec01a39107
