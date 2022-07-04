@@ -98,7 +98,7 @@ extension BrandsViewController: UICollectionViewDelegate ,UICollectionViewDataSo
         guard  let productVC = storyboard?.instantiateViewController(withIdentifier: "ProductsViewController") as? ProductsViewController else {return}
         productVC.title = "Brand Products"
         
-        productVC.productID = brandsViewModel?.brandsData?.smartCollections?[indexPath.row].id ?? 0
+        productVC.BrandID = brandsViewModel?.brandsData?.smartCollections?[indexPath.row].id ?? 0
         self.navigationController?.pushViewController(productVC, animated: true)
         
     }
