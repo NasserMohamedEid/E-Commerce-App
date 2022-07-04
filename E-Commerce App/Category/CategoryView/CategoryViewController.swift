@@ -10,7 +10,15 @@ import SDWebImage
 import Floaty
 class CategoryViewController: UIViewController{
  
-   
+ 
+ 
+    @IBAction func favoritButton(_ sender: UIBarButtonItem) {
+        guard let favVC = storyboard?.instantiateViewController(withIdentifier: "FavouriotesViewController") as? FavouriotesViewController else{return}
+        
+        self.navigationController?.pushViewController(favVC, animated: true)
+    }
+    
+    
     @IBOutlet weak var float: Floaty!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
@@ -105,7 +113,7 @@ class CategoryViewController: UIViewController{
 
 
 
-extension CategoryViewController:UICollectionViewDataSource,UICollectionViewDelegate{
+extension CategoryViewController:UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     
     /******************************Setup collection**************************************/
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -123,6 +131,20 @@ extension CategoryViewController:UICollectionViewDataSource,UICollectionViewDele
         guard let DVC = storyboard?.instantiateViewController(withIdentifier: "DescriptionViewController")as? DescriptionViewController else { return }
         DVC.idProduct = categoryViewModel.result?[indexPath.row].id
         self.navigationController?.pushViewController(DVC, animated: true)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.categoryCollectionView.bounds.width/3, height:self.categoryCollectionView.bounds.width/3 )
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets{
+        return UIEdgeInsets.zero
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+   //minimum space between item
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
     /***************************************************************************************/
     
