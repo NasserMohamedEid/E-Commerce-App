@@ -10,10 +10,14 @@ import CoreData
 
 class FavouriotesViewController: UIViewController {
 
-
+//MARK:-outlets : -
     @IBOutlet weak var favCollectionView:
     UICollectionView!
+   
+    
     var arr : [NSManagedObject]?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,7 +26,6 @@ class FavouriotesViewController: UIViewController {
         DispatchQueue.main.async {
             self.favCollectionView.reloadData()
         }
-        
     }
     
     
@@ -30,9 +33,9 @@ class FavouriotesViewController: UIViewController {
    
     
 
-
-
 }
+//MARK:-Extensions
+
 extension FavouriotesViewController :UICollectionViewDelegate ,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arr?.count ?? 0

@@ -101,28 +101,35 @@ class NetworkManager{
         
     }
     
-    static func createUser(firstName:String ,lastName:String, email:String, password:String, configPassword:String , completionHandler:@escaping (PostUser)->Void){
-        let parameters : Parameters = ["customer":["first_name":"\(firstName)","last_name":"\(lastName)","email":"\(email)","phone":"+11230544171","verified_email":true,"addresses":[["address1":"123 Oak St","city":"\(password)","province":"\(configPassword)","phone":"555-1212","zip":"123 ABC","last_name":"Lastnameson","first_name":"Mother","country":"CA"]]]]
+    static func createUser(firstName:String ,lastName:String, email:String, password:String,phone:String ,completionHandler:@escaping (PostUser)->Void){
+        let parameters : Parameters = ["customer":["first_name":"\(firstName)","last_name":"\(lastName)","email":"\(email)","phone":"\(phone)","verified_email":true,"multipass_identifier":"\(password)","addresses":[["address1":"123 Oak St","city":"Cairo","province":"ON","phone":"555-1212","zip":"123 ABC","last_name":"Lastnameson","first_name":"Mother","country":"CA"]]]]
         let baseUrl : String = "https://menofia-2022-q3.myshopify.com/admin/api/2022-04/customers.json"
         let headers:HTTPHeaders = ["X-Shopify-Access-Token": "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","Content-Type": "application/json"]
-        AF.request(baseUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseDecodable(of:PostUser.self) {
+        AF.request(baseUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).response {
+            //responseDecodable(of:PostUser.self)
             response in
-           // print(response.data)
+            print(response)
+            
             switch response.result{
-            case .success(_):
+            case .success(let data):
                 
-               // let jsonData = response.data
-               // let Decoder = JSONDecoder()
-                guard let data = response.data else{return}
+                // let jsonData = response.data
+                
+                // guard let data = response.data else{return}
                 do{
-                    let user = try JSONDecoder().decode(PostUser.self, from: data)
+                    // let Decoder = JSONDecoder()
+                    // Decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    // let json = try JSONDecoder().decode(PostUser.self, from: data)
+                    let json = try JSONSerialization.jsonObject(with: data!, options: [])
+                    print(json)
+                    //  print((json as! PostUser).customer.phone ?? "" )
                     
-                  //  print(user.customer.id )
-
-                                       completionHandler(user)
-                
+                    
+                    // completionHandler(json)
+                    
                 } catch let error {
-                    print(error.localizedDescription)
+                    // print(error.localizedDescription)
+                    print(String(describing: error))
                 }
                 
                 print(response)
@@ -137,4 +144,24 @@ class NetworkManager{
         }
         
     }
+    
+    static func fetchcustomer(completionHandler:@escaping (Users)->Void){
+        let baseUrl:String = "https://fde429753a207f610321a557c2e0ceb0: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@menofia-2022-q3.myshopify.com/admin/api/2022-04/customers.json"
+      
+        AF.request(baseUrl).responseDecodable(of:Users.self){
+            response in
+            print(response)
+
+            guard let customer=response.value else{return}
+            completionHandler(customer)
+            
+        }
+    }
+    
 }
+
+
+
+
+
+

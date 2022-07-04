@@ -77,6 +77,9 @@ class DescriptionViewController: UIViewController {
     }
     
     @IBAction func addToFavButton(_ sender: UIButton) {
+        let product : Product = descriptionViewModel.result!
+        CoreDataManager.shared.addProductToFav(productList:product)
+
     }
     
 

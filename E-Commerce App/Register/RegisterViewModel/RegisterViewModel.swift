@@ -20,8 +20,8 @@ class RegisterViewModel {
         }
     }
     
-    func createCustomer(name:String, lastName:String, email:String, password:String, configPassword:String){
-        NetworkManager.createUser(firstName: name, lastName: lastName, email: email, password: password, configPassword: configPassword) { userData in
+    func createCustomer(name:String, lastName:String, email:String, password:String, phone:String){
+        NetworkManager.createUser(firstName: name, lastName: lastName, email: email, password: password, phone: phone) { userData in
             self.result=userData.customer
         }
         
