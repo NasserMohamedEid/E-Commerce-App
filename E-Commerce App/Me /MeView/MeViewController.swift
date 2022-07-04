@@ -8,21 +8,35 @@
 import UIKit
 
 class MeViewController: UIViewController {
-
+    var name : String = "name"
     //MARK:-outlets : -
     
     @IBOutlet weak var meTableView: UITableView!
+    @IBOutlet weak var userNameLabel: UILabel!
     
+    @IBAction func logButtonPressed(_ sender: UIButton) {
+        guard let VC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else { return  }
+
+        self.navigationController?.pushViewController(VC, animated: true)
+    }
     
     //MARK:- lifecycle : -
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+        userNameLabel.text = name
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        let nameuser = LoginViewController()
+        userNameLabel.text = nameuser.userName
+        
     }
     
     //MARK:-Function Helper
+  
+    
     
     @IBAction func settingButtonPressed(_ sender: UIBarButtonItem) {
         
