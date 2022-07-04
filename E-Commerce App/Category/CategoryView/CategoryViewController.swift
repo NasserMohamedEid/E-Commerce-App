@@ -10,6 +10,14 @@ import SDWebImage
 import Floaty
 class CategoryViewController: UIViewController{
  
+ 
+ 
+    @IBAction func favoritButton(_ sender: UIBarButtonItem) {
+        guard let favVC = storyboard?.instantiateViewController(withIdentifier: "FavouriotesViewController") as? FavouriotesViewController else{return}
+        
+        self.navigationController?.pushViewController(favVC, animated: true)
+    }
+    
     
     @IBOutlet weak var float: Floaty!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
@@ -17,33 +25,60 @@ class CategoryViewController: UIViewController{
     var categoryViewModel:CategoryViewModel!
     var CollectionCell:CategoryCollectionViewCell!
     var arrayOfProduct:[Products]?
-    var x=1
+    var SUBProduct:[Products]?
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-        if x==1{
+     
         categoryViewModel=CategoryViewModel()
             didSelectSegment(segmentControl)
-            x=2
-        }
+        
+       
         /***************float button******************/
         let accessoriesImage=UIImage(named: "accessories")
         let shoseImage=UIImage(named: "shose")
         let t_shirtImage=UIImage(named: "t-shirt")
-        float.addItem("accessories", icon: accessoriesImage, handler: {_ in
-            for index in 0...(self.categoryViewModel.result?.count ?? 0)-1{
-                if self.categoryViewModel.result?[index].product_type=="ACCESSORIES"{
-                    self.arrayOfProduct?[index]=(self.categoryViewModel.result?[index])!
-                    print(self.arrayOfProduct?.count ?? 0)
-                    print(self.arrayOfProduct?.count)
+        float.addItem("accessories", icon: accessoriesImage, handler: { [self]_ in
+            arrayOfProduct?.removeAll()
+            var y=0
+            for index in 0...(categoryViewModel.result?.count ?? 0)-1 {
+                if self.categoryViewModel.result?[y].product_type=="ACCESSORIES"{
+                    self.arrayOfProduct?.append(categoryViewModel.result![y])
+                  
                 }
-                self.categoryCollectionView.reloadData()
-                
+             y+=1
             }
+            
+            self.categoryCollectionView.reloadData()
         })
-        float.addItem("shose", icon: shoseImage, handler: {_ in
-                print("hi")})
+     
+        float.addItem("shose", icon: shoseImage, handler: { [self]_ in
+            arrayOfProduct?.removeAll()
+           
+            var y=0
+            for index in 0...(categoryViewModel.result?.count ?? 0)-1 {
+                if self.categoryViewModel.result?[y].product_type=="SHOES"{
+                    self.arrayOfProduct?.append(categoryViewModel.result![y])
+                  
+                }
+             y+=1
+            }
+            
+            self.categoryCollectionView.reloadData()
+            
+        })
         float.addItem("t-shirt", icon: t_shirtImage, handler: {_ in
-            print("hi")
+            self.arrayOfProduct?.removeAll()
+            var y=0
+            for index in 0...(self.categoryViewModel.result?.count ?? 0)-1 {
+                if self.categoryViewModel.result?[y].product_type=="T-SHIRTS"{
+                    self.arrayOfProduct?.append(self.categoryViewModel.result![y])
+                  
+                }
+             y+=1
+            }
+            
+            self.categoryCollectionView.reloadData()
         })
         self.view.addSubview(float)
     }
@@ -78,7 +113,7 @@ class CategoryViewController: UIViewController{
 
 
 
-extension CategoryViewController:UICollectionViewDataSource,UICollectionViewDelegate{
+extension CategoryViewController:UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     
     /******************************Setup collection**************************************/
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -96,6 +131,20 @@ extension CategoryViewController:UICollectionViewDataSource,UICollectionViewDele
         guard let DVC = storyboard?.instantiateViewController(withIdentifier: "DescriptionViewController")as? DescriptionViewController else { return }
         DVC.idProduct = categoryViewModel.result?[indexPath.row].id
         self.navigationController?.pushViewController(DVC, animated: true)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.categoryCollectionView.bounds.width/3, height:self.categoryCollectionView.bounds.width/3 )
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets{
+        return UIEdgeInsets.zero
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+   //minimum space between item
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
     /***************************************************************************************/
     

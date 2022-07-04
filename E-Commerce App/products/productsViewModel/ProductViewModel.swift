@@ -30,7 +30,5 @@ class ProductViewModel {
             self.productsData = productResponse
             self.bindingProductResult()
         }
-        
-        
     }
 }

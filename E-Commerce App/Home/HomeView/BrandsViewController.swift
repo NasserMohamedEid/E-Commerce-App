@@ -62,6 +62,12 @@ class BrandsViewController: UIViewController {
 
     //MARK:- Functions Helper
 
+    @IBAction func favouriteButoonPressed(_ sender: UIBarButtonItem) {
+        
+        guard let favVC = storyboard?.instantiateViewController(withIdentifier: "FavouriotesViewController") as? FavouriotesViewController else{return}
+        
+        self.navigationController?.pushViewController(favVC, animated: true)
+    }
     
     func MakeImageChanges(){
         let images = [UIImage(named: "SalesImageHomeScreen"), UIImage(named: "SaleImages1"), UIImage(named: "womenSaleImage")].compactMap{$0}
@@ -103,14 +109,23 @@ extension BrandsViewController: UICollectionViewDelegate ,UICollectionViewDataSo
         
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+                let padding: CGFloat =  60
+                let collectionViewSize = collectionView.frame.size.height - padding
+                return CGSize(width: 180, height: collectionViewSize / 2)
+    }
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 10
     }
 
 }
