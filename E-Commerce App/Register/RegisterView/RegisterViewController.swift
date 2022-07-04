@@ -28,11 +28,14 @@ class RegisterViewController: UIViewController {
 
     @IBAction func makeRegisterButton(_ sender: UIButton) {
         registerViewModel.bindResultToRegisterView = {[weak self]in}
-        registerViewModel.createCustomer(name: firstNameTextField.text ?? "", lastName: lastNameTextField.text ?? "", email: emailInTextField.text ?? "", password: passwordInTextField.text ?? "", configPassword: confirmPasswordTextField.text ?? "")
+        registerViewModel.createCustomer(name: firstNameTextField.text ?? "", lastName: lastNameTextField.text ?? "", email: emailInTextField.text ?? "", password: passwordInTextField.text ?? "", phone: confirmPasswordTextField.text ?? "")
+        
+
+
+        navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func backMeScreenButton(_ sender: UIButton) {
-    }
+
     
 
 

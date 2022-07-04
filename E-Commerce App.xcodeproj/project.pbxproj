@@ -51,6 +51,8 @@
 		F7239718286F98BA00CB07C7 /* ProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7239716286F98BA00CB07C7 /* ProductDetails.swift */; };
 		F7239719286F98BA00CB07C7 /* OrderCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7239717286F98BA00CB07C7 /* OrderCart.swift */; };
 		F723971B286F98DC00CB07C7 /* DescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723971A286F98DC00CB07C7 /* DescriptionViewModel.swift */; };
+		F72A5EA428724BDC008C688A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72A5EA328724BDC008C688A /* LoginViewModel.swift */; };
+		F72A5EA728724FBA008C688A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72A5EA628724FBA008C688A /* Users.swift */; };
 		F743D35E286CA43A0013D032 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743D35D286CA4390013D032 /* LoginViewController.swift */; };
 		F743D362286CA5030013D032 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743D361286CA5030013D032 /* RegisterViewController.swift */; };
 		F7E7FB7E2870DA1B00C239C2 /* CustomerFailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E7FB7D2870DA1B00C239C2 /* CustomerFailModel.swift */; };
@@ -131,6 +133,8 @@
 		F7239716286F98BA00CB07C7 /* ProductDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetails.swift; sourceTree = "<group>"; };
 		F7239717286F98BA00CB07C7 /* OrderCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCart.swift; sourceTree = "<group>"; };
 		F723971A286F98DC00CB07C7 /* DescriptionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionViewModel.swift; sourceTree = "<group>"; };
+		F72A5EA328724BDC008C688A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F72A5EA628724FBA008C688A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		F743D35D286CA4390013D032 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F743D361286CA5030013D032 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F7E7FB7D2870DA1B00C239C2 /* CustomerFailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerFailModel.swift; sourceTree = "<group>"; };
@@ -540,9 +544,27 @@
 			path = descriptionModel;
 			sourceTree = "<group>";
 		};
+		F72A5EA228724BA5008C688A /* LoginViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F72A5EA328724BDC008C688A /* LoginViewModel.swift */,
+			);
+			path = LoginViewModel;
+			sourceTree = "<group>";
+		};
+		F72A5EA528724FA2008C688A /* LoginModel */ = {
+			isa = PBXGroup;
+			children = (
+				F72A5EA628724FBA008C688A /* Users.swift */,
+			);
+			path = LoginModel;
+			sourceTree = "<group>";
+		};
 		F743D35B286CA3E00013D032 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F72A5EA528724FA2008C688A /* LoginModel */,
+				F72A5EA228724BA5008C688A /* LoginViewModel */,
 				F743D35C286CA4060013D032 /* Login View */,
 			);
 			path = Login;
@@ -819,6 +841,7 @@
 				E08BB447286797CE005D08B3 /* MeViewController.swift in Sources */,
 				E0D350BB286AFEF700B5C94F /* AddressViewModel.swift in Sources */,
 				F7141C7D28705792003FD38D /* DescriptionCollectionViewCell.swift in Sources */,
+				F72A5EA428724BDC008C688A /* LoginViewModel.swift in Sources */,
 				F7141C792870572A003FD38D /* DescriptionViewModel.swift in Sources */,
 				E03D3549286681B6007847F2 /* BrandsCollectionViewCell.swift in Sources */,
 				E06F5D77286A14C800A57871 /* AddNewAddressViewController.swift in Sources */,
@@ -847,6 +870,7 @@
 				F7239719286F98BA00CB07C7 /* OrderCart.swift in Sources */,
 				F7239714286F310200CB07C7 /* CustomerModel.swift in Sources */,
 				F7239711286F2FDA00CB07C7 /* RegisterViewModel.swift in Sources */,
+				F72A5EA728724FBA008C688A /* Users.swift in Sources */,
 				58A8250928637A1100DCFFC3 /* SceneDelegate.swift in Sources */,
 				E0D350B9286AF71F00B5C94F /* Customers.swift in Sources */,
 				E08BB44928679ACD005D08B3 /* MeTableViewCell.swift in Sources */,
