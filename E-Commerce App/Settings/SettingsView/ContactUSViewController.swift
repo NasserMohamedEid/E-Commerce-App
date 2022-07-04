@@ -13,7 +13,7 @@ class ContactUSViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ConatctUStTextView.text = "sherif.samy7770@gmail.com \n 01149229505"
+        ConatctUStTextView.text = "Ecommerce app@gmail.com "
         ConatctUStTextView.textAlignment = .center
     }
 

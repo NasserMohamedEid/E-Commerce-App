@@ -19,8 +19,6 @@ class CoreDataManager {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var viewContext: NSManagedObjectContext?
-    
-    var favouriteObject: NSManagedObject?
     let userEntityName = "ProductsList"
     
     
@@ -39,14 +37,14 @@ class CoreDataManager {
         guard let entity = NSEntityDescription.entity(forEntityName: userEntityName,
                                                       in: viewContext) else { return }
         
-//        for productWillSave in productList {
+
             let saveProduct = NSManagedObject(entity: entity,
                                               insertInto: viewContext)
             saveProduct.setValue(productList.images?[0].src, forKey: mykeys.image.rawValue)
             saveProduct.setValue(productList.title, forKey: mykeys.name.rawValue)
             saveProduct.setValue(productList.id, forKey: mykeys.id.rawValue)
               
-//        }
+
           appDelegate.saveContext()
         
     }
