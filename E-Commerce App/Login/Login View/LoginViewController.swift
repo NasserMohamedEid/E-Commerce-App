@@ -7,7 +7,10 @@
 
 import UIKit
 
+
+
 class LoginViewController: UIViewController {
+    var delegate : getUser?
     @IBOutlet weak var loginImageView: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -23,12 +26,11 @@ class LoginViewController: UIViewController {
                     if self?.loginViewModel.result?[index].email == self?.emailTextField.text &&   (self?.loginViewModel.result?[index].multipass_identifier) == ( self?.passwordTextField.text){
                         self?.userId = self?.loginViewModel.result?[index].id
                         self?.userName = self?.loginViewModel.result?[index].first_name
-                        print(self?.loginViewModel.result?[index].first_name)
+                        print(self?.loginViewModel.result?[index].first_name ?? "")
                         
-                      
-                        guard let VC = self?.storyboard?.instantiateViewController(withIdentifier: "MeViewController") as? MeViewController else { return  }
-                        VC.name = self?.userName ?? "naser"
 
+                       
+                        self?.delegate?.getName(name: self?.loginViewModel.result?[index].first_name ?? "")
                         self?.navigationController?.popViewController(animated: true)
                     }
                 }

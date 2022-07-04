@@ -7,8 +7,16 @@
 
 import UIKit
 
-class MeViewController: UIViewController {
-    var name : String = "name"
+protocol getUser{
+    func getName(name : String)
+}
+
+class MeViewController: UIViewController,getUser {
+    func getName(name : String) {
+        
+        userNameLabel.text = name
+    }
+    
     //MARK:-outlets : -
     
     @IBOutlet weak var meTableView: UITableView!
@@ -16,7 +24,7 @@ class MeViewController: UIViewController {
     
     @IBAction func logButtonPressed(_ sender: UIButton) {
         guard let VC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else { return  }
-
+        VC.delegate = self
         self.navigationController?.pushViewController(VC, animated: true)
     }
     
@@ -25,13 +33,9 @@ class MeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        userNameLabel.text = name
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        let nameuser = LoginViewController()
-        userNameLabel.text = nameuser.userName
-        
     }
     
     //MARK:-Function Helper
