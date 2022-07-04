@@ -49,6 +49,25 @@ class CoreDataManager {
         
     }
     
+    func addProductToFav(productList:Product){
+        
+        guard let viewContext = viewContext else {return}
+        guard let entity = NSEntityDescription.entity(forEntityName: userEntityName,
+                                                      in: viewContext) else { return }
+        
+
+            let saveProduct = NSManagedObject(entity: entity,
+                                              insertInto: viewContext)
+        saveProduct.setValue(productList.images[0].src, forKey: mykeys.image.rawValue)
+            saveProduct.setValue(productList.title, forKey: mykeys.name.rawValue)
+            saveProduct.setValue(productList.id, forKey: mykeys.id.rawValue)
+              
+
+          appDelegate.saveContext()
+        
+    }
+    
+    
     
     func getSavedProducts()->[NSManagedObject]{
 
