@@ -12,7 +12,8 @@ class ProductsViewController: UIViewController {
     var productViewModel:ProductViewModel?
     @IBOutlet weak var productsCollectionView: UICollectionView!
     
-    var BrandID:Int?
+     var BrandID:Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,7 +29,9 @@ class ProductsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         productViewModel?.getProducts(brandId: BrandID ?? 0)
+        
     }
+
 
 }
 extension ProductsViewController : UICollectionViewDelegate,UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
@@ -41,10 +44,12 @@ extension ProductsViewController : UICollectionViewDelegate,UICollectionViewData
             UICollectionViewCell()
         }
         
-       
+        cell.product = productViewModel?.productsData?.products[indexPath.row]
         if let image = productViewModel?.productsData?.products[indexPath.row].images?[0].src  {
             cell.productImageView.sd_setImage(with:URL(string: image) ,placeholderImage: UIImage(named: "placeholder-images"))
         }
+        
+        cell.priceLBL.text = productViewModel?.productsData?.products[indexPath.row].variants?[0].price
         return cell
     }
     

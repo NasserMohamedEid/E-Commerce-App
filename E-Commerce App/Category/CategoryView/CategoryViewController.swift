@@ -13,7 +13,11 @@ class CategoryViewController: UIViewController{
  
  
     @IBAction func favoritButton(_ sender: UIBarButtonItem) {
+        guard let favVC = storyboard?.instantiateViewController(withIdentifier: "FavouriotesViewController") as? FavouriotesViewController else{return}
+        
+        self.navigationController?.pushViewController(favVC, animated: true)
     }
+    
     
     @IBOutlet weak var float: Floaty!
     @IBOutlet weak var categoryCollectionView: UICollectionView!

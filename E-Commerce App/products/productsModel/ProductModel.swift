@@ -20,42 +20,34 @@ struct products: Codable {
 
     let id: Int?
     let title: String?
-    let bodyHtml: String?
     let vendor: String?
     let productType: String?
-    let createdAt: String?
-    let handle: String?
-    let updatedAt: String?
-    let publishedAt: String??
-    let templateSuffix: String?
     let status: String?
     let publishedScope: String?
-    let tags: String?
-    let adminGraphqlApiId: String?
     let options: [Options]?
     let images: [ImagesBrand]?
+    let variants: [Variants]?
 
     
     enum CodingKeys: String, CodingKey {
            case id, title
-           case bodyHtml = "body_html"
            case vendor
            case productType = "product_type"
-           case createdAt = "created_at"
-           case handle
-           case updatedAt = "updated_at"
-           case publishedAt = "published_at"
-           case templateSuffix = "template_suffix"
            case status
            case publishedScope = "published_scope"
-           case tags
-           case adminGraphqlApiId = "admin_graphql_api_id"
-           case  options, images
+           case  variants,options, images
        }
     
 }
 
+struct Variants: Codable {
 
+    let id: Int?
+    let productId: Int?
+    let title: String?
+    let price: String?
+
+}
 
 struct Options: Codable {
 

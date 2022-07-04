@@ -23,10 +23,8 @@ struct Customer: Codable {
     let state: String
     let totalSpent: String
     let lastOrderId: Int?
-    let note: String
     let verifiedEmail: Bool
-    let multipassIdentifier: String?
-    let taxExempt: Bool
+    let note :String
     let phone: String?
     let tags: String
     let lastOrderName: String?
@@ -44,11 +42,8 @@ struct Customer: Codable {
         case state
         case totalSpent = "total_spent"
         case lastOrderId = "last_order_id"
-        case note
         case verifiedEmail = "verified_email"
-        case multipassIdentifier = "multipass_identifier"
-        case taxExempt = "tax_exempt"
-        case phone, tags
+        case phone, tags,note
         case lastOrderName = "last_order_name"
         case currency, addresses
         case defaultAddress = "default_address"
@@ -57,6 +52,7 @@ struct Customer: Codable {
 
 // MARK: - Address
 struct Address: Codable {
+    
     let address1, address2, city, company: String
     let firstName, lastName, phone, province: String
     let country, zip, name, provinceCode: String

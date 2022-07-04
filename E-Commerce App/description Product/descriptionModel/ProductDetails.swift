@@ -18,7 +18,7 @@ struct Product : Decodable{  // productDetails
     let body_html: String
     let vendor: String
     let images: [Imagess]
-    let variants: [Variants]
+    let variants: [Variants1]
 }
 
 
@@ -26,7 +26,7 @@ struct Imagess : Decodable{
     var src: String
 }
 
-struct Variants: Decodable {
+struct Variants1: Decodable {
     let product_id : Int
     let id: Int
     let title: String
