@@ -47,7 +47,7 @@ class BrandsViewController: UIViewController {
         super.viewDidLoad()
         
         MakeImageChanges()
-        brandsViewModel = BrandsViewModel(services: NetworkManager())
+        brandsViewModel = BrandsViewModel()
         brandsViewModel?.bindingBrandsResult = {[weak self ] in
             guard let self =  self  else{return}
             DispatchQueue.main.async {
@@ -83,7 +83,7 @@ class BrandsViewController: UIViewController {
 
 extension BrandsViewController: UICollectionViewDelegate ,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return brandsViewModel?.brandsData?.smartCollections?.count ?? 0
+        return brandsViewModel?.brandssData?.smartCollections?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -92,8 +92,8 @@ extension BrandsViewController: UICollectionViewDelegate ,UICollectionViewDataSo
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? BrandsCollectionViewCell else {return
            UICollectionViewCell()
         }
-        cell.brandLBL.text = brandsViewModel?.brandsData?.smartCollections?[indexPath.row].title
-        if let image = brandsViewModel?.brandsData?.smartCollections?[indexPath.row].image?.src {
+        cell.brandLBL.text = brandsViewModel?.brandssData?.smartCollections?[indexPath.row].title
+        if let image = brandsViewModel?.brandssData?.smartCollections?[indexPath.row].image?.src {
             cell.brandImageView.sd_setImage(with:URL(string: image) ,placeholderImage: UIImage(named: "placeholder-images"))
         }
         return cell
@@ -104,7 +104,7 @@ extension BrandsViewController: UICollectionViewDelegate ,UICollectionViewDataSo
         guard  let productVC = storyboard?.instantiateViewController(withIdentifier: "ProductsViewController") as? ProductsViewController else {return}
         productVC.title = "Brand Products"
         
-        productVC.BrandID = brandsViewModel?.brandsData?.smartCollections?[indexPath.row].id ?? 0
+        productVC.BrandID = brandsViewModel?.brandssData?.smartCollections?[indexPath.row].id ?? 0
         self.navigationController?.pushViewController(productVC, animated: true)
         
     }

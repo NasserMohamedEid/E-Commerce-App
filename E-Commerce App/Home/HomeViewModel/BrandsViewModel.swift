@@ -11,13 +11,13 @@ import Foundation
 
 class BrandsViewModel {
     
-    let  services:NetworkManager
+ 
     var bindingBrandsResult : (()->()) = {}
-    var brandsData:Brands?
+    var brandssData:Brands?
     
-    init(services: NetworkManager) {
-        self.services = services
-    }
+//    init(services: NetworkManager) {
+////        self.services = services
+//    }
 
     
     
@@ -25,7 +25,7 @@ class BrandsViewModel {
         
         NetworkManager.fetchBrands { [weak self] brandsResponse in
             guard let self = self else{return}
-            self.brandsData = brandsResponse
+            self.brandssData = brandsResponse
             self.bindingBrandsResult()
         }
     }

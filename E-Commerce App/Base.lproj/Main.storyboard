@@ -135,7 +135,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eR0-vp-8CD">
-                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
+                                <rect key="frame" x="10" y="124" width="394" height="738"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9pb-M9-cBv">
                                     <size key="itemSize" width="173" height="199"/>
@@ -205,8 +205,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eR0-vp-8CD" firstAttribute="height" secondItem="nFz-9C-wfS" secondAttribute="height" multiplier="0.823661" id="4w4-ix-MWw"/>
-                            <constraint firstItem="eR0-vp-8CD" firstAttribute="leading" secondItem="AyG-FA-z2w" secondAttribute="leading" id="CV4-vO-yPr"/>
-                            <constraint firstItem="AyG-FA-z2w" firstAttribute="trailing" secondItem="eR0-vp-8CD" secondAttribute="trailing" id="IIC-Dd-LHG"/>
+                            <constraint firstItem="eR0-vp-8CD" firstAttribute="leading" secondItem="AyG-FA-z2w" secondAttribute="leading" constant="10" id="CV4-vO-yPr"/>
+                            <constraint firstItem="AyG-FA-z2w" firstAttribute="trailing" secondItem="eR0-vp-8CD" secondAttribute="trailing" constant="10" id="IIC-Dd-LHG"/>
                             <constraint firstItem="eR0-vp-8CD" firstAttribute="bottom" secondItem="AyG-FA-z2w" secondAttribute="bottom" id="XGx-iA-SXJ"/>
                             <constraint firstItem="AyG-FA-z2w" firstAttribute="bottom" secondItem="eR0-vp-8CD" secondAttribute="bottom" id="jcb-3Y-akL"/>
                         </constraints>
@@ -228,7 +228,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4aO-xy-PYA">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="15" y="59" width="384" height="788"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iy1-fF-ABi">
                                     <size key="itemSize" width="175" height="189"/>
@@ -281,10 +281,10 @@
                         <viewLayoutGuide key="safeArea" id="RsI-xG-8QA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="RsI-xG-8QA" firstAttribute="bottom" secondItem="4aO-xy-PYA" secondAttribute="bottom" id="2e2-3O-VE4"/>
-                            <constraint firstItem="4aO-xy-PYA" firstAttribute="leading" secondItem="RsI-xG-8QA" secondAttribute="leading" id="9Va-EK-dzk"/>
-                            <constraint firstItem="4aO-xy-PYA" firstAttribute="top" secondItem="RsI-xG-8QA" secondAttribute="top" id="Uyv-1N-VrG"/>
-                            <constraint firstItem="RsI-xG-8QA" firstAttribute="trailing" secondItem="4aO-xy-PYA" secondAttribute="trailing" id="lnn-QI-Zoi"/>
+                            <constraint firstItem="RsI-xG-8QA" firstAttribute="bottom" secondItem="4aO-xy-PYA" secondAttribute="bottom" constant="15" id="2e2-3O-VE4"/>
+                            <constraint firstItem="4aO-xy-PYA" firstAttribute="leading" secondItem="RsI-xG-8QA" secondAttribute="leading" constant="15" id="9Va-EK-dzk"/>
+                            <constraint firstItem="4aO-xy-PYA" firstAttribute="top" secondItem="RsI-xG-8QA" secondAttribute="top" constant="15" id="Uyv-1N-VrG"/>
+                            <constraint firstItem="RsI-xG-8QA" firstAttribute="trailing" secondItem="4aO-xy-PYA" secondAttribute="trailing" constant="15" id="lnn-QI-Zoi"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1340,7 +1340,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i09-td-haf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5250.7246376811599" y="793.52678571428567"/>
+            <point key="canvasLocation" x="5204" y="818"/>
         </scene>
         <!--Home-->
         <scene sceneID="yaC-9W-o4x">
