@@ -86,7 +86,7 @@ class NetworkManager{
     }
     
     
-    static func addToCart(completionHandler:@escaping (OrderRequest? )->Void){
+    static func addToCart(completionHandler:@escaping (OrderRequest?)->Void){
         
         
         let parameters : Parameters = ["order":["line_items":[["variant_id":447654529,"quantity":1]]]]
