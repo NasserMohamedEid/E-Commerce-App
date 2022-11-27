@@ -13,8 +13,9 @@ class NetworkManager{
     
     
     static func fetchBrands(completionHandler: @escaping(Brands?)-> Void){
-        let brandsUrl : String = "https://fde429753a207f610321a557c2e0ceb0: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@menofia-2022-q3.myshopify.com/admin/api/2022-04/smart_collections.json"
-        AF.request(brandsUrl, method: .get, encoding: URLEncoding.queryString)
+        
+        let url  = Route.baseUrl + Route.fetchBrands.description
+        AF.request(url, method: .get, encoding: URLEncoding.queryString)
             .responseDecodable(of: Brands.self) { response in
                 guard let brandsRespone = response.value else {return}
                 completionHandler(brandsRespone)
@@ -23,27 +24,16 @@ class NetworkManager{
     }
     
     static func fetchproducts(collectionId : Int, completionHandler :@escaping(ProductsBrand?)->Void){
-        let productUrl = "https://fde429753a207f610321a557c2e0ceb0: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@menofia-2022-q3.myshopify.com/admin/api/2022-04/collections/\(collectionId)/products.json"
-        AF.request(productUrl, method: .get,encoding: URLEncoding.queryString).responseDecodable(of:ProductsBrand.self) { response in
+        
+//        let productUrl = "https://fde429753a207f610321a557c2e0ceb0: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@menofia-2022-q3.myshopify.com/admin/api/2022-04/collections/\(collectionId)/products.json"
+        
+        let url  = Route.baseUrl + Route.fetchProducts(collectionId).description
+        AF.request( url, method: .get,encoding: URLEncoding.queryString).responseDecodable(of:ProductsBrand.self) { response in
             guard let productResponse = response.value else{return}
             completionHandler(productResponse)
         }
     }
-    
 
-    
-   
-        
-        
-
-
-
-
-    
-    
-    
-    
-    
     
     static func fetchCategoryApi(id:Int,complitionHandler : @escaping (CategoryModel?) -> Void){
         let url:String="https://fde429753a207f610321a557c2e0ceb0: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@menofia-2022-q3.myshopify.com/admin/api/2022-04/collections/"+String(id)+"/products.json"
