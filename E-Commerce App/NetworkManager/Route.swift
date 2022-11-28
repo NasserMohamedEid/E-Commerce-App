@@ -13,8 +13,9 @@ enum Route {
     static let baseUrl  = "https://\(ApiManager.APIkey):\(ApiManager.password)@\(ApiManager.hostName)admin/api/2022-04"
     
     case fetchBrands
-    case fetchProducts(Int)
+    case fetchProductsAndCategories(Int)
     case fetchProductDetils(Int)
+    case createCustomer
     
     var description:String {
         
@@ -22,10 +23,12 @@ enum Route {
             
         case .fetchBrands:
             return "/smart_collections.json"
-        case .fetchProducts(let collectionId):
+        case .fetchProductsAndCategories(let collectionId):
             return "/collections/\(collectionId)/products.json"
         case .fetchProductDetils(let id):
             return "/products/\(id).json"
+        case .createCustomer:
+            return "/customers.json"
         }
         
         

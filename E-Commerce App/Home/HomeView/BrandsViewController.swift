@@ -12,17 +12,6 @@ class BrandsViewController: UIViewController {
     
     //MARK:-Outlets
     
-    @IBOutlet weak var collectionContentView: UIView!{
-        
-        didSet{
-            collectionContentView.layer.borderWidth = 3
-            collectionContentView.layer.borderColor = UIColor.gray.cgColor
-            collectionContentView.layer.masksToBounds = true
-            collectionContentView.clipsToBounds = true
-            collectionContentView.layer.cornerRadius = collectionContentView.frame.size.width / 5
-            collectionContentView.backgroundColor = .gray
-        }
-    }
     
     @IBOutlet weak var salesImageView: UIImageView!{
         didSet{
@@ -46,6 +35,7 @@ class BrandsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavgitionControllerApperance()
         MakeImageChanges()
         brandsViewModel = BrandsViewModel()
         brandsViewModel?.bindingBrandsResult = {[weak self ] in
@@ -60,7 +50,16 @@ class BrandsViewController: UIViewController {
         brandsViewModel?.getBrands()
     }
 
-    //MARK:- Functions Helper
+ //MARK: - Function Helper
+    
+    func setupNavgitionControllerApperance(){
+
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor.systemYellow
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    }
+    
 
     @IBAction func favouriteButoonPressed(_ sender: UIBarButtonItem) {
         
@@ -79,7 +78,7 @@ class BrandsViewController: UIViewController {
 }
 
 
-//MARK:- Extension For collectionViewDelegate and datasource:- 
+ //MARK: - Extension for Collection view
 
 extension BrandsViewController: UICollectionViewDelegate ,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

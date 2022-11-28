@@ -18,11 +18,21 @@ class MeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupNavgitionControllerApperance()
        
     }
     
     //MARK:-Function Helper
+    
+    func setupNavgitionControllerApperance(){
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor.systemYellow
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    }
+    
+    
     
     @IBAction func settingButtonPressed(_ sender: UIBarButtonItem) {
         

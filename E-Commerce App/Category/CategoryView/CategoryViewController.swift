@@ -21,7 +21,7 @@ class CategoryViewController: UIViewController{
   
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        setupNavgitionControllerApperance()
         categoryViewModel=CategoryViewModel()
             didSelectSegment(segmentControl)
         
@@ -101,6 +101,17 @@ class CategoryViewController: UIViewController{
     }
     /**************************************************************************/
  
+    
+    
+    func setupNavgitionControllerApperance(){
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor.systemYellow
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    }
+    
+    
 }
 
 

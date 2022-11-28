@@ -7,36 +7,64 @@
 
 
 import UIKit
-class RegisterViewController: UIViewController {
 
-    @IBOutlet weak var registerImageView: UIImageView!
+
+class RegisterViewController: UIViewController {
+    
+    @IBOutlet weak var registerImageView: UIImageView!{
+        didSet{
+            registerImageView.image = UIImage(named: "shop")
+        }
+    }
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailInTextField: UITextField!
     @IBOutlet weak var passwordInTextField: UITextField!
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
-    var registerViewModel : RegisterViewModel!
+    @IBOutlet weak var Phone: UITextField!
+    
+    var registerVM =  RegisterViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-  registerViewModel = RegisterViewModel()
-   
-        registerImageView.image = UIImage(named:"shop")
-
+        
+        
+        
     }
     
-
+    
     @IBAction func makeRegisterButton(_ sender: UIButton) {
-        registerViewModel.bindResultToRegisterView = {[weak self]in}
-        registerViewModel.createCustomer(name: firstNameTextField.text ?? "", lastName: lastNameTextField.text ?? "", email: emailInTextField.text ?? "", password: passwordInTextField.text ?? "", configPassword: confirmPasswordTextField.text ?? "")
+        
+        registerVM.bindResultToRegisterView = { [weak self] in
+            
+            DispatchQueue.main.async {
+   
+            if self?.firstNameTextField.text?.isEmpty ?? true && self?.lastNameTextField.text?.isEmpty ?? true {
+                
+                    let alert =  UIAlertController(title: "Error", message: "Invalid Fileds", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alert.addAction(okAction)
+                    self?.present(alert, animated: true)
+                }else{
+                    
+                let alert =  UIAlertController(title: "Success", message: "User ceated successfully", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                     alert.addAction(okAction)
+                    self?.present(alert, animated: true)
+                }
+            }
+        }
+        
+        registerVM.createCustomer(name: firstNameTextField.text ?? "", lastName: lastNameTextField.text ?? "", email: emailInTextField.text ?? "", password: passwordInTextField.text ?? "", phone: Phone.text ?? "")
     }
     
     @IBAction func backMeScreenButton(_ sender: UIButton) {
+        
+        
     }
     
-
-
     
     
-
+    
+    
+    
 }
