@@ -8,9 +8,6 @@
 import Foundation
 
 
-
-
-
 struct customerErrorModel: Decodable {
 
     let errors: Errors
