@@ -7,33 +7,6 @@
 
 import Foundation
 
-//
-//struct RegisterNewCustomer:Decodable {
-//
-//
-//      let id:Int?
-//      let firstName:String?
-//      let lastName:String?
-//      let email:String?
-//      let phone:String?
-//    // filed for  password
-//      let note:String?
-//    //       "created_at": "2022-11-09T10:25:39-05:00",
-//    //       "updated_at": "2022-11-09T10:25:40-05:00",
-//
-//
-//    enum CodingKeys: String, CodingKey {
-//
-//        case id, email
-//        case firstName = "first_name"
-//        case lastName = "last_name"
-//        case note , phone
-//
-//
-//    }
-//
-//
-
 
 struct newCustomer: Codable {
 
@@ -48,6 +21,9 @@ struct newCustomer: Codable {
         let state: String?
         let totalSpent: String?
         let lastOrderId: String?
+    
+    //  note for password Field
+    
         let note: String?
         let verifiedEmail: Bool?
         let multipassIdentifier: String?

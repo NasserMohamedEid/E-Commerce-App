@@ -37,29 +37,26 @@ class RegisterViewController: UIViewController {
         registerVM.bindResultToRegisterView = { [weak self] in
             
             DispatchQueue.main.async {
-   
-            if self?.firstNameTextField.text?.isEmpty ?? true && self?.lastNameTextField.text?.isEmpty ?? true {
-                
-                    let alert =  UIAlertController(title: "Error", message: "Invalid Fileds", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                    alert.addAction(okAction)
-                    self?.present(alert, animated: true)
-                }else{
-                    
-                let alert =  UIAlertController(title: "Success", message: "User ceated successfully", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                     alert.addAction(okAction)
-                    self?.present(alert, animated: true)
+
+            let alert =  UIAlertController(title: "Success", message: "User ceated successfully", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(okAction)
+                self?.present(alert, animated: true)
                 }
             }
-        }
         
         registerVM.createCustomer(name: firstNameTextField.text ?? "", lastName: lastNameTextField.text ?? "", email: emailInTextField.text ?? "", password: passwordInTextField.text ?? "", phone: Phone.text ?? "")
+        
+        
+        guard let loginVc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController")as? LoginViewController  else {return}
+        loginVc.modalPresentationStyle = .fullScreen
+        self.present(loginVc, animated: true)
     }
+
     
     @IBAction func backMeScreenButton(_ sender: UIButton) {
         
-        
+       // self.dismiss(animated: true)
     }
     
     

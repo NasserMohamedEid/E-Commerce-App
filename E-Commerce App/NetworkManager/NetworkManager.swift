@@ -113,7 +113,7 @@ class NetworkManager{
         
         AF.request(url, method: .post, parameters: param,encoding: JSONEncoding.default, headers: headers).responseDecodable(of:newCustomer.self) {
             response in
-           // print(response.data)
+            print(response)
             switch response.result{
             case .success(_):
                 

@@ -239,9 +239,9 @@
 		58A8250528637A1100DCFFC3 /* E-Commerce App */ = {
 			isa = PBXGroup;
 			children = (
-				E0AB5F5C2934FD200031D9A1 /* Extension */,
 				E0208FD52933874D002DF338 /* Delegates */,
 				58B02296286399F5008A5C0F /* NetworkManager */,
+				E0AB5F5C2934FD200031D9A1 /* Extension */,
 				E0B22B652933B27000201D2C /* Custom Views */,
 				E0A4645728705B6700A02ACB /* Favourites */,
 				58AC348A286C647200D90281 /* Shopping cart */,
