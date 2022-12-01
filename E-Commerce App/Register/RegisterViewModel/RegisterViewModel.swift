@@ -13,7 +13,7 @@ class RegisterViewModel {
     var bindResultToRegisterView : (() -> ()) = {}
     var errorData:customerErrorModel?
     
-    var result :newCustomer?{
+    var result :userCustomer?{
         
         didSet{
             bindResultToRegisterView()
@@ -23,6 +23,7 @@ class RegisterViewModel {
     func createCustomer(name:String, lastName:String, email:String, password:String, phone:String){
         
         NetworkManager.createUser(firstName: name, lastName: lastName, email: email, password: password, phone:phone) { response, error in
+
             self.result = response
             self.errorData = error
             

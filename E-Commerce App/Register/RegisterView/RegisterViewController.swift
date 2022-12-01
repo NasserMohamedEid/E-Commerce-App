@@ -48,9 +48,9 @@ class RegisterViewController: UIViewController {
         registerVM.createCustomer(name: firstNameTextField.text ?? "", lastName: lastNameTextField.text ?? "", email: emailInTextField.text ?? "", password: passwordInTextField.text ?? "", phone: Phone.text ?? "")
         
         
-        guard let loginVc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController")as? LoginViewController  else {return}
-        loginVc.modalPresentationStyle = .fullScreen
-        self.present(loginVc, animated: true)
+//        guard let loginVc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController")as? LoginViewController  else {return}
+//        loginVc.modalPresentationStyle = .fullScreen
+//        self.present(loginVc, animated: true)
     }
 
     

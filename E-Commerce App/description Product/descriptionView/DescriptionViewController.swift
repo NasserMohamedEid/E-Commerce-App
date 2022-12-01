@@ -14,50 +14,36 @@ import SDWebImage
 class DescriptionViewController: UIViewController {
     
     @IBOutlet weak var DescriptionCollectionView: UICollectionView!
-    
     @IBOutlet weak var ImagePageController: UIPageControl!
-    
-  
-    @IBOutlet weak var Sec2Label: UILabel!
+    @IBOutlet weak var sectionView: UIView!
     @IBOutlet weak var ReviewsLabel: UILabel!
-    
     @IBOutlet weak var PriceLabel: UILabel!
-    
     @IBOutlet weak var RatingLabel: UILabel!
-    
-    @IBOutlet weak var DescriptionLabel: UILabel!
-    
     @IBOutlet weak var descriptionDetailsLabel: UILabel!
 
-    var descriptionViewModel : DescriptionViewModel!
+    var descriptionViewModel = DescriptionViewModel()
+    var idProduct : Int?
+    
     var timer : Timer?
     var currentIndex = 0
-    var idProduct : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        DescriptionCollectionView.delegate = self
-        DescriptionCollectionView.dataSource = self
-        descriptionViewModel = DescriptionViewModel()
+        
+        ImagePageController.numberOfPages = descriptionViewModel.result?.images.count ?? 0
         descriptionViewModel.bindResultToDescriptionView={[weak self]in
-            DispatchQueue.main.async { [self] in
-                                    self?.DescriptionCollectionView.reloadData()
-                                   // self?.viewDidLoad()
-                                    self?.descriptionDetailsLabel.text = self?.descriptionViewModel.result?.body_html
-                                    self?.RatingLabel.text = "4/5"
-
-                                    self?.ReviewsLabel.text = self?.descriptionViewModel.result?.title
-
-                                    self?.ReviewsLabel.text = self?.descriptionViewModel.result?.title
-
-                                var price = self?.descriptionViewModel.result?.variants[0].price
-                                    
-                                    self?.PriceLabel.text = (price ?? "") + "LE"
-                                    
-                                }
-
-                            }
+    
+            DispatchQueue.main.async {
+        self?.DescriptionCollectionView.reloadData()
+        self?.descriptionDetailsLabel.text = self?.descriptionViewModel.result?.body_html
+        self?.RatingLabel.text = "4/5"
+        self?.ReviewsLabel.text = self?.descriptionViewModel.result?.title
+        var price = self?.descriptionViewModel.result?.variants[0].price
+        self?.PriceLabel.text = (price ?? "") + "LE"
+                
+            }
+            
+        }
         title = "Product Info"
 
         
@@ -99,8 +85,6 @@ class DescriptionViewController: UIViewController {
 //
 //    }
 
-    
-
 }
 
 extension DescriptionViewController : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
@@ -117,15 +101,40 @@ extension DescriptionViewController : UICollectionViewDelegate, UICollectionView
        
         return cell
     }
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexpath: IndexPath) -> CGSize{
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.width/1.5)
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height )
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        currentIndex = Int(scrollView.contentOffset.x / collectionView.frame.size.width)
-//        ImagesPageController.currentPage = currentIndex
-//    }
- 
+
+}
+
+
+extension DescriptionViewController {
+    
+    func startTimer(){
+        
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.timeAction), userInfo: nil, repeats: true)
+    }
+    
+    
+    @objc func timeAction(){
+        
+         guard let images  =  descriptionViewModel.result?.images else {return}
+        let newScrollPosition = (currentIndex < images.count  - 1 ) ? currentIndex + 1  : 0
+        DescriptionCollectionView.scrollToItem(at: IndexPath(item: newScrollPosition, section: 0), at: .centeredHorizontally, animated: true)
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        currentIndex = Int(scrollView.contentOffset.x / DescriptionCollectionView.frame.width)
+        ImagePageController.currentPage = currentIndex
+        timer?.invalidate()
+          startTimer()
+    }
+    
+    
 }

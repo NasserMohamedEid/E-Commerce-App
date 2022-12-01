@@ -98,9 +98,8 @@ class NetworkManager{
         
     }
     
-    static func createUser(firstName:String,lastName:String,email:String,password:String, phone:String,completionHandler:@escaping (newCustomer?,customerErrorModel?)->Void){
+    static func createUser(firstName:String,lastName:String,email:String,password:String, phone:String,completionHandler:@escaping (userCustomer?,customerErrorModel?)->Void){
         
-//        let baseUrl : String = "https://menofia-2022-q3.myshopify.com/admin/api/2022-04/customers.json"
         
         let url  =  Route.baseUrl + Route.createCustomer.description
         
@@ -111,28 +110,24 @@ class NetworkManager{
                           "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",
                             "Content-Type": "application/json"]
         
-        AF.request(url, method: .post, parameters: param,encoding: JSONEncoding.default, headers: headers).responseDecodable(of:newCustomer.self) {
+        AF.request(url, method: .post, parameters: param,encoding: JSONEncoding.default, headers: headers).responseDecodable(of:userCustomer.self) {
             response in
-            print(response)
-            switch response.result{
-            case .success(_):
-                
-               // let jsonData = response.data
-               // let Decoder = JSONDecoder()
-                guard let data = response.data else{return}
+            switch response.result {
+            case .success:
+                guard let value = response.data else {return}
+                print(value)
                 
                 do{
-                    let user = try JSONDecoder().decode(newCustomer.self, from: data)
-                    completionHandler(user,nil)
-                } catch let error {
+                    let dataDecoded = try JSONDecoder().decode(userCustomer.self, from: value)
+                    print(dataDecoded)
+                    completionHandler(dataDecoded, nil)
+                }catch let error{
                     print(error)
                 }
-            case .failure(let error) :
-                print(error)
-                break
+            case .failure(let error):
+                print(error.localizedDescription)
+               
             }
-            
-            
         }
         
     }

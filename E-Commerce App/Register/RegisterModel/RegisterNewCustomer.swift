@@ -8,6 +8,12 @@
 import Foundation
 
 
+struct userCustomer: Codable {
+    
+    let customers: [newCustomer]?
+}
+
+
 struct newCustomer: Codable {
 
         let id: Int?
