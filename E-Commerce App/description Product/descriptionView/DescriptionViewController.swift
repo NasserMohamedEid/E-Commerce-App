@@ -30,28 +30,25 @@ class DescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Product Info"
+        
         ImagePageController.numberOfPages = descriptionViewModel.result?.images.count ?? 0
         descriptionViewModel.bindResultToDescriptionView={[weak self]in
     
             DispatchQueue.main.async {
+                
         self?.DescriptionCollectionView.reloadData()
         self?.descriptionDetailsLabel.text = self?.descriptionViewModel.result?.body_html
         self?.RatingLabel.text = "4/5"
         self?.ReviewsLabel.text = self?.descriptionViewModel.result?.title
-        var price = self?.descriptionViewModel.result?.variants[0].price
+        let price = self?.descriptionViewModel.result?.variants[0].price
         self?.PriceLabel.text = (price ?? "") + "LE"
-                
+       
             }
             
+            self?.startTimer()
         }
-        title = "Product Info"
-
-        
-//        ImagePageController.numberOfPages = descriptionViewModel.result?.images.count ?? 0
-//
-//        self.startTimer()
-//
-//       ImagePageController.currentPage = 0
+       
 
         descriptionViewModel.getItems(id:idProduct ?? 0)
         
@@ -65,25 +62,6 @@ class DescriptionViewController: UIViewController {
     @IBAction func addToFavButton(_ sender: UIButton) {
     }
     
-
-
-
-//    func startTimer(){
-//        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(moveToNext), userInfo: nil, repeats: true)
-//    }
-//    @objc func moveToNext(){
-//
-//        if currentIndex < (descriptionViewModel.result?.images.count ?? 0)-1 {
-//            currentIndex += 1
-//            print((descriptionViewModel.result?.images.count ?? 0)-currentIndex)
-//        }else{
-//            currentIndex = 0
-//        }
-//        ImagePageController.currentPage = currentIndex
-//        DescriptionCollectionView.scrollToItem(at: IndexPath(row: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
-//        ImagePageController.currentPage = currentIndex
-//
-//    }
 
 }
 
