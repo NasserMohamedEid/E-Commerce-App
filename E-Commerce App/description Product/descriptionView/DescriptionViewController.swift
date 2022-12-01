@@ -4,7 +4,7 @@
 //
 
 //  Created by Ahmed Hamam on 02/07/2022.
-//
+// Modified By Sherif Samy
 
 
 
@@ -12,6 +12,8 @@ import UIKit
 import SDWebImage
 
 class DescriptionViewController: UIViewController {
+    
+     //MARK: - Outlets
     
     @IBOutlet weak var DescriptionCollectionView: UICollectionView!
     @IBOutlet weak var ImagePageController: UIPageControl!
@@ -21,12 +23,16 @@ class DescriptionViewController: UIViewController {
     @IBOutlet weak var RatingLabel: UILabel!
     @IBOutlet weak var descriptionDetailsLabel: UILabel!
 
+     //MARK: - vars
+    
     var descriptionViewModel = DescriptionViewModel()
     var idProduct : Int?
-    
     var timer : Timer?
     var currentIndex = 0
     
+    
+     //MARK: - life cycle
+     
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,15 +54,12 @@ class DescriptionViewController: UIViewController {
             
             self?.startTimer()
         }
-       
-
         descriptionViewModel.getItems(id:idProduct ?? 0)
-        
     }
-
+    
+     //MARK: - IB actions
     @IBAction func addToCartButton(_ sender: UIButton) {
         descriptionViewModel.addToCartPost()
-        
     }
     
     @IBAction func addToFavButton(_ sender: UIButton) {
@@ -64,6 +67,8 @@ class DescriptionViewController: UIViewController {
     
 
 }
+
+ //MARK: - Extension for collection View Description
 
 extension DescriptionViewController : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
@@ -90,6 +95,7 @@ extension DescriptionViewController : UICollectionViewDelegate, UICollectionView
 
 }
 
+ //MARK: - Extension for Timer eith slider
 
 extension DescriptionViewController {
     
