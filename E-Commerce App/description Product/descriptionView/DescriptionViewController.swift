@@ -10,6 +10,7 @@
 
 import UIKit
 import SDWebImage
+import Cosmos
 
 class DescriptionViewController: UIViewController {
     
@@ -20,7 +21,9 @@ class DescriptionViewController: UIViewController {
     @IBOutlet weak var sectionView: UIView!
     @IBOutlet weak var ReviewsLabel: UILabel!
     @IBOutlet weak var PriceLabel: UILabel!
-    @IBOutlet weak var RatingLabel: UILabel!
+  
+    @IBOutlet weak var ratingView: CosmosView!
+    
     @IBOutlet weak var descriptionDetailsLabel: UILabel!
 
      //MARK: - vars
@@ -45,11 +48,11 @@ class DescriptionViewController: UIViewController {
         
         self?.DescriptionCollectionView.reloadData()
         self?.descriptionDetailsLabel.text = self?.descriptionViewModel.result?.body_html
-        self?.RatingLabel.text = "4/5"
+       
         self?.ReviewsLabel.text = self?.descriptionViewModel.result?.title
         let price = self?.descriptionViewModel.result?.variants[0].price
         self?.PriceLabel.text = (price ?? "") + "LE"
-       
+//                self?.ratingView.rating = descriptionViewModel.result?.variants[0].
             }
             
             self?.startTimer()
