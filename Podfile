@@ -9,6 +9,7 @@ target 'E-Commerce App' do
 pod 'Alamofire'
 pod 'SDWebImage'
 pod 'Floaty'
+pod 'Cosmos', '~> 23.0'
 
   target 'E-Commerce AppTests' do
     inherit! :search_paths

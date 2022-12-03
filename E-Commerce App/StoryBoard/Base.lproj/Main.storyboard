@@ -674,6 +674,11 @@
                                                 <state key="normal" title="ADD TO BAG">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadious">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="addToCartButton:" destination="raC-Ld-m3A" eventType="touchUpInside" id="rnP-Xr-8Qh"/>
                                                 </connections>

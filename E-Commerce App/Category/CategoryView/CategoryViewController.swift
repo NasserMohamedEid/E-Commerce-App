@@ -33,7 +33,7 @@ class CategoryViewController: UIViewController{
         float.addItem("accessories", icon: accessoriesImage, handler: { [self]_ in
             arrayOfProduct?.removeAll()
             var y=0
-            for index in 0...(categoryViewModel.result?.count ?? 0)-1 {
+            for _ in 0...(categoryViewModel.result?.count ?? 0)-1 {
                 if self.categoryViewModel.result?[y].product_type=="ACCESSORIES"{
                     self.arrayOfProduct?.append(categoryViewModel.result![y])
                   
@@ -48,7 +48,7 @@ class CategoryViewController: UIViewController{
             arrayOfProduct?.removeAll()
            
             var y=0
-            for index in 0...(categoryViewModel.result?.count ?? 0)-1 {
+            for _ in 0...(categoryViewModel.result?.count ?? 0)-1 {
                 if self.categoryViewModel.result?[y].product_type=="SHOES"{
                     self.arrayOfProduct?.append(categoryViewModel.result![y])
                   
@@ -62,7 +62,7 @@ class CategoryViewController: UIViewController{
         float.addItem("t-shirt", icon: t_shirtImage, handler: {_ in
             self.arrayOfProduct?.removeAll()
             var y=0
-            for index in 0...(self.categoryViewModel.result?.count ?? 0)-1 {
+            for _ in 0...(self.categoryViewModel.result?.count ?? 0)-1 {
                 if self.categoryViewModel.result?[y].product_type=="T-SHIRTS"{
                     self.arrayOfProduct?.append(self.categoryViewModel.result![y])
                   
