@@ -23,7 +23,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var Phone: UITextField!
     
     var registerVM =  RegisterViewModel()
-    
+    var customer:newCustomer?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,22 +35,37 @@ class RegisterViewController: UIViewController {
     @IBAction func makeRegisterButton(_ sender: UIButton) {
         
         registerVM.bindResultToRegisterView = { [weak self] in
-            
+            guard let self = self  else {return}
             DispatchQueue.main.async {
 
-            let alert =  UIAlertController(title: "Success", message: "User ceated successfully", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alert.addAction(okAction)
-                self?.present(alert, animated: true)
+//            let alert =  UIAlertController(title: "Success", message: "User ceated successfully", preferredStyle: .alert)
+//            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//                alert.addAction(okAction)
+//                self?.present(alert, animated: true)
+                
+                if self.registerVM.errorData != nil  &&  self.registerVM.errorData?.errors.email?[0] == self.customer?.email {
+                    
+                    let alert = UIAlertController(title: "Error", message: self.registerVM.errorData?.errors.email?[0] ?? "", preferredStyle: .alert)
+                    let alertPhone = UIAlertController(title: "Error", message: self.registerVM.errorData?.errors.phone?[0] ?? "", preferredStyle: .alert)
+                    let okAction  = UIAlertAction(title: "OK", style: .default,handler: nil)
+                    alert.addAction(okAction)
+//                    self.present(alertPhone, animated: true)
+                    self.present(alert, animated: true)
+                }else{
+                    let alert = UIAlertController(title: "Success", message: "User Created", preferredStyle: .alert)
+                    let okAction  = UIAlertAction(title: "OK", style: .default,handler: nil)
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true)
+                }
+                
+                
+                
                 }
             }
         
         registerVM.createCustomer(name: firstNameTextField.text ?? "", lastName: lastNameTextField.text ?? "", email: emailInTextField.text ?? "", password: passwordInTextField.text ?? "", phone: Phone.text ?? "")
         
-        
-//        guard let loginVc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController")as? LoginViewController  else {return}
-//        loginVc.modalPresentationStyle = .fullScreen
-//        self.present(loginVc, animated: true)
+    
     }
 
     

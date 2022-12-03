@@ -7,6 +7,8 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
+
 
 class NetworkManager{
     
@@ -110,23 +112,32 @@ class NetworkManager{
                           "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",
                             "Content-Type": "application/json"]
         
-        AF.request(url, method: .post, parameters: param,encoding: JSONEncoding.default, headers: headers).responseDecodable(of:userCustomer.self) {
+        AF.request(url, method: .post, parameters: param,encoding: JSONEncoding.default, headers: headers).responseJSON{
             response in
             switch response.result {
             case .success:
-                guard let value = response.data else {return}
-                print(value)
+                guard let value = response.value else {return}
+                let jsonData = JSON(value)
+                print(jsonData)
                 
                 do{
-                    let dataDecoded = try JSONDecoder().decode(userCustomer.self, from: value)
+                    let dataDecoded = try JSONDecoder().decode(userCustomer.self, from: jsonData.rawData())
                     print(dataDecoded)
                     completionHandler(dataDecoded, nil)
                 }catch let error{
                     print(error)
                 }
             case .failure(let error):
-                print(error.localizedDescription)
-               
+                 print(error)
+                let jsonErrorData = JSON(response.data!)
+                let data =  jsonErrorData["errors"]
+                do{
+                    let errormessage = try JSONDecoder().decode(customerErrorModel.self, from: data.rawData())
+                    print(errormessage)
+                    completionHandler(nil,errormessage)
+                }catch let error{
+                    print(error)
+                }
             }
         }
         
