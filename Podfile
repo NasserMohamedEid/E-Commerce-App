@@ -10,6 +10,7 @@ pod 'Alamofire'
 pod 'SDWebImage'
 pod 'Floaty'
 pod 'Cosmos', '~> 23.0'
+pod 'SwiftyJSON'
 
   target 'E-Commerce AppTests' do
     inherit! :search_paths

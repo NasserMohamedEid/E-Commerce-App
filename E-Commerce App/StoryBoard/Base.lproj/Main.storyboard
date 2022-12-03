@@ -1604,6 +1604,11 @@
             <point key="canvasLocation" x="-409" y="818"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Abm-Uv-0OH">
+            <size key="intrinsicContentSize" width="120" height="20"/>
+        </designable>
+    </designables>
     <resources>
         <image name="addressImage" width="750" height="750"/>
         <image name="backward" catalog="system" width="128" height="79"/>
