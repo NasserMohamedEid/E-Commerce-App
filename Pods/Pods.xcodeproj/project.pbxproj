@@ -426,22 +426,14 @@
 		9B9E267F3998110C3757A49C7A6B998C /* SDWebImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SDWebImage.debug.xcconfig; sourceTree = "<group>"; };
 		9BBA7A2870B0D320BF28BB31538447CD /* FloatyViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatyViewController.swift; path = Sources/FloatyViewController.swift; sourceTree = "<group>"; };
 		9D7D3D79C725545E97488EB2AB858637 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
-
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-
 		A027CB9323EC7E75E31201BA587A078F /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
 		A373E3D54A9693A525BF84BB8DAD4D58 /* FloatyManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatyManager.swift; path = Sources/FloatyManager.swift; sourceTree = "<group>"; };
 		A40DE6B110160ECFD2553BACB7754E26 /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
 		A43C8BE422878E3EA65E7F2B5C53A0F1 /* SDFileAttributeHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDFileAttributeHelper.h; path = SDWebImage/Private/SDFileAttributeHelper.h; sourceTree = "<group>"; };
 		A44C72B56564E7F585C61F14FD373631 /* SDAnimatedImageRep.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAnimatedImageRep.m; path = SDWebImage/Core/SDAnimatedImageRep.m; sourceTree = "<group>"; };
 		A4DF00899E5735CDE88A97824C776B10 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImagePrefetcher.h; path = SDWebImage/Core/SDWebImagePrefetcher.h; sourceTree = "<group>"; };
-
-		A606492194B2A9D5F390CD284324481E /* Pods_E_Commerce_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Commerce_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-
 		A606492194B2A9D5F390CD284324481E /* Pods-E-Commerce App */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-E-Commerce App"; path = Pods_E_Commerce_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-
 		A8083AFC0203B7BFB353D2D0D7DA74A0 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		A87C9841DA368933592E7344F900E329 /* SDWebImageOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageOperation.h; path = SDWebImage/Core/SDWebImageOperation.h; sourceTree = "<group>"; };
 		A89C2DAF31EAF8008D1500537C1B7481 /* Pods-E-Commerce App-E-Commerce AppUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-E-Commerce App-E-Commerce AppUITests-frameworks.sh"; sourceTree = "<group>"; };
@@ -605,10 +597,7 @@
 				186F9F5795408C265EDE8F488B1ED858 /* UIView+Draggable.swift */,
 				9B7CBC816047A02DB3DC625D7076CCD0 /* Support Files */,
 			);
-
-
 			name = Floaty;
-
 			path = Floaty;
 			sourceTree = "<group>";
 		};
@@ -617,11 +606,7 @@
 			children = (
 				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
 				2915C263A5C5C8012A8C1E97512DC6A8 /* Floaty */,
-
-				A606492194B2A9D5F390CD284324481E /* Pods_E_Commerce_App.framework */,
-
 				A606492194B2A9D5F390CD284324481E /* Pods-E-Commerce App */,
-
 				3A7CCCFC15B5B04D8283A82EB783B072 /* Pods-E-Commerce App-E-Commerce AppUITests */,
 				33B17B1E767BB1A6A8A850AB9D769175 /* Pods-E-Commerce AppTests */,
 				B0B214D775196BA7CA8E17E53048A493 /* SDWebImage */,
@@ -957,10 +942,7 @@
 				E2F2A2E90DB1EAFB1475A47A5B6062CD /* Core */,
 				A6CABF4E75FEFA6400843CE5BB94BEE2 /* Support Files */,
 			);
-
-
 			name = SDWebImage;
-
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
@@ -1049,7 +1031,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		52E6F7B26483BE3BC9393C6C05D32424 /* Headers */ = {
-
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1077,35 +1058,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				005B319B494ED2DAA239B9939A504DFC /* Alamofire-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B075C982B15DA58B86D6CA8346DE7BC6 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				370A1D5E8CA3EF5765DF81E7E78FD20A /* Pods-E-Commerce AppTests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C4E86C4A3DF263E93EC70FCC5B622024 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				10531618447F1D8EDD1F096B89F343DD /* Pods-E-Commerce App-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E043972B8466D13A31A8D0FFB02E9A72 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-
 				197533DE6434BAC49762D75A4E774AB6 /* Floaty-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1139,7 +1091,7 @@
 			);
 			name = "Pods-E-Commerce App";
 			productName = Pods_E_Commerce_App;
-			productReference = A606492194B2A9D5F390CD284324481E /* Pods_E_Commerce_App.framework */;
+			productReference = A606492194B2A9D5F390CD284324481E /* Pods-E-Commerce App */;
 			productType = "com.apple.product-type.framework";
 		};
 		3847153A6E5EEFB86565BA840768F429 /* SDWebImage */ = {

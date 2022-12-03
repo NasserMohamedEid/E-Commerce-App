@@ -42,7 +42,7 @@ class DescriptionViewController: UIViewController {
         descriptionViewModel.bindResultToDescriptionView={[weak self]in
     
             DispatchQueue.main.async {
-                
+        
         self?.DescriptionCollectionView.reloadData()
         self?.descriptionDetailsLabel.text = self?.descriptionViewModel.result?.body_html
         self?.RatingLabel.text = "4/5"
@@ -54,6 +54,7 @@ class DescriptionViewController: UIViewController {
             
             self?.startTimer()
         }
+        
         descriptionViewModel.getItems(id:idProduct ?? 0)
     }
     
@@ -101,7 +102,7 @@ extension DescriptionViewController {
     
     func startTimer(){
         
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.timeAction), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(self.timeAction), userInfo: nil, repeats: true)
     }
     
     
