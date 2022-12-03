@@ -10,23 +10,55 @@ import SDWebImage
 import Floaty
 class CategoryViewController: UIViewController{
  
-   
+     //MARK: - Outlets:
+    
     @IBOutlet weak var float: Floaty!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
+    
+     //MARK: - Vars
+    
     var categoryViewModel:CategoryViewModel!
     var CollectionCell:CategoryCollectionViewCell!
     var arrayOfProduct:[Products]?
     var SUBProduct:[Products]?
   
+    
+     //MARK: - lifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavgitionControllerApperance()
         categoryViewModel=CategoryViewModel()
             didSelectSegment(segmentControl)
+        addFloatingButton()
+       
         
        
-        /***************float button******************/
+    }
+    
+    
+    //MARK: - IBActions
+   
+ /**************************** Select Segment *******************************/
+   @IBAction func didSelectSegment(_ sender: UISegmentedControl) {
+       switch segmentControl.selectedSegmentIndex{
+       case 0:getData(id: 286861426859)
+       case 1:getData(id: 286861459627)
+       case 2:getData(id: 286861394091)
+       default:getData(id: 286861492395)
+       }
+       
+       
+
+   }
+
+    
+     //MARK: - Function Helper
+    
+    
+    func addFloatingButton(){
+        
         let accessoriesImage=UIImage(named: "accessories")
         let shoseImage=UIImage(named: "shose")
         let t_shirtImage=UIImage(named: "t-shirt")
@@ -73,20 +105,10 @@ class CategoryViewController: UIViewController{
             self.categoryCollectionView.reloadData()
         })
         self.view.addSubview(float)
+        
     }
     
-  /**************************** Select Segment *******************************/
-    @IBAction func didSelectSegment(_ sender: UISegmentedControl) {
-        switch segmentControl.selectedSegmentIndex{
-        case 0:getData(id: 286861426859)
-        case 1:getData(id: 286861459627)
-        case 2:getData(id: 286861394091)
-        default:getData(id: 286861492395)
-        }
-        
-        
-        
-    }
+
     
     func getData(id:Int){
                         categoryViewModel.bindResultToHomeView={[weak self]in
@@ -99,9 +121,7 @@ class CategoryViewController: UIViewController{
                             categoryViewModel.getItems(id:id)
         
     }
-    /**************************************************************************/
- 
-    
+
     
     func setupNavgitionControllerApperance(){
         
@@ -114,7 +134,7 @@ class CategoryViewController: UIViewController{
     
 }
 
-
+ //MARK: - Extension For collection 
 
 extension CategoryViewController:UICollectionViewDataSource,UICollectionViewDelegate{
     
