@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class NetworkManager{
     
-    
+     //MARK: - get requests :
     
     static func fetchBrands(completionHandler: @escaping(Brands?)-> Void){
         
@@ -60,7 +60,70 @@ class NetworkManager{
         }
     }
     
+    static func getUser(id:String,completionHandler: @escaping (userCustomer?,Error?) -> Void){
+        
+        let url  =  Route.baseUrl + Route.getSingleUser(id).description
+        AF.request(url,encoding: JSONEncoding.default).responseJSON { response in
+            
+            switch response.result {
+            case.success:
+                guard let value = response.value else {return}
+                let jsonData = JSON(value)
+                print(jsonData)
+                do{
+                    let dataDecoded = try JSONDecoder().decode(userCustomer.self, from: jsonData.rawData())
+                    completionHandler(dataDecoded, nil)
+                }catch let error{
+                    print(error)
+                }
+            case .failure(let error):
+                 print(error)
+                completionHandler(nil, error)
+            }
+        }
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+      //MARK: - post Reuests
+    
+    static func createUser(firstName:String,lastName:String,email:String,password:String, phone:String,completionHandler:@escaping (userCustomer?,Error?)->Void){
+        let url  =  Route.baseUrl + Route.createCustomer.description
+        
+        let param :Parameters = ["customer":["first_name":"\(firstName)","last_name":"\(lastName)","email":"\(email)","phone":"+\(phone)","verified_email":true,"addresses":[["address1":"123 Oak St","city":"Ottawa","province":"ON","phone":"555-1212","zip":"123 ABC","last_name":"Lastnameson","first_name":"Mother","country":"CA"]],"password":"\(password)","password_confirmation":"\(password)","send_email_welcome":false]]
 
+        AF.request(url, method: .post, parameters: param,encoding: JSONEncoding.default, headers: ApiManager.headers).responseJSON{
+            response in
+            switch response.result {
+            case .success:
+                guard let value = response.value else {return}
+                let jsonData = JSON(value)
+                print(jsonData)
+                
+                do{
+                    let dataDecoded = try JSONDecoder().decode(userCustomer.self, from: jsonData.rawData())
+                    completionHandler(dataDecoded, nil)
+                }catch let error{
+                    print(error)
+                }
+            case .failure(let error):
+                 print(error)
+                completionHandler(nil, error)
+            }
+        }
+        
+    }
+    
+    
+    
+    
     
     
     
@@ -100,35 +163,5 @@ class NetworkManager{
         
     }
     
-    static func createUser(firstName:String,lastName:String,email:String,password:String, phone:String,completionHandler:@escaping (userCustomer?,Error?)->Void){
-        let url  =  Route.baseUrl + Route.createCustomer.description
-        
-        let param :Parameters = ["customer":["first_name":"\(firstName)","last_name":"\(lastName)","email":"\(email)","phone":"+\(phone)","verified_email":true,"addresses":[["address1":"123 Oak St","city":"Ottawa","province":"ON","phone":"555-1212","zip":"123 ABC","last_name":"Lastnameson","first_name":"Mother","country":"CA"]],"password":"\(password)","password_confirmation":"\(password)","send_email_welcome":false]]
-        
-         let headers:HTTPHeaders = [
-                    "X-Shopify-Access-Token":
-                          "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",
-                            "Content-Type": "application/json"]
-        
-        AF.request(url, method: .post, parameters: param,encoding: JSONEncoding.default, headers: headers).responseJSON{
-            response in
-            switch response.result {
-            case .success:
-                guard let value = response.value else {return}
-                let jsonData = JSON(value)
-                print(jsonData)
-                
-                do{
-                    let dataDecoded = try JSONDecoder().decode(userCustomer.self, from: jsonData.rawData())
-                    completionHandler(dataDecoded, nil)
-                }catch let error{
-                    print(error)
-                }
-            case .failure(let error):
-                 print(error)
-                completionHandler(nil, error)
-            }
-        }
-        
-    }
+
 }

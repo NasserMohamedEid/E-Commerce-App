@@ -15,6 +15,7 @@ enum Route {
     case fetchBrands
     case fetchProductsAndCategories(Int)
     case fetchProductDetils(Int)
+    case getSingleUser(String)
     case createCustomer
     
     var description:String {
@@ -27,8 +28,11 @@ enum Route {
             return "/collections/\(collectionId)/products.json"
         case .fetchProductDetils(let id):
             return "/products/\(id).json"
+        case .getSingleUser(let id):
+            return "/customers/\(id).json"
         case .createCustomer:
             return "/customers.json"
+       
         }
         
         

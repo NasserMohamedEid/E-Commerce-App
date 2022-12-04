@@ -53,7 +53,7 @@ class RegisterViewController: UIViewController {
     
     @IBAction func backMeScreenButton(_ sender: UIButton) {
         
-       // self.dismiss(animated: true)
+        self.dismiss(animated: true)
     }
     
     

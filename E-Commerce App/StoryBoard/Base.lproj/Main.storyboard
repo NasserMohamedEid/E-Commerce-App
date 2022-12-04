@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XCs-aB-gJG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sTN-y8-OEK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -1471,6 +1471,7 @@
                             <constraint firstItem="Bvb-C0-ZvY" firstAttribute="leading" secondItem="JIR-ix-vmB" secondAttribute="leading" id="tWD-rh-hCz"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="AJS-ks-Uoc"/>
                     <connections>
                         <outlet property="emailInTextField" destination="ont-iL-sye" id="gQ9-H1-jZG"/>
                         <outlet property="firstNameTextField" destination="PNg-bH-aIx" id="cR8-eP-dmj"/>
@@ -1482,7 +1483,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SO2-rH-lyt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3584" y="1509"/>
+            <point key="canvasLocation" x="3412" y="1509"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="pNn-yO-8al">
@@ -1577,6 +1578,7 @@
                         <outlet property="emailTextField" destination="KUa-dt-4pS" id="KXf-xk-KRN"/>
                         <outlet property="loginImageView" destination="Zth-8Q-HYY" id="9Gp-SL-EtW"/>
                         <outlet property="passwordTextField" destination="TEv-Du-lmU" id="BI5-Ei-hp1"/>
+                        <segue destination="XCs-aB-gJG" kind="presentation" modalPresentationStyle="fullScreen" id="6yY-ib-1s1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2r-0S-rS5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1604,11 +1606,6 @@
             <point key="canvasLocation" x="-409" y="818"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="Abm-Uv-0OH">
-            <size key="intrinsicContentSize" width="120" height="20"/>
-        </designable>
-    </designables>
     <resources>
         <image name="addressImage" width="750" height="750"/>
         <image name="backward" catalog="system" width="128" height="79"/>
