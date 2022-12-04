@@ -1578,7 +1578,7 @@
                         <outlet property="emailTextField" destination="KUa-dt-4pS" id="KXf-xk-KRN"/>
                         <outlet property="loginImageView" destination="Zth-8Q-HYY" id="9Gp-SL-EtW"/>
                         <outlet property="passwordTextField" destination="TEv-Du-lmU" id="BI5-Ei-hp1"/>
-                        <segue destination="XCs-aB-gJG" kind="presentation" modalPresentationStyle="fullScreen" id="6yY-ib-1s1"/>
+                        <segue destination="XCs-aB-gJG" kind="presentation" identifier="GotoDetails" modalPresentationStyle="fullScreen" id="6yY-ib-1s1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2r-0S-rS5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

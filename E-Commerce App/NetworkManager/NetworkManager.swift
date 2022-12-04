@@ -22,12 +22,10 @@ class NetworkManager{
                 guard let brandsRespone = response.value else {return}
                 completionHandler(brandsRespone)
             }
-        
     }
     
     static func fetchproducts(collectionId : Int, completionHandler :@escaping(ProductsBrand?)->Void){
-        
-        
+
         let url  = Route.baseUrl + Route.fetchProductsAndCategories(collectionId).description
         AF.request( url, method: .get,encoding: URLEncoding.queryString).responseDecodable(of:ProductsBrand.self) { response in
             guard let productResponse = response.value else{return}
@@ -35,8 +33,6 @@ class NetworkManager{
         }
     }
 
-    
-    
     static func fetchProductDetails(id:Int,completionHandler:@escaping (ProductDetails?)->Void){
 
         let url = Route.baseUrl + Route.fetchProductDetils(id).description
@@ -47,8 +43,6 @@ class NetworkManager{
             completionHandler(descriptionProduct)
         }
     }
-    
-    
     
     static func fetchCategoryApi(id:Int,complitionHandler : @escaping (CategoryModel?) -> Void){
 
@@ -81,16 +75,7 @@ class NetworkManager{
                 completionHandler(nil, error)
             }
         }
-        
-        
     }
-    
-    
-    
-    
-    
-    
-    
     
       //MARK: - post Reuests
     
@@ -120,13 +105,7 @@ class NetworkManager{
         }
         
     }
-    
-    
-    
-    
-    
-    
-    
+
     static func createAddress(customerID : Int , completionHandler: @escaping(Address?)-> Void){
         
         let parametrs:Parameters = [
