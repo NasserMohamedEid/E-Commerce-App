@@ -20,7 +20,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailInTextField: UITextField!
     @IBOutlet weak var passwordInTextField: UITextField!
-    @IBOutlet weak var Phone: UITextField!
+    @IBOutlet weak var phoneTF: UITextField!
     
     var registerVM =  RegisterViewModel()
     var customer:newCustomer?
@@ -34,38 +34,20 @@ class RegisterViewController: UIViewController {
     
     @IBAction func makeRegisterButton(_ sender: UIButton) {
         
-        registerVM.bindResultToRegisterView = { [weak self] in
-            guard let self = self  else {return}
+        guard let fisrt = firstNameTextField.text?.trimmed ,!fisrt.isEmpty,
+        let lastName =  lastNameTextField.text?.trimmed,!lastName.isEmpty,
+        let email = emailInTextField.text?.trimmed ,!email.isEmpty ,
+        let password =  passwordInTextField.text,!password.isEmpty,
+        let phone = phoneTF.text,!phone.isEmpty else {return}
+        
+        registerVM.createCustomer(name: fisrt, lastName: lastName, email: email, password: password, phone: phone)
+        
+        registerVM.bindResultToRegisterView = {
             DispatchQueue.main.async {
-
-//            let alert =  UIAlertController(title: "Success", message: "User ceated successfully", preferredStyle: .alert)
-//            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-//                alert.addAction(okAction)
-//                self?.present(alert, animated: true)
                 
-                if self.registerVM.errorData != nil  &&  self.registerVM.errorData?.errors.email?[0] == self.customer?.email {
-                    
-                    let alert = UIAlertController(title: "Error", message: self.registerVM.errorData?.errors.email?[0] ?? "", preferredStyle: .alert)
-                    let alertPhone = UIAlertController(title: "Error", message: self.registerVM.errorData?.errors.phone?[0] ?? "", preferredStyle: .alert)
-                    let okAction  = UIAlertAction(title: "OK", style: .default,handler: nil)
-                    alert.addAction(okAction)
-//                    self.present(alertPhone, animated: true)
-                    self.present(alert, animated: true)
-                }else{
-                    let alert = UIAlertController(title: "Success", message: "User Created", preferredStyle: .alert)
-                    let okAction  = UIAlertAction(title: "OK", style: .default,handler: nil)
-                    alert.addAction(okAction)
-                    self.present(alert, animated: true)
-                }
-                
-                
-                
+        
                 }
             }
-        
-        registerVM.createCustomer(name: firstNameTextField.text ?? "", lastName: lastNameTextField.text ?? "", email: emailInTextField.text ?? "", password: passwordInTextField.text ?? "", phone: Phone.text ?? "")
-        
-    
     }
 
     

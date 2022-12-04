@@ -11,7 +11,6 @@ import Foundation
 class RegisterViewModel {
     
     var bindResultToRegisterView : (() -> ()) = {}
-    var errorData:customerErrorModel?
     
     var result :userCustomer?{
         
@@ -25,8 +24,7 @@ class RegisterViewModel {
         NetworkManager.createUser(firstName: name, lastName: lastName, email: email, password: password, phone:phone) { response, error in
 
             self.result = response
-            self.errorData = error
-            
+            print("Success")
         }
         
     }

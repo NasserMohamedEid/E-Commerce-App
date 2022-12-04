@@ -1418,7 +1418,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nIZ-TO-vEo">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="passordAgain" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nIZ-TO-vEo">
                                         <rect key="frame" x="0.0" y="280" width="394" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -1472,11 +1472,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="Phone" destination="nIZ-TO-vEo" id="O6y-0s-hFS"/>
                         <outlet property="emailInTextField" destination="ont-iL-sye" id="gQ9-H1-jZG"/>
                         <outlet property="firstNameTextField" destination="PNg-bH-aIx" id="cR8-eP-dmj"/>
                         <outlet property="lastNameTextField" destination="L6h-hk-gIk" id="rLt-MW-LSp"/>
                         <outlet property="passwordInTextField" destination="uu6-5d-aGg" id="neu-MI-Zlv"/>
+                        <outlet property="phoneTF" destination="nIZ-TO-vEo" id="O6y-0s-hFS"/>
                         <outlet property="registerImageView" destination="JIR-ix-vmB" id="SCx-3e-2ok"/>
                     </connections>
                 </viewController>

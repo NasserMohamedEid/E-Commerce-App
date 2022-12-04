@@ -100,9 +100,7 @@ class NetworkManager{
         
     }
     
-    static func createUser(firstName:String,lastName:String,email:String,password:String, phone:String,completionHandler:@escaping (userCustomer?,customerErrorModel?)->Void){
-        
-        
+    static func createUser(firstName:String,lastName:String,email:String,password:String, phone:String,completionHandler:@escaping (userCustomer?,Error?)->Void){
         let url  =  Route.baseUrl + Route.createCustomer.description
         
         let param :Parameters = ["customer":["first_name":"\(firstName)","last_name":"\(lastName)","email":"\(email)","phone":"+\(phone)","verified_email":true,"addresses":[["address1":"123 Oak St","city":"Ottawa","province":"ON","phone":"555-1212","zip":"123 ABC","last_name":"Lastnameson","first_name":"Mother","country":"CA"]],"password":"\(password)","password_confirmation":"\(password)","send_email_welcome":false]]
@@ -122,22 +120,13 @@ class NetworkManager{
                 
                 do{
                     let dataDecoded = try JSONDecoder().decode(userCustomer.self, from: jsonData.rawData())
-                    print(dataDecoded)
                     completionHandler(dataDecoded, nil)
                 }catch let error{
                     print(error)
                 }
             case .failure(let error):
                  print(error)
-                let jsonErrorData = JSON(response.data!)
-                let data =  jsonErrorData["errors"]
-                do{
-                    let errormessage = try JSONDecoder().decode(customerErrorModel.self, from: data.rawData())
-                    print(errormessage)
-                    completionHandler(nil,errormessage)
-                }catch let error{
-                    print(error)
-                }
+                completionHandler(nil, error)
             }
         }
         
