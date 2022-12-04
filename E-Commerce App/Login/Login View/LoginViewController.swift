@@ -23,20 +23,32 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButton(_ sender: UIButton) {
+    
         
-        loginVM.bindResultToLoginView = {[weak self] in
-            
+        loginVM.bindResultToLoginView = { [weak self] in
             guard let self =  self else {return}
             
-            guard let email = self.emailTextField.text?.trimmed,!email.isEmpty,let password = self.passwordTextField.text,!email.isEmpty else {return}
-            
-            
+            DispatchQueue.main.async { [weak self] in
+                
+                let alert = Alerts.instance.showAlert(title: "success", message: loginVM.message ?? "")
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                    if ((self?.loginVM.islooged) != nil){
+                        self?.navigationController?.popViewController(animated: true)
+                    }
+                }))
+                self?.present(alert, animated: true)
+            }
         }
+        loginVM.getUser(email: emailTextField.text!, password: passwordTextField.text!)
         
-        loginVM.getUser(userId: "\(String(describing: user?.id))")
+        
     }
     
     @IBAction func registerButton(_ sender: UIButton) {
+        
+        guard let vc  = storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController else {return}
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
         
     }
     

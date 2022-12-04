@@ -11,7 +11,7 @@ import Foundation
 class RegisterViewModel {
     
     var bindResultToRegisterView : (() -> ()) = {}
-    
+    var error:String?
     var result :userCustomer?{
         
         didSet{
@@ -21,10 +21,10 @@ class RegisterViewModel {
     
     func createCustomer(name:String, lastName:String, email:String, password:String, phone:String){
         
-        NetworkManager.createUser(firstName: name, lastName: lastName, email: email, password: password, phone:phone) { response, error in
+        NetworkManager.registUser(firstName: name, lastName: lastName, email: email, password: password, phone:phone) { [weak self ] response, error in
 
-            self.result = response
-            print("Success")
+            self?.result = response
+            self?.error = error
         }
         
     }

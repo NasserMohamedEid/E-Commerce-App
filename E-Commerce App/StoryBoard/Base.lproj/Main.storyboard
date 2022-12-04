@@ -1452,6 +1452,16 @@
                                     <action selector="makeRegisterButton:" destination="XCs-aB-gJG" eventType="touchUpInside" id="ktH-k7-HT0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bye-Zj-Ab7">
+                                <rect key="frame" x="20" y="741" width="374" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Have account? Login">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signInButtonPressed:" destination="XCs-aB-gJG" eventType="touchUpInside" id="2Km-r3-WKP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CTv-bC-pFv"/>
                         <color key="backgroundColor" red="0.98181396720000003" green="0.72138601540000002" blue="0.18872669340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1464,11 +1474,15 @@
                             <constraint firstItem="CTv-bC-pFv" firstAttribute="trailing" secondItem="x57-Sg-AV0" secondAttribute="trailing" constant="20" id="DoC-vE-iyh"/>
                             <constraint firstItem="x57-Sg-AV0" firstAttribute="leading" secondItem="CTv-bC-pFv" secondAttribute="leading" constant="20" id="F1R-jl-Ies"/>
                             <constraint firstItem="l3m-Kd-WNf" firstAttribute="top" secondItem="CTv-bC-pFv" secondAttribute="top" constant="10" id="IyG-29-RBF"/>
+                            <constraint firstItem="bye-Zj-Ab7" firstAttribute="leading" secondItem="x57-Sg-AV0" secondAttribute="leading" id="KfR-zc-iGx"/>
                             <constraint firstItem="x57-Sg-AV0" firstAttribute="top" secondItem="nIZ-TO-vEo" secondAttribute="bottom" constant="40" id="SmW-ia-0GH"/>
                             <constraint firstItem="CTv-bC-pFv" firstAttribute="trailing" secondItem="JIR-ix-vmB" secondAttribute="trailing" constant="10" id="T5L-Xu-tAj"/>
                             <constraint firstItem="Bvb-C0-ZvY" firstAttribute="trailing" secondItem="JIR-ix-vmB" secondAttribute="trailing" id="a6T-R4-yO0"/>
                             <constraint firstItem="JIR-ix-vmB" firstAttribute="leading" secondItem="CTv-bC-pFv" secondAttribute="leading" constant="10" id="e6r-Mn-Cz7"/>
+                            <constraint firstItem="bye-Zj-Ab7" firstAttribute="trailing" secondItem="x57-Sg-AV0" secondAttribute="trailing" id="niL-hK-fPD"/>
+                            <constraint firstItem="CTv-bC-pFv" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l3m-Kd-WNf" secondAttribute="trailing" symbolic="YES" id="pob-vd-JhT"/>
                             <constraint firstItem="Bvb-C0-ZvY" firstAttribute="leading" secondItem="JIR-ix-vmB" secondAttribute="leading" id="tWD-rh-hCz"/>
+                            <constraint firstItem="bye-Zj-Ab7" firstAttribute="top" secondItem="x57-Sg-AV0" secondAttribute="bottom" constant="41" id="zuI-Xk-mES"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AJS-ks-Uoc"/>
@@ -1560,10 +1574,10 @@
                             <constraint firstItem="TEv-Du-lmU" firstAttribute="trailing" secondItem="Zth-8Q-HYY" secondAttribute="trailing" id="4hx-H1-PJa"/>
                             <constraint firstItem="L8W-DB-gjP" firstAttribute="top" secondItem="hWs-6Z-fWq" secondAttribute="bottom" constant="26" id="6nB-2C-IuC"/>
                             <constraint firstItem="L8W-DB-gjP" firstAttribute="leading" secondItem="hWs-6Z-fWq" secondAttribute="leading" id="78E-vQ-b7D"/>
-                            <constraint firstItem="CHn-KB-ddm" firstAttribute="leading" secondItem="sfF-i1-a0Q" secondAttribute="leading" constant="20" id="8TQ-C1-WrU"/>
                             <constraint firstItem="WQi-Ft-M8h" firstAttribute="trailing" secondItem="L8W-DB-gjP" secondAttribute="trailing" id="8Y5-Fv-nbI"/>
                             <constraint firstItem="hWs-6Z-fWq" firstAttribute="top" secondItem="Zth-8Q-HYY" secondAttribute="bottom" constant="60" id="Ira-VD-bVL"/>
                             <constraint firstItem="Zth-8Q-HYY" firstAttribute="height" secondItem="U6e-MW-6Fd" secondAttribute="height" multiplier="0.167411" id="Lo5-8p-hJg"/>
+                            <constraint firstItem="sfF-i1-a0Q" firstAttribute="trailing" secondItem="CHn-KB-ddm" secondAttribute="trailing" constant="323.5" id="OGN-Lm-CQN"/>
                             <constraint firstItem="Zth-8Q-HYY" firstAttribute="top" secondItem="sfF-i1-a0Q" secondAttribute="top" constant="51" id="RHd-wE-cFd"/>
                             <constraint firstItem="WQi-Ft-M8h" firstAttribute="leading" secondItem="L8W-DB-gjP" secondAttribute="leading" id="Ro8-DJ-MZT"/>
                             <constraint firstItem="WQi-Ft-M8h" firstAttribute="top" secondItem="L8W-DB-gjP" secondAttribute="bottom" constant="31" id="c22-Hy-lGf"/>
@@ -1574,11 +1588,12 @@
                             <constraint firstItem="sfF-i1-a0Q" firstAttribute="trailing" secondItem="Zth-8Q-HYY" secondAttribute="trailing" constant="10" id="wx4-td-bXQ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Ipc-e6-Ckk"/>
                     <connections>
                         <outlet property="emailTextField" destination="KUa-dt-4pS" id="KXf-xk-KRN"/>
                         <outlet property="loginImageView" destination="Zth-8Q-HYY" id="9Gp-SL-EtW"/>
                         <outlet property="passwordTextField" destination="TEv-Du-lmU" id="BI5-Ei-hp1"/>
-                        <segue destination="XCs-aB-gJG" kind="presentation" identifier="GotoDetails" modalPresentationStyle="fullScreen" id="6yY-ib-1s1"/>
+                        <segue destination="XCs-aB-gJG" kind="presentation" identifier="Register" modalPresentationStyle="fullScreen" id="6yY-ib-1s1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2r-0S-rS5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

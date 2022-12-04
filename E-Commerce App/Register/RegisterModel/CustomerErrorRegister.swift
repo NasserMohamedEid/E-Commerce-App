@@ -8,14 +8,13 @@
 import Foundation
 
 
-struct customerErrorModel: Decodable {
-
-    let errors: Errors
-
+struct CustomerErrorModel: Codable
+{
+    var errors: Errors?
 }
-struct Errors:Decodable{
-    
-    let email: [String]?
-    let phone: [String]?
-    
+
+// MARK: - Errors
+struct Errors: Codable
+{
+    var email, phone: [String]?
 }

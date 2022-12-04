@@ -8,9 +8,14 @@
 import Foundation
 
 
-struct userCustomer: Codable {
+struct userCustomers: Codable {
     
     let customers: [newCustomer]?
+}
+
+
+struct userCustomer:Codable {
+    let customer:newCustomer?
 }
 
 

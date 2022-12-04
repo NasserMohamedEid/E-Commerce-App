@@ -17,6 +17,7 @@ enum Route {
     case fetchProductDetils(Int)
     case getSingleUser(String)
     case createCustomer
+    case login(String)
     
     var description:String {
         
@@ -33,6 +34,8 @@ enum Route {
         case .createCustomer:
             return "/customers.json"
        
+        case .login(let email):
+            return "/search.json?query=\(email)"
         }
         
         

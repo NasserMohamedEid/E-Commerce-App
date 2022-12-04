@@ -37,19 +37,27 @@ class RegisterViewController: UIViewController {
         guard let fisrt = firstNameTextField.text?.trimmed ,!fisrt.isEmpty,
         let lastName =  lastNameTextField.text?.trimmed,!lastName.isEmpty,
         let email = emailInTextField.text?.trimmed ,!email.isEmpty ,
-        let password =  passwordInTextField.text,!password.isEmpty,
+        let passwordText =  passwordInTextField.text,!passwordText.isEmpty,
         let phone = phoneTF.text,!phone.isEmpty else {return}
         
-        registerVM.createCustomer(name: fisrt, lastName: lastName, email: email, password: password, phone: phone)
+        
+
+        
+        registerVM.createCustomer(name: fisrt, lastName: lastName, email: email, password: passwordText, phone: phone)
         
         registerVM.bindResultToRegisterView = {
             DispatchQueue.main.async {
-                
-        
+
+                let alert =  Alerts.instance.showAlert(title: "Error", message: self.registerVM.error ?? "")
+            self.present(alert, animated: true)
                 }
             }
     }
 
+    @IBAction func signInButtonPressed(_ sender: UIButton) {
+        
+        self.dismiss(animated: true)
+    }
     
     @IBAction func backMeScreenButton(_ sender: UIButton) {
         

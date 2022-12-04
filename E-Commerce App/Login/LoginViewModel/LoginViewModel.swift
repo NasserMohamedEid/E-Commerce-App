@@ -12,8 +12,10 @@ class LoginViewModel {
     
     
     var bindResultToLoginView : (() -> ()) = {}
+    var message:String?
+    var islooged:Bool?
     
-    var result :userCustomer?{
+    var result :userCustomers?{
         
         didSet{
             bindResultToLoginView()
@@ -21,12 +23,13 @@ class LoginViewModel {
     }
     
     
-    func getUser(userId:String){
-        NetworkManager.getUser(id: userId) { userResponse, error in
-            
-            self.result = userResponse
-        }
+    func getUser(email:String,password:String){
         
+        NetworkManager.loginUser(email: email, password: password) {[weak self] resultMessage,loggedIn in
+            self?.message = resultMessage
+            self?.islooged = loggedIn
+            self?.bindResultToLoginView()
+        }
     }
     
     
