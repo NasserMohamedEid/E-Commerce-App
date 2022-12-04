@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
             
             DispatchQueue.main.async { [weak self] in
                 
-                let alert = Alerts.instance.showAlert(title: "success", message: loginVM.message ?? "")
+                let alert = Alerts.instance.showAlert(title: "success", message: self?.loginVM.message ?? "")
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
                     if ((self?.loginVM.islooged) != nil){
                         self?.navigationController?.popViewController(animated: true)
