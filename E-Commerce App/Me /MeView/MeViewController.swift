@@ -26,12 +26,14 @@ class MeViewController: UIViewController {
         
         didSet{
             
-            loginRegisterButton.shopifyBtn(title: "LOGIN/REGISTER")
+            loginRegisterButton.customButton(title: "LOGIN/REGISTER")
         }
     }
     
     @IBOutlet weak var welcomeLBL: UILabel!
-    //MARK:- lifecycle : -
+    
+    
+     //MARK: - life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,22 +44,18 @@ class MeViewController: UIViewController {
        
     }
     
-    //MARK:-Function Helper
+     //MARK: - function Helper
     
     func checkExistingUser(){
         
         if let user = UserManager.loogedInUser {
-            welcomeLBL.text = "Hi,\(user.firstName)"
+            welcomeLBL.text = "Hi,\(user.firstName ?? "")"
         }else{
             welcomeLBL.isHidden = true
             meTableView.isHidden = true
         }
     }
-    
-    
-    
-    
-    
+
     func setupNavgitionControllerApperance(){
         
         let appearance = UINavigationBarAppearance()
@@ -66,33 +64,25 @@ class MeViewController: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
     
-    
-    
     @IBAction func settingButtonPressed(_ sender: UIBarButtonItem) {
         
-        guard let settingsVC = storyboard?.instantiateViewController(withIdentifier: "SettingViewController") as? SettingViewController else {return}
+        let settingsVC = SettingViewController.instantiateVC()
         self.navigationController?.pushViewController(settingsVC, animated: true)
         
     }
     
     @IBAction func moreOrderButton(_ sender: UIButton) {
-        
-        guard let orderListVC = storyboard?.instantiateViewController(withIdentifier: "orderViewController") as? orderViewController else {return}
-        
+        let orderListVC = orderViewController.instantiateVC()
         self.navigationController?.pushViewController(orderListVC, animated: true)
-        
     }
     
     
     @IBAction func LoginRegisterButtonPressed(_ sender: UIButton) {
         
-        
         if loginRegisterButton.titleLabel?.text == "LOGIN/REGISTER" {
-            
-           guard let vc = storyboard?.instantiateViewController(withIdentifier: "LoginViewController")else {return}
-            
-            
-            self.navigationController?.pushViewController(vc, animated: true)
+          
+            let loginVC = LoginViewController.instantiateVC()
+            self.navigationController?.pushViewController(loginVC, animated: true)
         }
         
         
@@ -100,6 +90,9 @@ class MeViewController: UIViewController {
     
     
 }
+
+ //MARK: - Extension
+
 extension MeViewController :UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

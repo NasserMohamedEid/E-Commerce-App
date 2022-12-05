@@ -18,8 +18,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        
+        self.title = "Login"
     }
     
     @IBAction func loginButton(_ sender: UIButton) {
@@ -46,9 +46,9 @@ class LoginViewController: UIViewController {
     
     @IBAction func registerButton(_ sender: UIButton) {
         
-        guard let vc  = storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController else {return}
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true)
+        let registerVC =  RegisterViewController.instantiateVC()
+        registerVC.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(registerVC, animated: true)
         
     }
     

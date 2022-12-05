@@ -941,7 +941,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VVB-xy-myP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1889.8550724637682" y="817.63392857142856"/>
+            <point key="canvasLocation" x="1786" y="818"/>
         </scene>
         <!--Order View Controller-->
         <scene sceneID="GY9-zX-hEU">
@@ -1031,7 +1031,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tay-sM-Wbg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2688" y="818"/>
+            <point key="canvasLocation" x="3864" y="818"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="cF9-az-GwY">
@@ -1093,7 +1093,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIP-f5-pwm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3387" y="818"/>
+            <point key="canvasLocation" x="4668" y="818"/>
         </scene>
         <!--AboutUS View Controller-->
         <scene sceneID="jyo-zD-Clb">
@@ -1263,7 +1263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QgS-7j-gUR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4103" y="818"/>
+            <point key="canvasLocation" x="5306" y="818"/>
         </scene>
         <!--Add New Address View Controller-->
         <scene sceneID="Pga-Ip-tuB">
@@ -1355,7 +1355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i09-td-haf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5204" y="818"/>
+            <point key="canvasLocation" x="6010" y="818"/>
         </scene>
         <!--Home-->
         <scene sceneID="yaC-9W-o4x">
@@ -1408,43 +1408,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shop" translatesAutoresizingMaskIntoConstraints="NO" id="JIR-ix-vmB">
-                                <rect key="frame" x="10" y="94" width="394" height="155"/>
+                                <rect key="frame" x="10" y="64" width="394" height="155"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Bvb-C0-ZvY">
-                                <rect key="frame" x="10" y="288" width="394" height="330"/>
+                                <rect key="frame" x="10" y="258" width="394" height="280"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PNg-bH-aIx">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="2wH-MY-nvY"/>
+                                            <constraint firstAttribute="height" constant="40" id="2wH-MY-nvY"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L6h-hk-gIk">
-                                        <rect key="frame" x="0.0" y="70" width="394" height="50"/>
+                                        <rect key="frame" x="0.0" y="60" width="394" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ont-iL-sye">
-                                        <rect key="frame" x="0.0" y="140" width="394" height="50"/>
+                                        <rect key="frame" x="0.0" y="120" width="394" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uu6-5d-aGg">
-                                        <rect key="frame" x="0.0" y="210" width="394" height="50"/>
+                                        <rect key="frame" x="0.0" y="180" width="394" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="passordAgain" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nIZ-TO-vEo">
-                                        <rect key="frame" x="0.0" y="280" width="394" height="50"/>
+                                        <rect key="frame" x="0.0" y="240" width="394" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x57-Sg-AV0">
-                                <rect key="frame" x="20" y="658" width="374" height="42"/>
+                                <rect key="frame" x="20" y="558" width="374" height="42"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -1461,7 +1461,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bye-Zj-Ab7">
-                                <rect key="frame" x="20" y="741" width="374" height="30"/>
+                                <rect key="frame" x="20" y="620" width="374" height="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Have account? Login">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1474,19 +1474,19 @@
                         <viewLayoutGuide key="safeArea" id="CTv-bC-pFv"/>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.72138601540000002" blue="0.18872669340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="JIR-ix-vmB" firstAttribute="top" secondItem="CTv-bC-pFv" secondAttribute="top" constant="50" id="4es-jt-17G"/>
+                            <constraint firstItem="JIR-ix-vmB" firstAttribute="top" secondItem="CTv-bC-pFv" secondAttribute="top" constant="20" id="4es-jt-17G"/>
                             <constraint firstItem="Bvb-C0-ZvY" firstAttribute="top" secondItem="JIR-ix-vmB" secondAttribute="bottom" constant="39" id="55m-cJ-gZ4"/>
                             <constraint firstItem="JIR-ix-vmB" firstAttribute="height" secondItem="IEd-oK-eat" secondAttribute="height" multiplier="0.172991" id="8T2-p8-Fhu"/>
                             <constraint firstItem="CTv-bC-pFv" firstAttribute="trailing" secondItem="x57-Sg-AV0" secondAttribute="trailing" constant="20" id="DoC-vE-iyh"/>
                             <constraint firstItem="x57-Sg-AV0" firstAttribute="leading" secondItem="CTv-bC-pFv" secondAttribute="leading" constant="20" id="F1R-jl-Ies"/>
                             <constraint firstItem="bye-Zj-Ab7" firstAttribute="leading" secondItem="x57-Sg-AV0" secondAttribute="leading" id="KfR-zc-iGx"/>
-                            <constraint firstItem="x57-Sg-AV0" firstAttribute="top" secondItem="nIZ-TO-vEo" secondAttribute="bottom" constant="40" id="SmW-ia-0GH"/>
+                            <constraint firstItem="x57-Sg-AV0" firstAttribute="top" secondItem="nIZ-TO-vEo" secondAttribute="bottom" constant="20" id="SmW-ia-0GH"/>
                             <constraint firstItem="CTv-bC-pFv" firstAttribute="trailing" secondItem="JIR-ix-vmB" secondAttribute="trailing" constant="10" id="T5L-Xu-tAj"/>
                             <constraint firstItem="Bvb-C0-ZvY" firstAttribute="trailing" secondItem="JIR-ix-vmB" secondAttribute="trailing" id="a6T-R4-yO0"/>
                             <constraint firstItem="JIR-ix-vmB" firstAttribute="leading" secondItem="CTv-bC-pFv" secondAttribute="leading" constant="10" id="e6r-Mn-Cz7"/>
                             <constraint firstItem="bye-Zj-Ab7" firstAttribute="trailing" secondItem="x57-Sg-AV0" secondAttribute="trailing" id="niL-hK-fPD"/>
                             <constraint firstItem="Bvb-C0-ZvY" firstAttribute="leading" secondItem="JIR-ix-vmB" secondAttribute="leading" id="tWD-rh-hCz"/>
-                            <constraint firstItem="bye-Zj-Ab7" firstAttribute="top" secondItem="x57-Sg-AV0" secondAttribute="bottom" constant="41" id="zuI-Xk-mES"/>
+                            <constraint firstItem="bye-Zj-Ab7" firstAttribute="top" secondItem="x57-Sg-AV0" secondAttribute="bottom" constant="20" id="zuI-Xk-mES"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AJS-ks-Uoc"/>
@@ -1501,7 +1501,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SO2-rH-lyt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3412" y="1509"/>
+            <point key="canvasLocation" x="3154" y="818"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="pNn-yO-8al">
@@ -1584,12 +1584,11 @@
                         <outlet property="emailTextField" destination="KUa-dt-4pS" id="KXf-xk-KRN"/>
                         <outlet property="loginImageView" destination="Zth-8Q-HYY" id="9Gp-SL-EtW"/>
                         <outlet property="passwordTextField" destination="TEv-Du-lmU" id="BI5-Ei-hp1"/>
-                        <segue destination="XCs-aB-gJG" kind="presentation" identifier="Register" modalPresentationStyle="fullScreen" id="6yY-ib-1s1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2r-0S-rS5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2528.985507246377" y="1508.7053571428571"/>
+            <point key="canvasLocation" x="2497" y="818"/>
         </scene>
         <!--Category-->
         <scene sceneID="DmF-hA-D99">
