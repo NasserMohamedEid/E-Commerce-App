@@ -11,18 +11,52 @@ class MeViewController: UIViewController {
 
     //MARK:-outlets : -
     
-    @IBOutlet weak var meTableView: UITableView!
+
+    @IBOutlet weak var meTableView: UITableView!{
+        
+        didSet{
+            if (UserManager.loogedInUser != nil) {
+                meTableView.isHidden =  true
+            }else{
+                meTableView.isHidden = false
+            }
+        }
+    }
+    @IBOutlet weak var loginRegisterButton: UIButton! {
+        
+        didSet{
+            
+            loginRegisterButton.shopifyBtn(title: "LOGIN/REGISTER")
+        }
+    }
     
-    
+    @IBOutlet weak var welcomeLBL: UILabel!
     //MARK:- lifecycle : -
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        checkExistingUser()
+        
         setupNavgitionControllerApperance()
        
     }
     
     //MARK:-Function Helper
+    
+    func checkExistingUser(){
+        
+        if let user = UserManager.loogedInUser {
+            welcomeLBL.text = "Hi,\(user.firstName)"
+        }else{
+            welcomeLBL.isHidden = true
+            meTableView.isHidden = true
+        }
+    }
+    
+    
+    
+    
     
     func setupNavgitionControllerApperance(){
         
@@ -48,6 +82,23 @@ class MeViewController: UIViewController {
         self.navigationController?.pushViewController(orderListVC, animated: true)
         
     }
+    
+    
+    @IBAction func LoginRegisterButtonPressed(_ sender: UIButton) {
+        
+        
+        if loginRegisterButton.titleLabel?.text == "LOGIN/REGISTER" {
+            
+           guard let vc = storyboard?.instantiateViewController(withIdentifier: "LoginViewController")else {return}
+            
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        
+    }
+    
+    
 }
 extension MeViewController :UITableViewDelegate,UITableViewDataSource {
     
@@ -61,7 +112,7 @@ extension MeViewController :UITableViewDelegate,UITableViewDataSource {
         }
         
         cell.priceLBL.text = "150"
-        cell.createdAtLBL.text = "27/10/ 2021"
+        cell.createdAtLBL.text = "27/10/2021"
         return cell
     }
     

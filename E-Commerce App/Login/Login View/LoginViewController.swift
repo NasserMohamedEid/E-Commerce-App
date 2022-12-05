@@ -52,9 +52,5 @@ class LoginViewController: UIViewController {
         
     }
     
-    @IBAction func backTOMeButton(_ sender: UIButton) {
-        
-        self.dismiss(animated: true)
-    }
     
 }

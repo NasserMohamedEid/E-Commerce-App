@@ -71,7 +71,6 @@ class NetworkManager{
                     isLoggedIn = true
                     customerId = customer.id ?? 0
                     completionHandler("welcome mr,\(customer.firstName ?? "")", true)
-                    
                     break
                 }
             }
