@@ -4,7 +4,7 @@
 //
 
 //  Created by Ahmed Hamam on 02/07/2022.
-// Modified By Sherif Samy
+//  Modified By Sherif Samy
 
 
 
@@ -21,9 +21,7 @@ class DescriptionViewController: UIViewController {
     @IBOutlet weak var sectionView: UIView!
     @IBOutlet weak var ReviewsLabel: UILabel!
     @IBOutlet weak var PriceLabel: UILabel!
-  
     @IBOutlet weak var ratingView: CosmosView!
-    
     @IBOutlet weak var descriptionDetailsLabel: UILabel!
 
      //MARK: - vars

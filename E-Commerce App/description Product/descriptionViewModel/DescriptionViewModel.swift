@@ -39,8 +39,8 @@ class DescriptionViewModel {
     func addToCartPost(){
         NetworkManager.addToCart { [weak self] resultOrd in
             guard let self = self else{return}
-            self.resultOrd=resultOrd?.order
-            print(resultOrd ?? "")
+            self.resultOrd = resultOrd?.order
+           
             
         }
     }

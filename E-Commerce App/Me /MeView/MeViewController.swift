@@ -39,7 +39,6 @@ class MeViewController: UIViewController {
         super.viewDidLoad()
         
         checkExistingUser()
-        
         setupNavgitionControllerApperance()
        
     }
@@ -100,7 +99,7 @@ extension MeViewController :UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? MeTableViewCell else{return
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? MeTableViewCell else{ return
             UITableViewCell()
         }
         

@@ -48,6 +48,7 @@ class LoginViewController: UIViewController {
         
         let registerVC =  RegisterViewController.instantiateVC()
         registerVC.modalPresentationStyle = .fullScreen
+        registerVC.title = "Register"
         self.navigationController?.pushViewController(registerVC, animated: true)
         
     }
