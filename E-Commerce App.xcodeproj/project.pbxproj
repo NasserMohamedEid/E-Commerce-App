@@ -64,6 +64,7 @@
 		E0FDBA01293E3B8C00B708E3 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDBA00293E3B8C00B708E3 /* UserManager.swift */; };
 		E0FDBA03293E3FDA00B708E3 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDBA02293E3FDA00B708E3 /* UIViewController+Extension.swift */; };
 		E0FDBA05293E4D1300B708E3 /* DescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDBA04293E4D1300B708E3 /* DescriptionViewModel.swift */; };
+		E0FDBA07293E4FEA00B708E3 /* 9-95161_online-shopping-shopping-bag-logo-coupon-online-shopping.png in Resources */ = {isa = PBXBuildFile; fileRef = E0FDBA06293E4FEA00B708E3 /* 9-95161_online-shopping-shopping-bag-logo-coupon-online-shopping.png */; };
 		F7141C7B28705758003FD38D /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7141C7A28705758003FD38D /* DescriptionViewController.swift */; };
 		F7141C7D28705792003FD38D /* DescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7141C7C28705792003FD38D /* DescriptionCollectionViewCell.swift */; };
 		F7239711286F2FDA00CB07C7 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7239710286F2FDA00CB07C7 /* RegisterViewModel.swift */; };
@@ -157,6 +158,7 @@
 		E0FDBA00293E3B8C00B708E3 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		E0FDBA02293E3FDA00B708E3 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		E0FDBA04293E4D1300B708E3 /* DescriptionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionViewModel.swift; sourceTree = "<group>"; };
+		E0FDBA06293E4FEA00B708E3 /* 9-95161_online-shopping-shopping-bag-logo-coupon-online-shopping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "9-95161_online-shopping-shopping-bag-logo-coupon-online-shopping.png"; sourceTree = "<group>"; };
 		E794427746BD02B09C717F9D /* Pods-E-Commerce App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E-Commerce App.release.xcconfig"; path = "Target Support Files/Pods-E-Commerce App/Pods-E-Commerce App.release.xcconfig"; sourceTree = "<group>"; };
 		F7141C74287056CA003FD38D /* ProductDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetails.swift; sourceTree = "<group>"; };
 		F7141C76287056FD003FD38D /* OrderCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCart.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 		58A824FA28637A1000DCFFC3 = {
 			isa = PBXGroup;
 			children = (
+				E0FDBA06293E4FEA00B708E3 /* 9-95161_online-shopping-shopping-bag-logo-coupon-online-shopping.png */,
 				E0A4645A28705FE400A02ACB /* PROductCoreData.xcdatamodeld */,
 				E08BB44028678B79005D08B3 /* placeholder-images.png */,
 				58A8250528637A1100DCFFC3 /* E-Commerce App */,
@@ -834,6 +837,7 @@
 				58A8251028637A1100DCFFC3 /* Assets.xcassets in Resources */,
 				58A8250E28637A1100DCFFC3 /* Main.storyboard in Resources */,
 				E08BB44128678B79005D08B3 /* placeholder-images.png in Resources */,
+				E0FDBA07293E4FEA00B708E3 /* 9-95161_online-shopping-shopping-bag-logo-coupon-online-shopping.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
