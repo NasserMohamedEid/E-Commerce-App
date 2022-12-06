@@ -59,10 +59,6 @@ class RegisterViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
-    @IBAction func backMeScreenButton(_ sender: UIButton) {
-        
-        self.dismiss(animated: true)
-    }
     
     
     

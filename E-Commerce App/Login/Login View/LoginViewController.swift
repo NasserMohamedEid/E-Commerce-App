@@ -30,18 +30,18 @@ class LoginViewController: UIViewController {
             
             DispatchQueue.main.async { [weak self] in
                 
-                let alert = Alerts.instance.showAlert(title: "success", message: self?.loginVM.message ?? "")
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-                    if ((self?.loginVM.islooged) != nil){
+                let alert = Alerts.instance.showAlert(title: "Success", message: self?.loginVM.message ?? "")
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
+                    if ((self?.loginVM.islooged) == true){
                         self?.navigationController?.popViewController(animated: true)
                     }
                 }))
                 self?.present(alert, animated: true)
+               
             }
         }
         loginVM.getUser(email: emailTextField.text!, password: passwordTextField.text!)
-        
-        
+
     }
     
     @IBAction func registerButton(_ sender: UIButton) {

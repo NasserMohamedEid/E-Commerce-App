@@ -57,8 +57,9 @@ class NetworkManager{
     static func loginUser(email:String, password:String,completionHandler: @escaping (String,Bool) -> Void){
         
         let url  =  Route.baseUrl + Route.login(email).description
-        print(url)
-        AF.request(url,encoding: JSONEncoding.default).responseDecodable(of: userCustomers.self) { customerResponse in
+        let urluser = "https://menofia-2022-q3.myshopify.com/admin/api/2022-04/customers.json".replacingOccurrences(of: ".json", with: "/search.json?query=\(email)")
+        print(urluser)
+        AF.request(urluser,encoding: JSONEncoding.default).responseDecodable(of: userCustomers.self) { customerResponse in
             
             guard let response =  customerResponse.value else{return}
             guard let customers = response.customers else {return}

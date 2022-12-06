@@ -21,9 +21,9 @@ class RegisterViewModel {
     
     func createCustomer(name:String, lastName:String, email:String, password:String, phone:String){
         
-        NetworkManager.registUser(firstName: name, lastName: lastName, email: email, password: password, phone:phone) { [weak self ] response, error in
+        NetworkManager.registUser(firstName: name, lastName: lastName, email: email, password: password, phone:phone) { [weak self ] resultResponse, error in
 
-            self?.result = response
+            self?.result = resultResponse
             self?.error = error
         }
         

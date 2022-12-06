@@ -25,8 +25,8 @@ class LoginViewModel {
     
     func getUser(email:String,password:String){
         
-        NetworkManager.loginUser(email: email, password: password) {[weak self] resultMessage,loggedIn in
-            self?.message = resultMessage
+        NetworkManager.loginUser(email: email, password: password) {[weak self] usermesage,loggedIn in
+            self?.message = usermesage
             self?.islooged = loggedIn
             self?.bindResultToLoginView()
         }
