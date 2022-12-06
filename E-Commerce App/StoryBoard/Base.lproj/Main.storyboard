@@ -936,6 +936,8 @@
                     <connections>
                         <outlet property="loginRegisterButton" destination="2pJ-vO-iKi" id="w0g-SV-hmX"/>
                         <outlet property="meTableView" destination="mSx-S2-da3" id="Ryj-Bx-Z1n"/>
+                        <outlet property="moreOrdersButton" destination="rtD-0J-zJ8" id="549-Qu-cDy"/>
+                        <outlet property="moreWishListButton" destination="q6W-7R-aKt" id="0Af-E9-VZb"/>
                         <outlet property="welcomeLBL" destination="6KI-Gb-sFg" id="fVY-Cm-GbB"/>
                     </connections>
                 </viewController>
@@ -1093,7 +1095,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIP-f5-pwm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4668" y="818"/>
+            <point key="canvasLocation" x="4535" y="818"/>
         </scene>
         <!--AboutUS View Controller-->
         <scene sceneID="jyo-zD-Clb">
@@ -1161,7 +1163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gN3-nt-fqJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1819" y="1509"/>
+            <point key="canvasLocation" x="1786" y="1509"/>
         </scene>
         <!--Adderess View Controller-->
         <scene sceneID="yxI-ei-dJ5">
@@ -1263,7 +1265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QgS-7j-gUR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5306" y="818"/>
+            <point key="canvasLocation" x="5236" y="818"/>
         </scene>
         <!--Add New Address View Controller-->
         <scene sceneID="Pga-Ip-tuB">

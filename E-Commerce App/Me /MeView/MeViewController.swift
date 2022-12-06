@@ -12,6 +12,9 @@ class MeViewController: UIViewController {
     //MARK:-outlets : -
     
 
+    @IBOutlet weak var moreWishListButton: UIButton!
+
+    @IBOutlet weak var moreOrdersButton: UIButton!
     @IBOutlet weak var meTableView: UITableView!{
         
         didSet{
@@ -71,6 +74,7 @@ class MeViewController: UIViewController {
     }
     
     @IBAction func moreOrderButton(_ sender: UIButton) {
+        
         let orderListVC = orderViewController.instantiateVC()
         self.navigationController?.pushViewController(orderListVC, animated: true)
     }
