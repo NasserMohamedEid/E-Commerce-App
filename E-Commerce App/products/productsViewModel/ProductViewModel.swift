@@ -10,25 +10,23 @@ import Foundation
 
 class ProductViewModel {
     
-    let services:NetworkManager
     var bindingProductResult : (()->()) = {}
-    var productsData:ProductsBrand?
-    
-    
-    
-    init(services: NetworkManager) {
-        self.services = services
+    var productsData:ProductsBrand?{
+        didSet{
+            bindingProductResult()
+        }
     }
     
     
-    
-    
     func getProducts(brandId :Int){
-        
-        NetworkManager.fetchproducts(collectionId: brandId) {[weak self] productResponse in
-            guard let self = self else{return}
-            self.productsData = productResponse
-            self.bindingProductResult()
+        let url  = Route.baseUrl + Route.fetchProductsAndCategories(brandId).description
+        NetworkManager.fetchData(url: url) { [weak self](product: ProductsBrand?,error) in
+            if let error = error {
+                print(error)
+            }else{
+                self?.productsData = product
+            }
+           
         }
     }
 }

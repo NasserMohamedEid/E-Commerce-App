@@ -28,20 +28,34 @@ class DescriptionViewModel {
         }
     }
     
-    func getItems(id:Int){
-        NetworkManager.fetchProductDetails(id: id, completionHandler: {
-            [weak self](result)in
-            
-            self?.result=result?.product
-        })
+//
+//    var resultOrd : Order?{
+//        didSet{
+//            bindResultToDescriptionView()
+//
+//        }
+//    }
     
-}
-    func addToCartPost(){
-        NetworkManager.addToCart { [weak self] resultOrd in
-            guard let self = self else{return}
-            self.resultOrd = resultOrd?.order
-           
-            
+    func getItems(id:Int){
+
+        let url = Route.baseUrl + Route.fetchProductDetils(id).description
+        NetworkManager.fetchData(url: url) { [weak self](productDetails: ProductDetails?,error ) in
+            if let error = error {
+                print(error)
+            }else{
+                self?.result = productDetails?.product
+            }
         }
-    }
+   }
+//    func addToCartPost(){
+//        NetworkManager.addToCart { [weak self] resultOrd in
+//            guard let self = self else{return}
+//            self.resultOrd = resultOrd?.order
+//
+//
+//        }
+//
+//    }
+    
+    
 }

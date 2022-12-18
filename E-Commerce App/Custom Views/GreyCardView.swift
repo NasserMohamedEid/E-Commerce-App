@@ -21,8 +21,6 @@ class GreyCardView:UIView {
         viewSetup()
     }
     
-    
-    
     func viewSetup(){
         
         self.layer.borderWidth = 3

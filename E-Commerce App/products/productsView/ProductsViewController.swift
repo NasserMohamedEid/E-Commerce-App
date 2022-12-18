@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+
 class ProductsViewController: UIViewController {
 
     var productViewModel:ProductViewModel?
@@ -16,8 +17,8 @@ class ProductsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        productViewModel = ProductViewModel(services: NetworkManager())
+        
+        productViewModel = ProductViewModel()
         productViewModel?.bindingProductResult = { [weak self] in
             DispatchQueue.main.async {
                 self?.productsCollectionView.reloadData()

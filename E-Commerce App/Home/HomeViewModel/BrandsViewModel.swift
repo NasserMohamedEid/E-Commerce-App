@@ -13,20 +13,23 @@ class BrandsViewModel {
     
  
     var bindingBrandsResult : (()->()) = {}
-    var brandssData:Brands?
-    
-//    init(services: NetworkManager) {
-////        self.services = services
-//    }
+    var brandssData:Brands? {
+        didSet{
+            bindingBrandsResult()
+        }
+    }
 
     
     
     func getBrands(){
-        
-        NetworkManager.fetchBrands { [weak self] brandsResponse in
-            guard let self = self else{return}
-            self.brandssData = brandsResponse
-            self.bindingBrandsResult()
+
+        let url  = Route.baseUrl + Route.fetchBrands.description
+        NetworkManager.fetchData(url: url) {[weak self] (Brands: Brands?, error) in
+            if let error = error {
+                print(error)
+            }else{
+                self?.brandssData = Brands
+            }
         }
     }
     

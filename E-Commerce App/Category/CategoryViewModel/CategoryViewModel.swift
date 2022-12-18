@@ -19,11 +19,14 @@ class CategoryViewModel {
     }
     
     func getItems(id:Int){
-        NetworkManager.fetchCategoryApi(id: id, complitionHandler: {
-            [weak self](result)in
-            
-            self?.result=result?.products
-        })
-    
+
+        let url  =  Route.baseUrl + Route.fetchProductsAndCategories(id).description
+        NetworkManager.fetchData(url: url) { [weak self] (productCategory:CategoryModel?, error)in
+            if let error = error {
+                 print(error)
+            }else{
+                self?.result = productCategory?.products
+            }
+        }
 }
 }

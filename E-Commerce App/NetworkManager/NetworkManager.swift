@@ -14,45 +14,68 @@ class NetworkManager{
     
     //MARK: - get requests :
     
-    static func fetchBrands(completionHandler: @escaping(Brands?)-> Void){
+//    static func fetchBrands(completionHandler: @escaping(Brands?)-> Void){
+//
+//        let url  = Route.baseUrl + Route.fetchBrands.description
+//        AF.request(url, method: .get, encoding: URLEncoding.queryString)
+//            .responseDecodable(of: Brands.self) { response in
+//                guard let brandsRespone = response.value else {return}
+//                completionHandler(brandsRespone)
+//            }
+//    }
+    
+//    static func fetchproducts(collectionId : Int, completionHandler :@escaping(ProductsBrand?)->Void){
+//        
+//        let url  = Route.baseUrl + Route.fetchProductsAndCategories(collectionId).description
+//        AF.request( url, method: .get,encoding: URLEncoding.queryString).responseDecodable(of:ProductsBrand.self) { response in
+//            guard let productResponse = response.value else{return}
+//            completionHandler(productResponse)
+//        }
+//    }
+    
+//    static func fetchProductDetails(id:Int,completionHandler:@escaping (ProductDetails?)->Void){
+//
+//        let url = Route.baseUrl + Route.fetchProductDetils(id).description
+//        AF.request(url, method: .get).responseDecodable(of:ProductDetails.self){
+//            response in
+//            guard let descriptionProduct=response.value else{return}
+//            print(descriptionProduct.product.title)
+//            completionHandler(descriptionProduct)
+//        }
+//    }
+    
+//    static func fetchCategoryApi(id:Int,complitionHandler : @escaping (CategoryModel?) -> Void){
+//
+//        let url  =  Route.baseUrl + Route.fetchProductsAndCategories(id).description
+//        AF.request(url).responseDecodable(of:CategoryModel.self){
+//            response in
+//            guard let categoryProduct=response.value else{return}
+//            complitionHandler(categoryProduct)
+//        }
+//    }
+//
+    // Generic Func To GetData
+    
+     static func fetchData<T:Decodable>(url:String,completionHandler: @escaping(T?,Error?)-> Void){
         
-        let url  = Route.baseUrl + Route.fetchBrands.description
-        AF.request(url, method: .get, encoding: URLEncoding.queryString)
-            .responseDecodable(of: Brands.self) { response in
-                guard let brandsRespone = response.value else {return}
-                completionHandler(brandsRespone)
+        AF.request( url, method: .get,encoding: URLEncoding.queryString).responseDecodable(of:T.self,queue: .global(qos: .background)) { response in
+            switch response.result {
+                
+            case .success:
+                do{
+                    completionHandler(try response.result.get(), nil)
+                }catch let error{
+                    completionHandler(nil,error)
+                    print(error)
+                }
+                
+            case .failure(let error):
+                completionHandler(nil,error)
             }
-    }
-    
-    static func fetchproducts(collectionId : Int, completionHandler :@escaping(ProductsBrand?)->Void){
-        
-        let url  = Route.baseUrl + Route.fetchProductsAndCategories(collectionId).description
-        AF.request( url, method: .get,encoding: URLEncoding.queryString).responseDecodable(of:ProductsBrand.self) { response in
-            guard let productResponse = response.value else{return}
-            completionHandler(productResponse)
         }
     }
+
     
-    static func fetchProductDetails(id:Int,completionHandler:@escaping (ProductDetails?)->Void){
-        
-        let url = Route.baseUrl + Route.fetchProductDetils(id).description
-        AF.request(url, method: .get).responseDecodable(of:ProductDetails.self){
-            response in
-            guard let descriptionProduct=response.value else{return}
-            print(descriptionProduct.product.title)
-            completionHandler(descriptionProduct)
-        }
-    }
-    
-    static func fetchCategoryApi(id:Int,complitionHandler : @escaping (CategoryModel?) -> Void){
-        
-        let url  =  Route.baseUrl + Route.fetchProductsAndCategories(id).description
-        AF.request(url).responseDecodable(of:CategoryModel.self){
-            response in
-            guard let categoryProduct=response.value else{return}
-            complitionHandler(categoryProduct)
-        }
-    }
     
     static func loginUser(email:String, password:String,completionHandler: @escaping (String,Bool) -> Void){
         
