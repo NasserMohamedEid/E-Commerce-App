@@ -460,21 +460,21 @@
                                 <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="r7x-qA-IIA">
-                                    <size key="itemSize" width="152" height="146"/>
+                                    <size key="itemSize" width="141" height="135"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="C4f-V9-nFZ" customClass="CategoryCollectionViewCell" customModule="E_Commerce_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="152" height="146"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="141" height="135"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uUk-pG-8e2">
-                                            <rect key="frame" x="0.0" y="0.0" width="152" height="146"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="141" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giL-9t-RD1">
-                                                    <rect key="frame" x="5" y="117" width="147" height="21"/>
+                                                    <rect key="frame" x="5" y="106" width="136" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Vjt-b5-EQh"/>
                                                     </constraints>
@@ -483,7 +483,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NxH-eN-fCq">
-                                                    <rect key="frame" x="5" y="5" width="142" height="107"/>
+                                                    <rect key="frame" x="5" y="5" width="131" height="96"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -497,7 +497,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="giL-9t-RD1" secondAttribute="trailing" id="xYv-vF-ptW"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="152" height="146"/>
+                                        <size key="customSize" width="141" height="135"/>
                                         <connections>
                                             <outlet property="nameLable" destination="giL-9t-RD1" id="qo8-La-6Yk"/>
                                             <outlet property="productImage" destination="NxH-eN-fCq" id="1Er-hy-xii"/>
