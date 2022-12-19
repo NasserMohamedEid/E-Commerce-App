@@ -8,11 +8,9 @@
 import UIKit
 import SDWebImage
 class BrandsViewController: UIViewController {
-
     
     //MARK:-Outlets
-    
-    
+
     @IBOutlet weak var salesImageView: UIImageView!{
         didSet{
             salesImageView.layer.cornerRadius = salesImageView.frame.size.height / 5
@@ -29,16 +27,24 @@ class BrandsViewController: UIViewController {
     
     //MARK:-Constants & vars
     
-    var brandsViewModel:BrandsViewModel?
+    var viewModel:BrandsViewModel?
+    
+    init(networkManager:Networking) {
+        viewModel = BrandsViewModel(networkManager: networkManager)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
     //MARK:-app lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        viewModel = BrandsViewModel(networkManager: NetworkManager())
         setupNavgitionControllerApperance()
         MakeImageChanges()
-        brandsViewModel = BrandsViewModel()
-        brandsViewModel?.bindingBrandsResult = {[weak self ] in
+        viewModel?.bindingBrandsResult = { [weak self] in
             guard let self =  self  else{return}
             DispatchQueue.main.async {
                 self.brandsCollectionView.reloadData()
@@ -47,7 +53,7 @@ class BrandsViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        brandsViewModel?.getBrands()
+        viewModel?.getBrands()
     }
 
  //MARK: - Function Helper
@@ -82,7 +88,7 @@ class BrandsViewController: UIViewController {
 
 extension BrandsViewController: UICollectionViewDelegate ,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return brandsViewModel?.brandssData?.smartCollections?.count ?? 0
+        return viewModel?.brandssData?.smartCollections?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -91,8 +97,8 @@ extension BrandsViewController: UICollectionViewDelegate ,UICollectionViewDataSo
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? BrandsCollectionViewCell else {return
            UICollectionViewCell()
         }
-        cell.brandLBL.text = brandsViewModel?.brandssData?.smartCollections?[indexPath.row].title
-        if let image = brandsViewModel?.brandssData?.smartCollections?[indexPath.row].image?.src {
+        cell.brandLBL.text = viewModel?.brandssData?.smartCollections?[indexPath.row].title
+        if let image = viewModel?.brandssData?.smartCollections?[indexPath.row].image?.src {
             cell.brandImageView.sd_setImage(with:URL(string: image) ,placeholderImage: UIImage(named: "placeholder-images"))
         }
         return cell
@@ -103,7 +109,7 @@ extension BrandsViewController: UICollectionViewDelegate ,UICollectionViewDataSo
         guard  let productVC = storyboard?.instantiateViewController(withIdentifier: "ProductsViewController") as? ProductsViewController else {return}
         productVC.title = "Brand Products"
         
-        productVC.BrandID = brandsViewModel?.brandssData?.smartCollections?[indexPath.row].id ?? 0
+        productVC.BrandID = viewModel?.brandssData?.smartCollections?[indexPath.row].id ?? 0
         self.navigationController?.pushViewController(productVC, animated: true)
         
     }

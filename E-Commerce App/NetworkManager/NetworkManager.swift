@@ -9,8 +9,30 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-
-class NetworkManager{
+protocol Networking {
+    func fetchData<T:Decodable>(url:String,completionHandler: @escaping(T?,Error?)-> Void)
+}
+class NetworkManager:Networking{
+    
+    func fetchData<T>(url: String, completionHandler: @escaping (T?, Error?) -> Void) where T : Decodable {
+        
+        AF.request( url, method: .get,encoding: URLEncoding.queryString).responseDecodable(of:T.self,queue: .global(qos: .background)) { response in
+            switch response.result {
+                
+            case .success:
+                do{
+                    completionHandler(try response.result.get(), nil)
+                }catch let error{
+                    completionHandler(nil,error)
+                    print(error)
+                }
+                
+            case .failure(let error):
+                completionHandler(nil,error)
+            }
+        }
+    }
+    
     
     //MARK: - get requests :
     
@@ -176,9 +198,7 @@ class NetworkManager{
                 }catch let error{
                     print(error)
                 }
-                
             }
-            
         }
     }
     static func createAddress(customerID : Int , completionHandler: @escaping(Address?)-> Void){
